@@ -76,7 +76,11 @@ desired effect
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
 
-       <!-- User Account Menu -->
+                
+              
+                   
+             
+          <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -182,22 +186,30 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       
-
-
-
       <!-- code here --> 
-
-
-
-
-
-
-
-
       <div class="table-responsive">
-<table class="table table-striped table-bordered" align="center">
+<table class="table table-striped table-bordered" >
 
-      
+      <?php 
+require '..\shared\course_db.php';
+$obj=new course_db();
+$result=$obj->getAllCourse();
+
+?>
+   <thead bgcolor="silver">
+   <th>ID</th>
+   <th>NAME</th>
+   </thead> 
+    <?php
+    while($row=$result->fetch_assoc())
+    {
+      echo '<tr>';
+      echo '<td>'.$row['course_id'].'</td> ';
+      echo '<td>'.$row['pk_course_name']. '</td>';
+      echo '</tr>';
+    }
+    ?>
+
       </div>
       </table>
     </section>

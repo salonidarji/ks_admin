@@ -76,7 +76,11 @@ desired effect
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
 
-       <!-- User Account Menu -->
+                
+              
+                   
+             
+          <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -148,30 +152,21 @@ desired effect
 
      <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-       <li class="treeview">
-          <a href="#"><i class="fa fa-table"></i> <span>Manage content </span>
+        <li class="header">HEADER</li>
+        <!-- Optionally, you can add icons to the links -->
+       <!-- <li class="active"><a href="starter.php"><i class="fa fa-link"></i> <span>Product</span></a></li> -->
+	    <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>Product</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-          <li><a href=""> Login </a></li>
-          <li><a href=""> Faculty </a></li>
-          <li><a href=""> Staff </a></li>
-          <li><a href=""> Student </a></li>
-          <li><a href="course.php">Course </a></li>
-          <li><a href=""> Material </a></li>
-          <li><a href=""> Notice</a></li>
-          <li><a href=""> Question-Answer </a></li>
-          <li><a href=""> Result </a></li>
-          <li><a href=""> Test </a></li>
-          <li><a href=""> Slider </a></li>  
-          <li><a href=""> Album </a></li>
-          <li><a href=""> Gallary </a></li>
-          <li><a href=""> Video </a></li>
+            <li><a href=""> Display</a></li>
+            <li><a href="">Insert</a></li>
           </ul>
         </li>
-       
+        <li><a href=""><i class="fa fa-link"></i> <span>User</span></a></li>
        </ul> <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
@@ -182,24 +177,8 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       
-
-
-
-      <!-- code here --> 
-
-
-
-
-
-
-
-
-      <div class="table-responsive">
-<table class="table table-striped table-bordered" align="center">
-
+      <!-- code here -->  
       
-      </div>
-      </table>
     </section>
 
     <!-- Main content -->
