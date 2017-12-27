@@ -14,6 +14,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <!-- dataTbles --> 
   <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -32,6 +33,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  
+  <script type="text/javascript" class="init">
+	
+
+$(document).ready(function() {
+	$('#lengthMenu').DataTable( {
+		"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+	} );
+} );
+
+
+	</script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -149,18 +162,14 @@ desired effect
                 </button>
               </span>
         </div>
-      </form>
+        </form>
       <!-- /.search form -->
 
      <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
        <li class="treeview">
-          <a href="#"><i class="fa fa-table"></i> <span>Manage content </span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
+          
+         
           <li><a href=""> Login </a></li>
           <li><a href=""> Faculty </a></li>
           <li><a href=""> Staff </a></li>
@@ -175,7 +184,7 @@ desired effect
           <li><a href=""> Album </a></li>
           <li><a href=""> Gallary </a></li>
           <li><a href=""> Video </a></li>
-          </ul>
+         
         </li>
        
        </ul> <!-- /.sidebar-menu -->
@@ -189,32 +198,83 @@ desired effect
     <section class="content-header">
       
       <!-- code here --> 
-      <div class="table-responsive">
-<table class="table table-striped table-bordered" >
+      <form action="qa_delete.php" name="qa_form" method="post">
+      <label>
+  Show
+  <select name="my-table_length" aria-controls="my-table" class="form-control input-sm" id="lengthMenu">
+    <option value="10">10</option>
+    <option value="25">25</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+  </select>
+  entries
+</label>
+
+<div align="right">
+<input type="submit" class="btn btn-primary" value="DELETE ALL">
+</div>
+
+
+<table class="dataTable table-striped" id="example" >
 
       <?php 
-require '..\shared\course_db.php';
-$obj=new course_db();
-$result=$obj->getAllCourse();
+require '..\shared\qa_db.php';
+$obj=new qa_db();
+$result=$obj->getAllQa();
 
 ?>
    <thead bgcolor="silver">
+  <th>Select</th>
+   <th>Title</th>
+   <th>Description</th>
+   <th>Image</th> 
+   <th>Option 1</th> 
+   <th>Option 2</th> 
+   <th>Option 3</th> 
+   <th>Option 4</th> 
+   <th>Answer</th> 
+   <th>Student year</th> 
+   <th>Faculty email id</th> 
+   <th>Action</th> 
   
-   <th>NAME</th>
-  
-   </thead> 
+   </thead>
+   <tbody>  
     <?php
     while($row=$result->fetch_assoc())
     {
+      $id=$row["pk_que_id"];
       echo '<tr>';
-     
-      echo '<td>'.$row['pk_course_name']. '</td>';
+      echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
+      echo '<td>'.$row['que_title']. '</td>';
+      echo '<td>'.$row['que_desc']. '</td>';
+      echo '<td>'.$row['que_img']. '</td>';
+      echo '<td>'.$row['op_1']. '</td>';
+      echo '<td>'.$row['op_2']. '</td>';
+      echo '<td>'.$row['op_3']. '</td>';
+      echo '<td>'.$row['op_4']. '</td>';
+      echo '<td>'.$row['ans']. '</td>';
+      echo '<td>'.$row['fk_student_year']. '</td>';
+      echo '<td>'.$row['fk_email_id']. '</td>';
+      echo '<td> <a href="qa_update.php?id='.  $row["pk_que_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
+      
+      </td>';
       echo '</tr>';
+      
     }
+    //echo '<td colspan="2"><input type="submit" class="btn btn-primary" value="DELETE ALL"></td>';
     ?>
 
-      </div>
+    
+      </tbody> 
       </table>
+     
+      
+<div align="right">
+<a href="qa_insert.php">
+      <button type="button" right class="btn btn-primary">New</button>
+    </a> 
+</div>           
+  </form>
     </section>
 
     <!-- Main content -->
@@ -323,8 +383,8 @@ $result=$obj->getAllCourse();
 <script src="dist/js/app.min.js"></script>
 <!-- dataTables --> 
 <script type="text/javascript" src="DataTables/datatables.min.js"></script>
-
-
+<script type="text/javascript" src="DataTables\Select-1.2.4\js\dataTables.select.js">
+</script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the

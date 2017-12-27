@@ -14,6 +14,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <!-- dataTbles --> 
   <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -32,6 +33,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  
+  <script type="text/javascript" class="init">
+	
+
+$(document).ready(function() {
+	$('#lengthMenu').DataTable( {
+		"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+	} );
+} );
+
+
+	</script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -155,12 +168,8 @@ desired effect
      <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
        <li class="treeview">
-          <a href="#"><i class="fa fa-table"></i> <span>Manage content </span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
+          
+         
           <li><a href=""> Login </a></li>
           <li><a href=""> Faculty </a></li>
           <li><a href=""> Staff </a></li>
@@ -175,7 +184,7 @@ desired effect
           <li><a href=""> Album </a></li>
           <li><a href=""> Gallary </a></li>
           <li><a href=""> Video </a></li>
-          </ul>
+         
         </li>
        
        </ul> <!-- /.sidebar-menu -->
@@ -189,32 +198,69 @@ desired effect
     <section class="content-header">
       
       <!-- code here --> 
-      <div class="table-responsive">
-<table class="table table-striped table-bordered" >
+   
+<?php 
+$que_id=$_GET["id"];
+require '..\shared\qa_db.php';
+/*$_obj=new qa_db();
+$result=$_obj->getQa($que_id);
+*/
+$cnn= qa_db::connect();
+$sql="select * from qa_tbl where pk_que_id=".$que_id;
 
-      <?php 
-require '..\shared\course_db.php';
-$obj=new course_db();
-$result=$obj->getAllCourse();
+$result=$cnn->query($sql);
+$row=$result->fetch_assoc();
+if($result->num_rows==1)
+{
 
+$_title=$row["que_title"];
+$_desc=$row["que_desc"];
+$_img=$row["que_img"];
+$_op1=$row["op_1"];
+$_op2=$row["op_2"];
+$_op3=$row["op_3"];
+$_op4=$row["op_4"];
+$_ans=$row["ans"];
+$_year=$row["fk_student_year"];
+$_email=$row["fk_email_id"];
+
+
+}
 ?>
-   <thead bgcolor="silver">
-  
-   <th>NAME</th>
-  
-   </thead> 
-    <?php
-    while($row=$result->fetch_assoc())
-    {
-      echo '<tr>';
-     
-      echo '<td>'.$row['pk_course_name']. '</td>';
-      echo '</tr>';
-    }
-    ?>
+<div class="table-responsive">
+<table class="table">
+<form method="post" action="qa_update_code.php"  enctype="multipart/form-Data" >
+<div class="form-group">
+<tr><td>Id :</td><td><input type="text" name="txtid" class="form-control" value="<?php echo $que_id; ?>"/> </td></tr>
+<tr><td>Title :</td><td><input type="text" name="txttitle" class="form-control" value="<?php echo $_title; ?>"/> </td></tr>
+<tr><td>Description :</td><td><input type="text" name="txtdesc" class="form-control" value="<?php echo $_desc; ?>"/> </td></tr>
 
-      </div>
-      </table>
+<tr><td>Image :</td><td><input type="text" name="txtimg" class="form-control" value="<?php echo $_img; ?>"/> </td></tr>
+<tr><td>Option A :</td><td><input type="text" name="txtop1" class="form-control" value="<?php echo $_op1; ?>"/> </td></tr>
+<tr><td>Option B:</td><td><input type="text" name="txtop2" class="form-control" value="<?php echo $_op2; ?>"/> </td></tr>
+<tr><td>Option C :</td><td><input type="text" name="txtop3" class="form-control" value="<?php echo $_op3; ?>"/> </td></tr>
+<tr><td>Option D :</td><td><input type="text" name="txtop4" class="form-control" value="<?php echo $_op4; ?>"/> </td></tr>
+<tr><td>Answer :</td><td><input type="text" name="txtans" class="form-control" value="<?php echo $_ans; ?>"/> </td></tr>
+<tr><td>Student Year:</td><td>
+					<select name="selyear" class="form-control">
+                    <option value="0">--Select Year--</option>
+                    <option value="1">First</option>
+                    <option value="2">Second</option>
+                    <option value="3">Third</option>
+                    <option value="4">Fourth</option>
+                    <option value="5">Fifth</option>
+					</select>
+
+
+				</td></tr>
+
+					
+<tr><td  colspan="2"><input type="submit" name="btnupdate" value="UPDATE"class="form-control btn  btn-success"/></td></tr>
+</div>
+</form>
+</table>
+</div>
+
     </section>
 
     <!-- Main content -->
@@ -323,8 +369,8 @@ $result=$obj->getAllCourse();
 <script src="dist/js/app.min.js"></script>
 <!-- dataTables --> 
 <script type="text/javascript" src="DataTables/datatables.min.js"></script>
-
-
+<script type="text/javascript" src="DataTables\Select-1.2.4\js\dataTables.select.js">
+</script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the

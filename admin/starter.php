@@ -12,6 +12,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <!-- dataTbles --> 
+  <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -162,7 +164,7 @@ desired effect
           <li><a href="course.php">Course </a></li>
           <li><a href=""> Material </a></li>
           <li><a href=""> Notice</a></li>
-          <li><a href=""> Question-Answer </a></li>
+          <li><a href="qa.php"> Question-Answer </a></li>
           <li><a href=""> Result </a></li>
           <li><a href=""> Test </a></li>
           <li><a href=""> Slider </a></li>  
@@ -306,6 +308,8 @@ desired effect
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
+<!-- dataTables --> 
+<script type="text/javascript" src="DataTables/datatables.min.js"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

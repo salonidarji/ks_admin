@@ -14,6 +14,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <!-- dataTbles --> 
   <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -32,6 +33,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  
+  <script type="text/javascript" class="init">
+	
+
+$(document).ready(function() {
+	$('#lengthMenu').DataTable( {
+		"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+	} );
+} );
+
+
+	</script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -155,12 +168,8 @@ desired effect
      <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
        <li class="treeview">
-          <a href="#"><i class="fa fa-table"></i> <span>Manage content </span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
+          
+         
           <li><a href=""> Login </a></li>
           <li><a href=""> Faculty </a></li>
           <li><a href=""> Staff </a></li>
@@ -175,7 +184,7 @@ desired effect
           <li><a href=""> Album </a></li>
           <li><a href=""> Gallary </a></li>
           <li><a href=""> Video </a></li>
-          </ul>
+         
         </li>
        
        </ul> <!-- /.sidebar-menu -->
@@ -189,32 +198,26 @@ desired effect
     <section class="content-header">
       
       <!-- code here --> 
-      <div class="table-responsive">
-<table class="table table-striped table-bordered" >
+   
+      
+<table class="table">
+<form method="post" action="qa_insert_code.php">
+<div class="form-group">
+<tr><td>Title :</td><td><input type="text" name="txttitle" class="form-control" /> </td></tr>
+<tr><td>Description :</td><td><input type="text" name="txtdesc" class="form-control"/> </td></tr>
+<tr><td>Image :</td><td><input type="file" name="txtimg" class="form-control"/> </td></tr>
+<tr><td>option A:</td><td><input type="text" name="txtop1" class="form-control"/> </td></tr>
+<tr><td>option B :</td><td><input type="text" name="txtop2" class="form-control"/> </td></tr>
+<tr><td>option C :</td><td><input type="text" name="txtop3" class="form-control"/> </td></tr>
+<tr><td>option D :</td><td><input type="text" name="txtop4" class="form-control"/> </td></tr>
+<tr><td>Answer :</td><td><input type="text" name="txtans" class="form-control"/> </td></tr>
+<tr><td>To which year :</td><td><input type="number" name="txtyear" class="form-control"/> </td></tr>
 
-      <?php 
-require '..\shared\course_db.php';
-$obj=new course_db();
-$result=$obj->getAllCourse();
 
-?>
-   <thead bgcolor="silver">
-  
-   <th>NAME</th>
-  
-   </thead> 
-    <?php
-    while($row=$result->fetch_assoc())
-    {
-      echo '<tr>';
-     
-      echo '<td>'.$row['pk_course_name']. '</td>';
-      echo '</tr>';
-    }
-    ?>
-
-      </div>
-      </table>
+<tr><td colspan="2"><input type="submit" name="btninsert" value="INSERT" class="form-control btn btn-info "/></td></tr>
+</div>
+</form>
+</table></div>
     </section>
 
     <!-- Main content -->
@@ -323,8 +326,8 @@ $result=$obj->getAllCourse();
 <script src="dist/js/app.min.js"></script>
 <!-- dataTables --> 
 <script type="text/javascript" src="DataTables/datatables.min.js"></script>
-
-
+<script type="text/javascript" src="DataTables\Select-1.2.4\js\dataTables.select.js">
+</script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
