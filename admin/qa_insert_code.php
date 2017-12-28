@@ -22,7 +22,7 @@ if($res)
 }
 else
 {
-echo 'error is caught';
+echo 'Record Not Inserted';
 }
 
 

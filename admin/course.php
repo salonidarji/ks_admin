@@ -14,6 +14,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <!-- dataTbles --> 
   <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="DataTables/DataTables-1.10.16/css/dataTables.bootstrap.min.css">
+  
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -32,6 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -149,18 +153,14 @@ desired effect
                 </button>
               </span>
         </div>
-      </form>
+        </form>
       <!-- /.search form -->
 
      <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
        <li class="treeview">
-          <a href="#"><i class="fa fa-table"></i> <span>Manage content </span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
+          
+         
           <li><a href=""> Login </a></li>
           <li><a href=""> Faculty </a></li>
           <li><a href=""> Staff </a></li>
@@ -175,7 +175,7 @@ desired effect
           <li><a href=""> Album </a></li>
           <li><a href=""> Gallary </a></li>
           <li><a href=""> Video </a></li>
-          </ul>
+         
         </li>
        
        </ul> <!-- /.sidebar-menu -->
@@ -189,9 +189,15 @@ desired effect
     <section class="content-header">
       
       <!-- code here --> 
-      <div class="table-responsive">
-<table class="table table-striped table-bordered" >
+      <form action="#" name="course_form" method="post">
+   
 
+
+
+<div class="dataTables_wrapper">
+<table class="table table-hover table-bordered table-striped" id="tableData" >
+<h3 class='title'>Course</h3>
+<hr>
       <?php 
 require '..\shared\course_db.php';
 $obj=new course_db();
@@ -199,22 +205,29 @@ $result=$obj->getAllCourse();
 
 ?>
    <thead bgcolor="silver">
+  <th>Name</th>
   
-   <th>NAME</th>
-  
-   </thead> 
+   </thead>
+   <tbody>  
     <?php
     while($row=$result->fetch_assoc())
     {
+      
       echo '<tr>';
-     
       echo '<td>'.$row['pk_course_name']. '</td>';
+     
       echo '</tr>';
+      
     }
+
     ?>
 
-      </div>
+    
+      </tbody> 
       </table>
+      </div>
+               
+  </form>
     </section>
 
     <!-- Main content -->
@@ -318,16 +331,21 @@ $result=$obj->getAllCourse();
 <!-- jQuery 2.2.3 -->
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
 <!-- dataTables --> 
 <script type="text/javascript" src="DataTables/datatables.min.js"></script>
-
+<script type="text/javascript" src="DataTables/DataTables-1.10.16/js/jquery.dataTables.min.js"> </script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
+    <script type="text/javascript">
+      $(function(){
+        $("#tableData").dataTable();
+      });
+    </script>
 </body>
 </html>

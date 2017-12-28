@@ -199,25 +199,45 @@ desired effect
       
       <!-- code here --> 
    
-      
+<?php 
+$_id=$_GET["id"];
+require '..\shared\faculty_db.php';
+/*$_obj=new faculty_db();
+$result=$_obj->getFaculty($_id);
+*/
+$cnn= faculty_db::connect();
+$sql="select * from faculty_tbl where pk_faculty_id=".$_id;
+
+$result=$cnn->query($sql);
+$row=$result->fetch_assoc();
+if($result->num_rows==1)
+{
+    
+    $_email=$row["fk_email_id"];
+    $_degree=$row["faculty_degree"];
+    $_date=$row["faculty_join_date"];
+    $_resume=$row["faculty_resume"];
+
+}
+?>
+<div class="table-responsive">
 <table class="table">
-<form method="post" action="qa_insert_code.php">
+<form method="post" action="faculty_update_code.php"  enctype="multipart/form-Data" >
 <div class="form-group">
-<tr><td>Title :</td><td><input type="text" name="txttitle" class="form-control" /> </td></tr>
-<tr><td>Description :</td><td><input type="text" name="txtdesc" class="form-control"/> </td></tr>
-<tr><td>Image :</td><td><input type="file" name="txtimg" class="form-control"/> </td></tr>
-<tr><td>option A:</td><td><input type="text" name="txtop1" class="form-control"/> </td></tr>
-<tr><td>option B :</td><td><input type="text" name="txtop2" class="form-control"/> </td></tr>
-<tr><td>option C :</td><td><input type="text" name="txtop3" class="form-control"/> </td></tr>
-<tr><td>option D :</td><td><input type="text" name="txtop4" class="form-control"/> </td></tr>
-<tr><td>Answer :</td><td><input type="text" name="txtans" class="form-control"/> </td></tr>
-<tr><td>To which year :</td><td><input type="number" name="txtyear" class="form-control"/> </td></tr>
+<tr><td>Id :</td><td><input type="number" name="txtid" class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
+<tr><td>Email Id :</td><td><input type="email" name="txttitle" class="form-control" value="<?php echo $_email; ?>"/> </td></tr>
+<tr><td>Degree :</td><td><input type="text" name="txtdesc" class="form-control" value="<?php echo $_degree; ?>"/> </td></tr>
 
+<tr><td>Join Date :</td><td><input type="text" name="txtimg" class="form-control" value="<?php echo $_date; ?>"/> </td></tr>
+<tr><td>Resume :</td><td><input type="file" name="txtop1" class="form-control" value="<?php echo $_resume; ?>"/> </td></tr>
 
-<tr><td colspan="2"><input type="submit" name="btninsert" value="INSERT" class="form-control btn btn-info "/></td></tr>
+					
+<tr><td  colspan="2"><input type="submit" name="btnupdate" value="UPDATE"class="form-control btn  btn-info"/></td></tr>
 </div>
 </form>
-</table></div>
+</table>
+</div>
+
     </section>
 
     <!-- Main content -->

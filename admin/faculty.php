@@ -14,6 +14,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <!-- dataTbles --> 
   <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="DataTables/DataTables-1.10.16/css/dataTables.bootstrap.min.css">
+  
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -34,17 +36,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
   
-  <script type="text/javascript" class="init">
-	
-
-$(document).ready(function() {
-	$('#lengthMenu').DataTable( {
-		"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
-	} );
-} );
-
-
-	</script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -162,7 +153,7 @@ desired effect
                 </button>
               </span>
         </div>
-      </form>
+        </form>
       <!-- /.search form -->
 
      <!-- Sidebar Menu -->
@@ -171,9 +162,9 @@ desired effect
           
          
           <li><a href=""> Login </a></li>
-          <li><a href=""> Faculty </a></li>
+          <li><a href="faculty.php"> Faculty </a></li>
           <li><a href=""> Staff </a></li>
-          <li><a href=""> Student </a></li>
+          <li><a href="student.php"> Student </a></li>
           <li><a href="course.php">Course </a></li>
           <li><a href=""> Material </a></li>
           <li><a href=""> Notice</a></li>
@@ -198,26 +189,68 @@ desired effect
     <section class="content-header">
       
       <!-- code here --> 
+      <form action="faculty_delete.php" name="faculty_form" method="post">
    
+
+
+
+<div class="dataTables_wrapper">
+<table class="table table-hover table-bordered table-striped" id="tableData" >
+<h3 class='title'>Faculty </h3>
+<hr>
+      <?php 
+require '..\shared\faculty_db.php';
+$obj=new faculty_db();
+$result=$obj->getAllFaculty();
+
+?>
+   <thead bgcolor="silver">
+  <th>Select</th>
+   <th>Email Id</th>
+   <th>Degree</th>
+   <th>Join Date/th> 
+   <th>Resume</th> 
+   
+   <th>Action</th> 
+  
+   </thead>
+   <tbody>  
+    <?php
+    while($row=$result->fetch_assoc())
+    {
+      $id=$row["pk_faculty_id"];
+      echo '<tr>';
+      echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
+      echo '<td>'.$row['fk_email_id']. '</td>';
+      echo '<td>'.$row['faculty_degree']. '</td>';
+      echo '<td>'.$row['faculty_join_date']. '</td>';
+      echo '<td>'.$row['faculty_resume']. '</td>';
       
-<table class="table">
-<form method="post" action="qa_insert_code.php">
-<div class="form-group">
-<tr><td>Title :</td><td><input type="text" name="txttitle" class="form-control" /> </td></tr>
-<tr><td>Description :</td><td><input type="text" name="txtdesc" class="form-control"/> </td></tr>
-<tr><td>Image :</td><td><input type="file" name="txtimg" class="form-control"/> </td></tr>
-<tr><td>option A:</td><td><input type="text" name="txtop1" class="form-control"/> </td></tr>
-<tr><td>option B :</td><td><input type="text" name="txtop2" class="form-control"/> </td></tr>
-<tr><td>option C :</td><td><input type="text" name="txtop3" class="form-control"/> </td></tr>
-<tr><td>option D :</td><td><input type="text" name="txtop4" class="form-control"/> </td></tr>
-<tr><td>Answer :</td><td><input type="text" name="txtans" class="form-control"/> </td></tr>
-<tr><td>To which year :</td><td><input type="number" name="txtyear" class="form-control"/> </td></tr>
+      echo '<td> <a href="faculty_update.php?id='.  $row["pk_faculty_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
+      
+      </td>';
+      echo '</tr>';
+      
+    }
 
+    ?>
 
-<tr><td colspan="2"><input type="submit" name="btninsert" value="INSERT" class="form-control btn btn-info "/></td></tr>
+    
+      </tbody> 
+      </table>
+      </div>
+    <div>
+      <div align="left">
+<input type="submit" class="btn btn-primary" value="DELETE ALL">
+</div>  
+    
+<div align="right" >
+<a href="faculty_insert.php">
+      <button type="button" right class="btn btn-primary">New</button>
+    </a> 
 </div>
-</form>
-</table></div>
+</div>           
+  </form>
     </section>
 
     <!-- Main content -->
@@ -326,11 +359,16 @@ desired effect
 <script src="dist/js/app.min.js"></script>
 <!-- dataTables --> 
 <script type="text/javascript" src="DataTables/datatables.min.js"></script>
-<script type="text/javascript" src="DataTables\Select-1.2.4\js\dataTables.select.js">
-</script>
+<script type="text/javascript" src="DataTables/DataTables-1.10.16/js/jquery.dataTables.min.js"> </script>
+
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
+    <script type="text/javascript">
+      $(function(){
+        $("#tableData").dataTable();
+      });
+    </script>
 </body>
 </html>

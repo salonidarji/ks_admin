@@ -26,7 +26,18 @@ class course_db
 			course_db::disconnect();
 		
 		}
-	
+		
+		public function getCourse($_name)
+		{
+			$cnn=course_db::connect();
+			$sql="select * from course_tbl where pk_course_name ".$_name;
+			$res=$cnn->query($sql);
+			return $res;
+			course_db::disconnect();
+		
+        }
+    
+      
 }
 
 ?>
