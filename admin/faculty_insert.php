@@ -204,6 +204,7 @@ desired effect
 <form method="post" action="faculty_insert_code.php">
 <div class="form-group">
 <tr><td>Email Id:</td><td><input type="email" name="txtemail" class="form-control" /> </td></tr>
+<tr><td>Name:</td><td><input type="text" name="txtname" class="form-control" /> </td></tr>
 <tr><td>Degree :</td><td><input type="text" name="txtdegree" class="form-control"/> </td></tr>
 <tr><td>Join Date :</td><td><input type="text" name="txtdate" class="form-control"/> </td></tr>
 <tr><td>Resume :</td><td><input type="file" name="txtresume" class="form-control"/> </td></tr>

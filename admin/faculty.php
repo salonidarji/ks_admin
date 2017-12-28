@@ -207,8 +207,9 @@ $result=$obj->getAllFaculty();
    <thead bgcolor="silver">
   <th>Select</th>
    <th>Email Id</th>
+   <th>Name</th>
    <th>Degree</th>
-   <th>Join Date/th> 
+   <th>Join Date</th> 
    <th>Resume</th> 
    
    <th>Action</th> 
@@ -222,6 +223,7 @@ $result=$obj->getAllFaculty();
       echo '<tr>';
       echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
       echo '<td>'.$row['fk_email_id']. '</td>';
+      echo '<td>'.$row['faculty_name']. '</td>';
       echo '<td>'.$row['faculty_degree']. '</td>';
       echo '<td>'.$row['faculty_join_date']. '</td>';
       echo '<td>'.$row['faculty_resume']. '</td>';

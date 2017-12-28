@@ -213,7 +213,8 @@ $row=$result->fetch_assoc();
 if($result->num_rows==1)
 {
     
-    $_email=$row["fk_email_id"];
+  $_email=$row["fk_email_id"];
+  $_name=$row["faculty_name"];
     $_degree=$row["faculty_degree"];
     $_date=$row["faculty_join_date"];
     $_resume=$row["faculty_resume"];
@@ -225,11 +226,12 @@ if($result->num_rows==1)
 <form method="post" action="faculty_update_code.php"  enctype="multipart/form-Data" >
 <div class="form-group">
 <tr><td>Id :</td><td><input type="number" name="txtid" class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
-<tr><td>Email Id :</td><td><input type="email" name="txttitle" class="form-control" value="<?php echo $_email; ?>"/> </td></tr>
-<tr><td>Degree :</td><td><input type="text" name="txtdesc" class="form-control" value="<?php echo $_degree; ?>"/> </td></tr>
+<tr><td>Email Id :</td><td><input type="email" name="txtemail" class="form-control" value="<?php echo $_email; ?>"/> </td></tr>
+<tr><td>Name :</td><td><input type="text" name="txtname" class="form-control" value="<?php echo $_name; ?>"/> </td></tr>
+<tr><td>Degree :</td><td><input type="text" name="txtdegree" class="form-control" value="<?php echo $_degree; ?>"/> </td></tr>
 
-<tr><td>Join Date :</td><td><input type="text" name="txtimg" class="form-control" value="<?php echo $_date; ?>"/> </td></tr>
-<tr><td>Resume :</td><td><input type="file" name="txtop1" class="form-control" value="<?php echo $_resume; ?>"/> </td></tr>
+<tr><td>Join Date :</td><td><input type="text" name="txtdate" class="form-control" value="<?php echo $_date; ?>"/> </td></tr>
+<tr><td>Resume :</td><td><input type="text" name="txtresume" class="form-control"/> </td></tr>
 
 					
 <tr><td  colspan="2"><input type="submit" name="btnupdate" value="UPDATE"class="form-control btn  btn-info"/></td></tr>
