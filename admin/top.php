@@ -14,6 +14,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <!-- dataTbles --> 
   <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="DataTables/DataTables-1.10.16/css/dataTables.bootstrap.min.css">
+  <!-- AdmLTE for content title-->
+  <link rel="stylesheet" type="text/css" href="\dist\css\AdminLTE.css">
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -32,6 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -78,7 +83,11 @@ desired effect
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
 
-       <!-- User Account Menu -->
+                
+              
+                   
+             
+          <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -145,171 +154,33 @@ desired effect
                 </button>
               </span>
         </div>
-      </form>
+        </form>
       <!-- /.search form -->
 
      <!-- Sidebar Menu -->
-     <ul class="sidebar-menu">
-     <li class="treeview">
-        
+      <ul class="sidebar-menu">
+       <li class="treeview">
+          
+         
+          <li><a href=""><i class="fa fa-table"></i> <span > Login </span> </a></li>
+          <li><a href="faculty.php"><i class="fa fa-table"></i> <span > Faculty </span></a></li>
+          <li><a href="staff.php"><i class="fa fa-table"></i> <span > Staff </span></a></li>
+          <li><a href="student.php"><i class="fa fa-table"></i> <span > Student</span> </a></li>
+          <li><a href="course.php"><i class="fa fa-table"></i> <span >Course </span></a></li>
+          <li><a href="material.php"><i class="fa fa-table"></i> <span > Material</span> </a></li>
+          <li><a href="notice.php"><i class="fa fa-table"></i> <span > Notice</span></a></li>
+          <li><a href="qa.php"><i class="fa fa-table"></i> <span > Question-Answer</span> </a></li>
+          <li><a href="result.php"><i class="fa fa-table"></i> <span > Result</span> </a></li>
+          <li><a href="test.php"><i class="fa fa-table"></i> <span > Test</span> </a></li>
+          <li><a href="slider.php"><i class="fa fa-table"></i> <span > Slider </span> </a></li>  
+          <li><a href="album.php"><i class="fa fa-table"></i> <span > Album </span></a></li>
+          <li><a href="gallary.php"><i class="fa fa-table"></i> <span > Gallary </span></a></li>
+          <li><a href="video.php"><i class="fa fa-table"></i> <span > Video </span></a></li>
+         
+        </li>
        
-        <li><a href=""> Login </a></li>
-        <li><a href="faculty.php"> Faculty </a></li>
-        <li><a href="staff.php"> Staff </a></li>
-        <li><a href="student.php"> Student </a></li>
-        <li><a href="course.php">Course </a></li>
-        <li><a href="material.php"> Material </a></li>
-        <li><a href="notice.php"> Notice</a></li>
-        <li><a href="qa.php"> Question-Answer </a></li>
-        <li><a href="result.php"> Result </a></li>
-        <li><a href="test.php"> Test </a></li>
-        <li><a href="slider.php"> Slider </a></li>  
-        <li><a href="album.php"> Album </a></li>
-        <li><a href="gallary.php"> Gallary </a></li>
-        <li><a href="video.php"> Video </a></li>
-       
-      </li>
-     
-     </ul> <!-- /.sidebar-menu -->
+       </ul> <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      
-
-
-
-      <!-- code here --> 
-
-
-
-
-
-
-
-
-      <div class="table-responsive">
-<table class="table table-striped table-bordered" align="center">
-
-      
-      </div>
-      </table>
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
-
-      <!-- Your Page Content Here -->
-
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-   
-    <!-- Default to the left -->
-    <strong>Copyright &copy; <a href="https:/ksschool.org.in/" target="_blank" >KSSBM</a>.</strong> All rights reserved.
-  </footer>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Home tab content -->
-      <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="pull-right-container">
-                  <span class="label label-danger pull-right">70%</span>
-                </span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-      </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-</div>
-<!-- ./wrapper -->
-
-<!-- REQUIRED JS SCRIPTS -->
-
-<!-- jQuery 2.2.3 -->
-<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="../bootstrap/js/bootstrap.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/app.min.js"></script>
-<!-- dataTables --> 
-<script type="text/javascript" src="DataTables/datatables.min.js"></script>
-
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. Slimscroll is required when using the
-     fixed layout. -->
-</body>
-</html>

@@ -1,31 +1,33 @@
 <?php require 'top.php'; ?>
-  <!-- Content Wrapper. Contains page content -->
+
+<!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       
       <!-- code here --> 
-      <form action="staff_delete.php" name="staff_form" method="post">
+      <form action="material_delete.php" name="material_form" method="post">
    
 
 
 
 <div class="dataTables_wrapper">
 <table class="table table-hover table-bordered table-striped" id="tableData" >
-<h3 class='title'>Staff </h3>
+<h3 class='title'>Material </h3>
 <hr>
       <?php 
-require '..\shared\staff_db.php';
-$obj=new staff_db();
-$result=$obj->getAllStaff();
+require '..\shared\material_db.php';
+$obj=new material_db();
+$result=$obj->getAllMaterial();
 
 ?>
    <thead bgcolor="silver">
   <th>Select</th>
-   <th>Email</th>
-   <th>Name</th>
-   <th>Join Date</th> 
-   <th>Designation</th> 
+   <th>Title</th>
+   <th>Description</th>
+   <th>Image / PDF</th> 
+   <th>Faculty Email Id</th> 
+   <th>Year</th> 
     
    <th>Action</th> 
   
@@ -34,15 +36,16 @@ $result=$obj->getAllStaff();
     <?php
     while($row=$result->fetch_assoc())
     {
-      $id=$row["pk_staff_id"];
+      $id=$row["pk_material_id"];
       echo '<tr>';
       echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
+      echo '<td>'.$row['material_title']. '</td>';
+      echo '<td>'.$row['material_desc']. '</td>';
+      echo '<td>'.$row['material_url']. '</td>';
       echo '<td>'.$row['fk_email_id']. '</td>';
-      echo '<td>'.$row['staff_name']. '</td>';
-      echo '<td>'.$row['staff_join_date']. '</td>';
-      echo '<td>'.$row['staff_designation']. '</td>';
-     
-      echo '<td> <a href="staff_update.php?id='.  $row["pk_staff_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
+      echo '<td>'.$row['fk_student_year']. '</td>';
+  
+      echo '<td> <a href="material_update.php?id='.  $row["pk_material_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
       
       </td>';
       echo '</tr>';
@@ -61,7 +64,7 @@ $result=$obj->getAllStaff();
 </div>  
     
 <div align="right" >
-<a href="staff_insert.php">
+<a href="material_insert.php">
       <button type="button" right class="btn btn-primary">New</button>
     </a> 
 </div>
@@ -78,5 +81,4 @@ $result=$obj->getAllStaff();
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
- <?php require 'bottom.php'; ?>
+<?php require 'bottom.php'; ?>

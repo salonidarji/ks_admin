@@ -4,13 +4,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 {
 
 	$_arr=implode(",",$_POST["chkdel"]);
-	require '../shared/qa_db.php';
-	$_obj=new qa_db();
-	$res=$_obj->deleteQa($_arr);
+	require '../shared/result_db.php';
+	$_obj=new result_db();
+	$res=$_obj->deleteResult($_arr);
 	
 	if($res)
 	{
-		header('location:qa.php');
+		header('location:result.php');
 	}
 	else
 	{

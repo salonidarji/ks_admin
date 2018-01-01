@@ -5,28 +5,30 @@
     <section class="content-header">
       
       <!-- code here --> 
-      <form action="staff_delete.php" name="staff_form" method="post">
+      <form action="notice_delete.php" name="notice_form" method="post">
    
 
 
 
 <div class="dataTables_wrapper">
 <table class="table table-hover table-bordered table-striped" id="tableData" >
-<h3 class='title'>Staff </h3>
+<h3 class='title'>Notice</h3>
 <hr>
       <?php 
-require '..\shared\staff_db.php';
-$obj=new staff_db();
-$result=$obj->getAllStaff();
+require '..\shared\notice_db.php';
+$obj=new notice_db();
+$result=$obj->getAllNotice();
 
 ?>
    <thead bgcolor="silver">
   <th>Select</th>
-   <th>Email</th>
-   <th>Name</th>
-   <th>Join Date</th> 
-   <th>Designation</th> 
-    
+   <th>Title</th>
+   <th>Description</th>
+   <th>Link</th> 
+   <th>Start Date</th> 
+   <th>End Count</th> 
+   <th>Owner Email Id</th> 
+   <th>Year</th> 
    <th>Action</th> 
   
    </thead>
@@ -34,15 +36,17 @@ $result=$obj->getAllStaff();
     <?php
     while($row=$result->fetch_assoc())
     {
-      $id=$row["pk_staff_id"];
+      $id=$row["pk_notice_id"];
       echo '<tr>';
       echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
+      echo '<td>'.$row['notice_title']. '</td>';
+      echo '<td>'.$row['notice_desc']. '</td>';
+      echo '<td>'.$row['notice_link']. '</td>';
+      echo '<td>'.$row['notice_start_date']. '</td>';
+      echo '<td>'.$row['notice_end_count']. '</td>';
       echo '<td>'.$row['fk_email_id']. '</td>';
-      echo '<td>'.$row['staff_name']. '</td>';
-      echo '<td>'.$row['staff_join_date']. '</td>';
-      echo '<td>'.$row['staff_designation']. '</td>';
-     
-      echo '<td> <a href="staff_update.php?id='.  $row["pk_staff_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
+      echo '<td>'.$row['notice_year']. '</td>';
+      echo '<td> <a href="notice_update.php?id='.  $row["pk_notice_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
       
       </td>';
       echo '</tr>';
@@ -61,7 +65,7 @@ $result=$obj->getAllStaff();
 </div>  
     
 <div align="right" >
-<a href="staff_insert.php">
+<a href="notice_insert.php">
       <button type="button" right class="btn btn-primary">New</button>
     </a> 
 </div>

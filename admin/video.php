@@ -1,32 +1,28 @@
 <?php require 'top.php'; ?>
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       
       <!-- code here --> 
-      <form action="staff_delete.php" name="staff_form" method="post">
+      <form action="video_delete.php" name="video_form" method="post">
    
-
-
-
 <div class="dataTables_wrapper">
 <table class="table table-hover table-bordered table-striped" id="tableData" >
-<h3 class='title'>Staff </h3>
+<h3 class='title'>Video </h3>
 <hr>
       <?php 
-require '..\shared\staff_db.php';
-$obj=new staff_db();
-$result=$obj->getAllStaff();
+require '..\shared\video_db.php';
+$obj=new video_db();
+$result=$obj->getAllVideo();
 
 ?>
    <thead bgcolor="silver">
   <th>Select</th>
-   <th>Email</th>
-   <th>Name</th>
-   <th>Join Date</th> 
-   <th>Designation</th> 
-    
+   <th>Title</th>
+   <th>Description</th>
+   <th>Path</th> 
    <th>Action</th> 
   
    </thead>
@@ -34,15 +30,13 @@ $result=$obj->getAllStaff();
     <?php
     while($row=$result->fetch_assoc())
     {
-      $id=$row["pk_staff_id"];
+      $id=$row["pk_video_id"];
       echo '<tr>';
       echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
-      echo '<td>'.$row['fk_email_id']. '</td>';
-      echo '<td>'.$row['staff_name']. '</td>';
-      echo '<td>'.$row['staff_join_date']. '</td>';
-      echo '<td>'.$row['staff_designation']. '</td>';
-     
-      echo '<td> <a href="staff_update.php?id='.  $row["pk_staff_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
+      echo '<td> '.$row['video_title']. '</td>';
+      echo '<td>'.$row['video_desc']. '</td>';
+      echo '<td>'.$row['video_url']. '</td>';
+      echo '<td> <a href="video_update.php?id='.  $row["pk_video_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
       
       </td>';
       echo '</tr>';
@@ -61,7 +55,7 @@ $result=$obj->getAllStaff();
 </div>  
     
 <div align="right" >
-<a href="staff_insert.php">
+<a href="video_insert.php">
       <button type="button" right class="btn btn-primary">New</button>
     </a> 
 </div>
@@ -78,5 +72,4 @@ $result=$obj->getAllStaff();
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
- <?php require 'bottom.php'; ?>
+<?php require 'bottom.php'; ?>

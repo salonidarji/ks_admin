@@ -4,17 +4,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 {
 
 	$_arr=implode(",",$_POST["chkdel"]);
-	require '../shared/qa_db.php';
-	$_obj=new qa_db();
-	$res=$_obj->deleteQa($_arr);
+	require '../shared/test_db.php';
+	$_obj=new test_db();
+	$res=$_obj->deleteTest($_arr);
 	
 	if($res)
 	{
-		header('location:qa.php');
+		header('location:test.php');
 	}
 	else
 	{
         echo 'Record not deleted';
+		
 		
 	}
 	

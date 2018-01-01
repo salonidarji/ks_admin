@@ -1,4 +1,5 @@
 <?php require 'top.php'; ?>
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -7,47 +8,43 @@
       <!-- code here --> 
    
 <?php 
-$que_id=$_GET["id"];
-require '..\shared\qa_db.php';
-/*$_obj=new qa_db();
-$result=$_obj->getQa($que_id);
+$_id=$_GET["id"];
+require '..\shared\notice_db.php';
+/*$_obj=new notice_db();
+$result=$_obj->getNotice($_id);
 */
-$cnn= qa_db::connect();
-$sql="select * from qa_tbl where pk_que_id=".$que_id;
+$cnn= notice_db::connect();
+$sql="select * from notice_tble where pk_notice_id=".$_id;
 
 $result=$cnn->query($sql);
 $row=$result->fetch_assoc();
 if($result->num_rows==1)
 {
 
-$_title=$row["que_title"];
-$_desc=$row["que_desc"];
-$_img=$row["que_img"];
-$_op1=$row["op_1"];
-$_op2=$row["op_2"];
-$_op3=$row["op_3"];
-$_op4=$row["op_4"];
-$_ans=$row["ans"];
-$_year=$row["fk_student_year"];
+$_title=$row["notice_title"];
+$_desc=$row["notice_desc"];
+$_link=$row["notice_link"];
+$_date=$row["notice_start_date"];
+$_cnt=$row["notice_end_count"];
 $_email=$row["fk_email_id"];
+$_year=$row["notice_year"];
+
 
 
 }
 ?>
 <div class="table-responsive">
 <table class="table">
-<form method="post" action="qa_update_code.php"  enctype="multipart/form-Data" >
+<form method="post" action="notice_update_code.php"  enctype="multipart/form-Data" >
 <div class="form-group">
-<tr><td>Id :</td><td><input type="text" name="txtid" class="form-control" value="<?php echo $que_id; ?>"/> </td></tr>
+<tr><td>Id :</td><td><input type="text" name="txtid" class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
 <tr><td>Title :</td><td><input type="text" name="txttitle" class="form-control" value="<?php echo $_title; ?>"/> </td></tr>
 <tr><td>Description :</td><td><input type="text" name="txtdesc" class="form-control" value="<?php echo $_desc; ?>"/> </td></tr>
 
-<tr><td>Image :</td><td><input type="text" name="txtimg" class="form-control" value="<?php echo $_img; ?>"/> </td></tr>
-<tr><td>Option A :</td><td><input type="text" name="txtop1" class="form-control" value="<?php echo $_op1; ?>"/> </td></tr>
-<tr><td>Option B:</td><td><input type="text" name="txtop2" class="form-control" value="<?php echo $_op2; ?>"/> </td></tr>
-<tr><td>Option C :</td><td><input type="text" name="txtop3" class="form-control" value="<?php echo $_op3; ?>"/> </td></tr>
-<tr><td>Option D :</td><td><input type="text" name="txtop4" class="form-control" value="<?php echo $_op4; ?>"/> </td></tr>
-<tr><td>Answer :</td><td><input type="text" name="txtans" class="form-control" value="<?php echo $_ans; ?>"/> </td></tr>
+<tr><td>Link :</td><td><input type="file" name="txtlink" class="form-control" value="<?php echo $_link; ?>"/> </td></tr>
+<tr><td>Published On:</td><td><input type="text" name="txtdate" class="form-control" value="<?php echo $_date; ?>"/> </td></tr>
+<tr><td>Days:</td><td><input type="number" name="txtcnt" class="form-control" value="<?php echo $_cnt; ?>"/> </td></tr>
+<tr><td>Email Id :</td><td><input type="email" name="txtemail" class="form-control" value="<?php echo $_email; ?>"/> </td></tr>
 <tr><td>Student Year:</td><td>
 					<select name="selyear" class="form-control">
                     <option value="0">--Select Year--</option>
