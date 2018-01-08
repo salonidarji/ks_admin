@@ -70,6 +70,15 @@ class faculty_db
 			return $res;
 			faculty_db::disconnect();
 		}
+
+		public function deleteFacultyOne($_id)
+		{
+			$cnn=faculty_db::connect();
+			$sql="delete from faculty_tbl where pk_faculty_id =".$_id;
+			$res=$cnn->query($sql);
+			return $res;
+			faculty_db::disconnect();
+		}
 	
 }
 

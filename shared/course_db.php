@@ -35,8 +35,9 @@ class course_db
 			return $res;
 			course_db::disconnect();
 		
-        }
-    
+		}
+		
+		
       
 }
 

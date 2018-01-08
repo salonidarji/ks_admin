@@ -70,6 +70,15 @@ class slider_db
 			return $res;
 			slider_db::disconnect();
 		}
+
+		public function deleteSliderOne($_id)
+		{
+			$cnn=slider_db::connect();
+			$sql="delete from slider_tbl where pk_slider_id =".$_id;
+			$res=$cnn->query($sql);
+			return $res;
+			slider_db::disconnect();
+		}
 	
 }
 

@@ -58,6 +58,15 @@ class album_db
 			return $res;
 			album_db::disconnect();
 		}
+
+		public function deleteAlbumOne($_id)
+		{
+			$cnn=album_db::connect();
+			$sql="delete from album_tbl where pk_album_id =".$_id;
+			$res=$cnn->query($sql);
+			return $res;
+			album_db::disconnect();
+		}
 		
 		
 		public function deleteAlbum($arr)

@@ -6,14 +6,21 @@
       
       <!-- code here --> 
       <form action="notice_delete.php" name="notice_form" method="post">
-   
-
-
-
-<div class="dataTables_wrapper">
-<table class="table table-hover table-bordered table-striped" id="tableData" >
-<h3 class='title'>Notice</h3>
-<hr>
+      <table class="table">
+      <tr><td>
+      <h3 class='page-header'>Manage Notice </h3>
+      </td>
+      <td>
+      <div align="right" >
+      <a href="notice_insert.php">
+            <button type="button" right class="btn btn-primary">New</button>
+          </a> 
+      </div>
+      </td></tr>
+      </table>
+      
+      <div class="dataTables_wrapper">
+      <table class="table table-hover table-bordered table-striped" id="tableData" >
       <?php 
 require '..\shared\notice_db.php';
 $obj=new notice_db();
@@ -29,7 +36,7 @@ $result=$obj->getAllNotice();
    <th>End Count</th> 
    <th>Owner Email Id</th> 
    <th>Year</th> 
-   <th>Action</th> 
+   <th colspan="2">Action</th> 
   
    </thead>
    <tbody>  
@@ -48,6 +55,9 @@ $result=$obj->getAllNotice();
       echo '<td>'.$row['notice_year']. '</td>';
       echo '<td> <a href="notice_update.php?id='.  $row["pk_notice_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
       
+      </td>
+      <td> <a href="notice_delete_one.php?id='.  $row["pk_notice_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>
+      
       </td>';
       echo '</tr>';
       
@@ -59,17 +69,12 @@ $result=$obj->getAllNotice();
       </tbody> 
       </table>
       </div>
-    <div>
+  
       <div align="left">
 <input type="submit" class="btn btn-primary" value="DELETE ALL">
 </div>  
     
-<div align="right" >
-<a href="notice_insert.php">
-      <button type="button" right class="btn btn-primary">New</button>
-    </a> 
-</div>
-</div>           
+           
   </form>
     </section>
 

@@ -8,10 +8,22 @@
       
       <!-- code here --> 
       <form action="qa_delete.php" name="qa_form" method="post">
- <div class="dataTables_wrapper">
+
+<table class="table">
+<tr><td>
+<h3 class='page-header'> Manage Question-Answer </h3>
+</td>
+<td>
+<div align="right" >
+<a href="qa_insert.php">
+      <button type="button" right class="btn btn-primary">New</button>
+    </a> 
+</div>
+</td></tr>
+</table>
+
+<div class="dataTables_wrapper">
 <table class="table table-hover table-bordered table-striped" id="tableData" >
-<h3 class='page-header'>Question-Answer </h3>
-<hr>
       <?php 
 require '..\shared\qa_db.php';
 $obj=new qa_db();
@@ -30,7 +42,7 @@ $result=$obj->getAllQa();
    <th>Answer</th> 
    <th>Student year</th> 
    <th>Faculty email id</th> 
-   <th>Action</th> 
+   <th  colspan="2">Action</th> 
   
    </thead>
    <tbody>  
@@ -50,7 +62,8 @@ $result=$obj->getAllQa();
       echo '<td>'.$row['ans']. '</td>';
       echo '<td>'.$row['fk_student_year']. '</td>';
       echo '<td>'.$row['fk_email_id']. '</td>';
-      echo '<td> <a href="qa_update.php?id='.  $row["pk_que_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
+      echo '<td > <a href="qa_update.php?id='.  $row["pk_que_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
+      </td><td><a href="qa_delete_one.php?id='.  $row["pk_que_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>
       
       </td>';
       echo '</tr>';
@@ -68,11 +81,7 @@ $result=$obj->getAllQa();
 <input type="submit" class="btn btn-primary" value="DELETE ALL">
 </div>  
     
-<div align="right" >
-<a href="qa_insert.php">
-      <button type="button" right class="btn btn-primary">New</button>
-    </a> 
-</div>
+
            
   </form>
     </section>

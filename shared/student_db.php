@@ -70,6 +70,15 @@ class student_db
 			return $res;
 			student_db::disconnect();
 		}
+
+		public function deleteStudentOne($_id)
+		{
+			$cnn=student_db::connect();
+			$sql="delete from student_tbl where pk_stu_rno =".$_id;
+			$res=$cnn->query($sql);
+			return $res;
+			student_db::disconnect();
+		}
 	
 }
 

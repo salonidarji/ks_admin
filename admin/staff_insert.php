@@ -10,8 +10,8 @@
 <table class="table">
 <form method="post" action="staff_insert_code.php">
 <div class="form-group">
-<tr><td>Email :</td><td><input type="email" name="txtemail" class="form-control" /> </td></tr>
-<tr><td>Name :</td><td><input type="text" name="txtname" class="form-control"/> </td></tr>
+<tr><td>Email :</td><td><input type="email" name="txtemail" required  class="form-control" /> </td></tr>
+<tr><td>Name :</td><td><input type="text" name="txtname"  required class="form-control"/> </td></tr>
 <tr><td>Join Date:</td><td><input type="text" name="txtdate" class="form-control"/> </td></tr>
 <tr><td>Designation:</td><td>
 

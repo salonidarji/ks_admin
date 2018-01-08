@@ -66,6 +66,15 @@ class test_db
 			return $res;
 			test_db::disconnect();
 		}
+
+		public function deleteTestOne($_id)
+		{
+			$cnn=test_db::connect();
+			$sql="delete from test_tbl where pk_test_id =".$_id;
+			$res=$cnn->query($sql);
+			return $res;
+			test_db::disconnect();
+		}
 	
 }
 

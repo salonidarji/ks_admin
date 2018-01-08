@@ -70,6 +70,15 @@ class material_db
 			return $res;
 			material_db::disconnect();
 		}
+
+		public function deleteMaterialOne($_id)
+		{
+			$cnn=material_db::connect();
+			$sql="delete from material_tbl where pk_material_id =".$_id;
+			$res=$cnn->query($sql);
+			return $res;
+			material_db::disconnect();
+		}
 	
 }
 

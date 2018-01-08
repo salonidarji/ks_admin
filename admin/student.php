@@ -7,11 +7,21 @@
       
       <!-- code here --> 
  <form action="student_delete.php" name="student_form" method="post">
-  
-<div class="dataTables_wrapper">
-<table class="table table-hover table-bordered table-striped" id="tableData" >
-<h3 class='title'>Student</h3>
-<hr>
+ <table class="table">
+ <tr><td>
+ <h3 class='page-header'>Manage Student</h3>
+ </td>
+ <td>
+ <div align="right" >
+ <a href="student_insert.php">
+       <button type="button" right class="btn btn-primary">New</button>
+     </a> 
+ </div>
+ </td></tr>
+ </table>
+ 
+ <div class="dataTables_wrapper">
+ <table class="table table-hover table-bordered table-striped" id="tableData" >
       <?php 
 require '..\shared\student_db.php';
 $obj=new student_db();
@@ -27,7 +37,7 @@ $result=$obj->getAllStudent();
    <th>Gender</th> 
    <th>Year</th> 
    
-   <th>Action</th> 
+   <th colspan="2">Action</th> 
   
    </thead>
    <tbody>  
@@ -46,6 +56,9 @@ $result=$obj->getAllStudent();
      
       echo '<td> <a href="student_update.php?rno='.  $row["pk_stu_rno"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
       
+      </td>
+      <td> <a href="student_delete_one.php?rno='.  $row["pk_stu_rno"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>
+      
       </td>';
       echo '</tr>';
       
@@ -57,17 +70,12 @@ $result=$obj->getAllStudent();
       </tbody> 
       </table>
       </div>
-    <div>
+   
       <div align="left">
 <input type="submit" class="btn btn-primary" value="DELETE ALL">
 </div>  
     
-<div align="right" >
-<a href="student_insert.php">
-      <button type="button" right class="btn btn-primary">New</button>
-    </a> 
-</div>
-</div>           
+           
   </form>
     </section>
 

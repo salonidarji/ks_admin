@@ -7,11 +7,21 @@
       
       <!-- code here --> 
       <form action="video_delete.php" name="video_form" method="post">
-   
-<div class="dataTables_wrapper">
-<table class="table table-hover table-bordered table-striped" id="tableData" >
-<h3 class='title'>Video </h3>
-<hr>
+      <table class="table">
+      <tr><td>
+      <h3 class='page-header'>Manage Video </h3>
+      </td>
+      <td>
+      <div align="right" >
+      <a href="video_insert.php">
+            <button type="button" right class="btn btn-primary">New</button>
+          </a> 
+      </div>
+      </td></tr>
+      </table>
+      
+      <div class="dataTables_wrapper">
+      <table class="table table-hover table-bordered table-striped" id="tableData" >
       <?php 
 require '..\shared\video_db.php';
 $obj=new video_db();
@@ -23,7 +33,7 @@ $result=$obj->getAllVideo();
    <th>Title</th>
    <th>Description</th>
    <th>Path</th> 
-   <th>Action</th> 
+   <th colspan="2">Action</th> 
   
    </thead>
    <tbody>  
@@ -38,6 +48,9 @@ $result=$obj->getAllVideo();
       echo '<td>'.$row['video_url']. '</td>';
       echo '<td> <a href="video_update.php?id='.  $row["pk_video_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
       
+      </td>
+      <td> <a href="video_delete_one.php?id='.  $row["pk_video_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>
+      
       </td>';
       echo '</tr>';
       
@@ -49,17 +62,12 @@ $result=$obj->getAllVideo();
       </tbody> 
       </table>
       </div>
-    <div>
+  
       <div align="left">
 <input type="submit" class="btn btn-primary" value="DELETE ALL">
 </div>  
     
-<div align="right" >
-<a href="video_insert.php">
-      <button type="button" right class="btn btn-primary">New</button>
-    </a> 
-</div>
-</div>           
+           
   </form>
     </section>
 

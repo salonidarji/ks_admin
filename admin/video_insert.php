@@ -10,8 +10,8 @@
 <table class="table">
 <form method="post" action="video_insert_code.php">
 <div class="form-group">
-<tr><td>Title:</td><td><input type="text" name="txttitle" class="form-control" /> </td></tr>
-<tr><td>Description :</td><td><input type="text" name="txtdesc" class="form-control"/> </td></tr>
+<tr><td>Title:</td><td><input type="text" name="txttitle" required  class="form-control" /> </td></tr>
+<tr><td>Description :</td><td><textarea name="txtdesc" rows="5" cols="5" class="form-control"/></textarea> </td></tr>
 <tr><td>Path :</td><td><input type="file" name="txturl" class="form-control"/> </td></tr>
 
 

@@ -6,14 +6,21 @@
       
       <!-- code here --> 
       <form action="slider_delete.php" name="slider_form" method="post">
-   
-
-
-
-<div class="dataTables_wrapper">
-<table class="table table-hover table-bordered table-striped" id="tableData" >
-<h3 class='title'>Slider </h3>
-<hr>
+      <table class="table">
+      <tr><td>
+      <h3 class='page-header'>Manage Slider </h3>
+      </td>
+      <td>
+      <div align="right" >
+      <a href="slider_insert.php">
+            <button type="button" right class="btn btn-primary">New</button>
+          </a> 
+      </div>
+      </td></tr>
+      </table>
+      
+      <div class="dataTables_wrapper">
+      <table class="table table-hover table-bordered table-striped" id="tableData" >
       <?php 
 require '..\shared\slider_db.php';
 $obj=new slider_db();
@@ -25,7 +32,7 @@ $result=$obj->getAllSlider();
    <th>Image</th>
    <th>Count</th>
    <th>Time</th> 
-   <th>Action</th> 
+   <th colspan="2">Action</th> 
   
    </thead>
    <tbody>  
@@ -40,6 +47,9 @@ $result=$obj->getAllSlider();
       echo '<td>'.$row['slider_time']. '</td>';
       echo '<td> <a href="slider_update.php?id='.  $row["pk_slider_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
       
+      </td>
+      <td> <a href="slider_delete_one.php?id='.  $row["pk_slider_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>
+      
       </td>';
       echo '</tr>';
       
@@ -51,17 +61,12 @@ $result=$obj->getAllSlider();
       </tbody> 
       </table>
       </div>
-    <div>
+
       <div align="left">
 <input type="submit" class="btn btn-primary" value="DELETE ALL">
 </div>  
     
-<div align="right" >
-<a href="slider_insert.php">
-      <button type="button" right class="btn btn-primary">New</button>
-    </a> 
-</div>
-</div>           
+           
   </form>
     </section>
 

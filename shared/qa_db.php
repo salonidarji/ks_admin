@@ -71,6 +71,14 @@ class qa_db
 			qa_db::disconnect();
 		}
 	
+		public function deleteQaOne($_id)
+		{
+			$cnn=qa_db::connect();
+			$sql="delete from qa_tbl where pk_que_id =".$_id;
+			$res=$cnn->query($sql);
+			return $res;
+			qa_db::disconnect();
+		}
 }
 
 ?>

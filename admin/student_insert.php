@@ -10,10 +10,10 @@
 <table class="table">
 <form method="post" action="student_insert_code.php">
 <div class="form-group">
-<tr><td>Roll Number :</td><td><input type="number" name="txtrno" class="form-control" /> </td></tr>
-<tr><td>Email Id :</td><td><input type="email" name="txtemail" class="form-control"/> </td></tr>
-<tr><td>Name:</td><td><input type="text" name="txtname" class="form-control"/> </td></tr>
-<tr><td>Mobile Number:</td><td><input type="number" name="txtmo_no" class="form-control"/> </td></tr>
+<tr><td>Roll Number :</td><td><input type="number" name="txtrno"  required class="form-control" /> </td></tr>
+<tr><td>Email Id :</td><td><input type="email" name="txtemail" required  class="form-control"/> </td></tr>
+<tr><td>Name:</td><td><input type="text" name="txtname"  required class="form-control"/> </td></tr>
+<tr><td>Mobile Number:</td><td><input type="number" name="txtmo_no"  required class="form-control"/> </td></tr>
 <tr><td>Gender:</td><td>
                     <select class="form-control" name="selgen">
                     <option value="0">--Select Gender--</option>

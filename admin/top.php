@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -157,25 +160,35 @@ desired effect
         </form>
       <!-- /.search form -->
 
+      <?php
+      
+        $_hide="";
+        $_SESSION["type"]=0;
+        if($_SESSION["type"]==2)
+        {
+          $_hide="hidden";
+        }
+      ?>
+
      <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
        <li class="treeview">
           
          
-          <li><a href=""><i class="fa fa-table"></i> <span > Login </span> </a></li>
-          <li><a href="faculty.php"><i class="fa fa-table"></i> <span > Faculty </span></a></li>
-          <li><a href="staff.php"><i class="fa fa-table"></i> <span > Staff </span></a></li>
-          <li><a href="student.php"><i class="fa fa-table"></i> <span > Student</span> </a></li>
-          <li><a href="course.php"><i class="fa fa-table"></i> <span >Course </span></a></li>
-          <li><a href="material.php"><i class="fa fa-table"></i> <span > Material</span> </a></li>
-          <li><a href="notice.php"><i class="fa fa-table"></i> <span > Notice</span></a></li>
-          <li><a href="qa.php"><i class="fa fa-table"></i> <span > Question-Answer</span> </a></li>
-          <li><a href="result.php"><i class="fa fa-table"></i> <span > Result</span> </a></li>
-          <li><a href="test.php"><i class="fa fa-table"></i> <span > Test</span> </a></li>
-          <li><a href="slider.php"><i class="fa fa-table"></i> <span > Slider </span> </a></li>  
-          <li><a href="album.php"><i class="fa fa-table"></i> <span > Album </span></a></li>
-          <li><a href="gallary.php"><i class="fa fa-table"></i> <span > Gallary </span></a></li>
-          <li><a href="video.php"><i class="fa fa-table"></i> <span > Video </span></a></li>
+          <li <?php echo $_hide; ?> ><a href=""><i class="fa fa-table"></i> <span > Login </span> </a></li>
+          <li <?php echo $_hide; ?> ><a href="faculty.php"><i class="fa fa-table"></i> <span > Faculty </span></a></li>
+          <li <?php echo $_hide; ?> ><a href="staff.php"><i class="fa fa-table"></i> <span > Staff </span></a></li>
+          <li <?php echo $_hide; ?> ><a href="student.php"><i class="fa fa-table"></i> <span > Student</span> </a></li>
+          <li <?php echo $_hide; ?> ><a href="course.php"><i class="fa fa-table"></i> <span >Course </span></a></li>
+          <li  ><a href="material.php"><i class="fa fa-table"></i> <span > Material</span> </a></li>
+          <li <?php echo $_hide; ?> ><a href="notice.php"><i class="fa fa-table"></i> <span > Notice</span></a></li>
+          <li  ><a href="qa.php"><i class="fa fa-table"></i> <span > Question-Answer</span> </a></li>
+          <li <?php echo $_hide; ?> ><a href="result.php"><i class="fa fa-table"></i> <span > Result</span> </a></li>
+          <li  ><a href="test.php"><i class="fa fa-table"></i> <span > Test</span> </a></li>
+          <li <?php echo $_hide; ?> ><a href="slider.php"><i class="fa fa-table"></i> <span > Slider </span> </a></li>  
+          <li <?php echo $_hide; ?> ><a href="album.php"><i class="fa fa-table"></i> <span > Album </span></a></li>
+          <li <?php echo $_hide; ?> ><a href="gallary.php"><i class="fa fa-table"></i> <span > Gallary </span></a></li>
+          <li <?php echo $_hide; ?> ><a href="video.php"><i class="fa fa-table"></i> <span > Video </span></a></li>
          
         </li>
        

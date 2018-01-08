@@ -11,7 +11,7 @@
 <table class="table">
 <form method="post" action="album_insert_code.php">
 <div class="form-group">
-<tr><td>Name :</td><td><input type="text" name="txtname" class="form-control" /> </td></tr>
+<tr><td>Name :</td><td><input type="text" name="txtname" required class="form-control" /> </td></tr>
 
 
 <tr><td colspan="2"><input type="submit" name="btninsert" value="INSERT" class="form-control btn btn-info "/></td></tr>

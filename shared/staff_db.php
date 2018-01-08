@@ -71,6 +71,14 @@ class staff_db
 			staff_db::disconnect();
 		}
 	
+		public function deleteStaffOne($_id)
+		{
+			$cnn=staff_db::connect();
+			$sql="delete from staff_tbl where pk_staff_id =".$_id;
+			$res=$cnn->query($sql);
+			return $res;
+			staff_db::disconnect();
+		}
 }
 
 ?>

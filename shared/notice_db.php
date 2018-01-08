@@ -71,6 +71,14 @@ class notice_db
 			notice_db::disconnect();
 		}
 	
+		public function deleteNoticeOne($_id)
+		{
+			$cnn=notice_db::connect();
+			$sql="delete from notice_tbl where pk_notice_id =".$_id;
+			$res=$cnn->query($sql);
+			return $res;
+			notice_db::disconnect();
+		}
 }
 
 ?>

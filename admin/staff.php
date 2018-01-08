@@ -6,14 +6,21 @@
       
       <!-- code here --> 
       <form action="staff_delete.php" name="staff_form" method="post">
-   
-
-
-
-<div class="dataTables_wrapper">
-<table class="table table-hover table-bordered table-striped" id="tableData" >
-<h3 class='title'>Staff </h3>
-<hr>
+      <table class="table">
+      <tr><td>
+      <h3 class='page-header'>Manage Staff </h3>
+      </td>
+      <td>
+      <div align="right" >
+      <a href="staff_insert.php">
+            <button type="button" right class="btn btn-primary">New</button>
+          </a> 
+      </div>
+      </td></tr>
+      </table>
+      
+      <div class="dataTables_wrapper">
+      <table class="table table-hover table-bordered table-striped" id="tableData" >
       <?php 
 require '..\shared\staff_db.php';
 $obj=new staff_db();
@@ -27,7 +34,7 @@ $result=$obj->getAllStaff();
    <th>Join Date</th> 
    <th>Designation</th> 
     
-   <th>Action</th> 
+   <th colspan="2">Action</th> 
   
    </thead>
    <tbody>  
@@ -44,6 +51,9 @@ $result=$obj->getAllStaff();
      
       echo '<td> <a href="staff_update.php?id='.  $row["pk_staff_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
       
+      </td>
+      <td> <a href="staff_delete_one.php?id='.  $row["pk_staff_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>
+      
       </td>';
       echo '</tr>';
       
@@ -55,17 +65,11 @@ $result=$obj->getAllStaff();
       </tbody> 
       </table>
       </div>
-    <div>
+   
       <div align="left">
 <input type="submit" class="btn btn-primary" value="DELETE ALL">
 </div>  
-    
-<div align="right" >
-<a href="staff_insert.php">
-      <button type="button" right class="btn btn-primary">New</button>
-    </a> 
-</div>
-</div>           
+          
   </form>
     </section>
 

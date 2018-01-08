@@ -12,8 +12,8 @@
 <form method="post" action="slider_insert_code.php">
 <div class="form-group">
 <tr><td>Image :</td><td><input type="file" name="txtimg" class="form-control" /> </td></tr>
-<tr><td>Count :</td><td><input type="number" name="txtcnt" class="form-control"/> </td></tr>
-<tr><td>Time (in Seconds) :</td><td><input type="number" name="txttime" class="form-control"/> </td></tr>
+<tr><td>Count :</td><td><input type="number" required name="txtcnt" class="form-control"/> </td></tr>
+<tr><td>Time (in Seconds) :</td><td><input type="number" name="txttime" required  class="form-control"/> </td></tr>
 
 
 <tr><td colspan="2"><input type="submit" name="btninsert" value="INSERT" class="form-control btn btn-info "/></td></tr>

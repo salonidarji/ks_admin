@@ -70,6 +70,15 @@ class video_db
 			return $res;
 			video_db::disconnect();
 		}
+
+		public function deleteVideoOne($_id)
+		{
+			$cnn=video_db::connect();
+			$sql="delete from video_tbl where pk_video_id =".$_id;
+			$res=$cnn->query($sql);
+			return $res;
+			video_db::disconnect();
+		}
 	
 }
 

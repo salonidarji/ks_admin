@@ -8,12 +8,21 @@
       <form action="result_delete.php" name="result_form" method="post">
    
 
-
-
-<div class="dataTables_wrapper">
-<table class="table table-hover table-bordered table-striped" id="tableData" >
-<h3 class='title'>Result </h3>
-<hr>
+      <table class="table">
+      <tr><td>
+      <h3 class='page-header'>Manage Result </h3>
+      </td>
+      <td>
+      <div align="right" >
+      <a href="result_insert.php">
+            <button type="button" right class="btn btn-primary">New</button>
+          </a> 
+      </div>
+      </td></tr>
+      </table>
+      
+      <div class="dataTables_wrapper">
+      <table class="table table-hover table-bordered table-striped" id="tableData" >
       <?php 
 require '..\shared\result_db.php';
 $obj=new result_db();
@@ -43,7 +52,7 @@ $result=$obj->getAllResult();
    <th>Subject 9:</th> 
    <th>Subject 9 Marks:</th>
    
-   <th>Action</th> 
+   <th colspan="2">Action</th> 
   
    </thead>
    <tbody>  
@@ -77,6 +86,9 @@ $result=$obj->getAllResult();
      
       echo '<td> <a href="result_update.php?id='.  $row["pk_result_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
       
+      </td>
+      <td> <a href="result_delete_one.php?id='.  $row["pk_result_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>
+      
       </td>';
       echo '</tr>';
       
@@ -88,17 +100,13 @@ $result=$obj->getAllResult();
       </tbody> 
       </table>
       </div>
-    <div>
+  
       <div align="left">
 <input type="submit" class="btn btn-primary" value="DELETE ALL">
 </div>  
     
-<div align="right" >
-<a href="result_insert.php">
-      <button type="button" right class="btn btn-primary">New</button>
-    </a> 
-</div>
-</div>           
+
+           
   </form>
     </section>
 

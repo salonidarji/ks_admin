@@ -10,7 +10,7 @@ $_op2=$_POST["txtop2"];
 $_op3=$_POST["txtop3"];
 $_op4=$_POST["txtop4"];
 $_ans=$_POST["txtans"];
-$_year=$_POST["txtyear"];
+$_year=$_POST["selyear"];
 $_email="null";
 //$_email=$_SESSION["email"];
 require '../shared/qa_db.php';

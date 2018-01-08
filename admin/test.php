@@ -6,14 +6,21 @@
       
       <!-- code here --> 
       <form action="test_delete.php" name="test_form" method="post">
-   
-
-
-
-<div class="dataTables_wrapper">
-<table class="table table-hover table-bordered table-striped" id="tableData" >
-<h3 class='title'>Test </h3>
-<hr>
+      <table class="table">
+      <tr><td>
+      <h3 class='page-header'>Manage Test </h3>
+      </td>
+      <td>
+      <div align="right" >
+      <a href="test_insert.php">
+            <button type="button" right class="btn btn-primary">New</button>
+          </a> 
+      </div>
+      </td></tr>
+      </table>
+      
+      <div class="dataTables_wrapper">
+      <table class="table table-hover table-bordered table-striped" id="tableData" >
       <?php 
 require '..\shared\test_db.php';
 $obj=new test_db();
@@ -25,7 +32,7 @@ $result=$obj->getAllTest();
    <th>Student Email Id</th>
    <th>Correct Answer</th>
    <th>Wrong Answer</th> 
-   <th>Action</th> 
+   <th colspan="2">Action</th> 
   
    </thead>
    <tbody>  
@@ -40,6 +47,9 @@ $result=$obj->getAllTest();
       echo '<td>'.$row['test_wrong_cnt']. '</td>';
       echo '<td> <a href="test_update.php?id='.  $row["pk_test_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
       
+      </td>
+      <td> <a href="test_delete_one.php?id='.  $row["pk_test_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>
+      
       </td>';
       echo '</tr>';
       
@@ -51,17 +61,12 @@ $result=$obj->getAllTest();
       </tbody> 
       </table>
       </div>
-    <div>
+   
       <div align="left">
 <input type="submit" class="btn btn-primary" value="DELETE ALL">
 </div>  
     
-<div align="right" >
-<a href="test_insert.php">
-      <button type="button" right class="btn btn-primary">New</button>
-    </a> 
-</div>
-</div>           
+          
   </form>
     </section>
 

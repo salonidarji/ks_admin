@@ -1,12 +1,10 @@
 
 <?php
-if($_SERVER["REQUEST_METHOD"]=="POST")
-{
 
-	$_arr=implode(",",$_POST["chkdel"]);
+	$_id=$_GET["id"];
 	require '../shared/qa_db.php';
 	$_obj=new qa_db();
-	$res=$_obj->deleteQa($_arr);
+	$res=$_obj->deleteQaOne($_id);
 	
 	if($res)
 	{
@@ -17,9 +15,5 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         echo 'Record not deleted';
 		
 	}
-	
-}
-
-
 
 ?>

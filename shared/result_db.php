@@ -70,6 +70,15 @@ class result_db
 			return $res;
 			result_db::disconnect();
 		}
+
+		public function deleteResultOne($_id)
+		{
+			$cnn=result_db::connect();
+			$sql="delete from result_tbl where pk_result_id =".$_id;
+			$res=$cnn->query($sql);
+			return $res;
+			result_db::disconnect();
+		}
 	
 }
 
