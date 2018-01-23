@@ -1,6 +1,7 @@
 *.DS_Store
 *.log
 *.zip
+*.rb linguist-language=Php
 .idea
 .sass-cache/
 /nbproject/
