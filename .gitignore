@@ -11,7 +11,7 @@ log.txt
 *.sublime-workspace
 .vscode/
 npm-debug.log*
-*.rb linguist-language=TypeScript
+*.rb linguist-language=Php
 
 .idea/
 .sourcemaps/
