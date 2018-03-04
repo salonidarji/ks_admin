@@ -52,7 +52,7 @@ $result=$obj->getAllResult();
    <th>Subject 9:</th> 
    <th>Subject 9 Marks:</th>
    
-   <th colspan="2">Action</th> 
+   <th>Action</th> 
   
    </thead>
    <tbody>  
@@ -83,13 +83,10 @@ $result=$obj->getAllResult();
       echo '<td>'.$row['sub9_name']. '</td>';
       echo '<td>'.$row['sub9_marks']. '</td>';
      
-     
       echo '<td> <a href="result_update.php?id='.  $row["pk_result_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
+           <a href="result_delete_one.php?id='.  $row["pk_result_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>';
+      echo '<a  type="button" class="btn  btn-md" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></td>';
       
-      </td>
-      <td> <a href="result_delete_one.php?id='.  $row["pk_result_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>
-      
-      </td>';
       echo '</tr>';
       
     }

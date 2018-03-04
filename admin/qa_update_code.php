@@ -4,7 +4,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 $_id=$_POST["txtid"];
 $_title=$_POST["txttitle"];
 $_desc=$_POST["txtdesc"];
-$_img=$_POST["txtimg"];
+$_img="../resources/exam/".basename($_FILES["txtimg"]["name"]);
 $_op1=$_POST["txtop1"];
 $_op2=$_POST["txtop2"];
 $_op3=$_POST["txtop3"];
@@ -14,6 +14,8 @@ $_year=$_POST["selyear"];
 //$_email=$_SESSION["email"];
 $_email=null;
 
+if(move_uploaded_file($_FILES["txtimg"]["tmp_name"] , $_img ))
+{
 require '../shared/qa_db.php';
 $obj=new qa_db();
 $res=$obj->updateQa($_id,$_title,$_desc,$_img,$_op1,$_op2,$_op3,$_op4,$_ans,$_year,$_email); 
@@ -26,6 +28,11 @@ else
 {
     echo "VALUES NOT Updated";
     
+	
+}
+}
+else{
+	echo 'error in move upload file';
 	
 }
 }

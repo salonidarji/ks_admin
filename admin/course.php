@@ -12,7 +12,7 @@
 
 
 <div class="dataTables_wrapper">
-<table class="table table-hover table-bordered table-striped" id="tableData" >
+<h4><table class="table table-hover table-striped" id="tableData" >
 <h3 class='title'>Course</h3>
 <hr>
       <?php 
@@ -42,6 +42,7 @@ $result=$obj->getAllCourse();
     
       </tbody> 
       </table>
+  </h4>
       </div>
                
   </form>

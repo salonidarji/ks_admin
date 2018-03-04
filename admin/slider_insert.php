@@ -9,7 +9,7 @@
    
       
 <table class="table">
-<form method="post" action="slider_insert_code.php">
+<form method="post" action="slider_insert_code.php" enctype="multipart/form-Data">
 <div class="form-group">
 <tr><td>Image :</td><td><input type="file" name="txtimg" class="form-control" /> </td></tr>
 <tr><td>Count :</td><td><input type="number" required name="txtcnt" class="form-control"/> </td></tr>

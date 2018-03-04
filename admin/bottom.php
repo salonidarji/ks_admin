@@ -96,7 +96,8 @@
 <!-- dataTables --> 
 <script type="text/javascript" src="DataTables/datatables.min.js"></script>
 <script type="text/javascript" src="DataTables/DataTables-1.10.16/js/jquery.dataTables.min.js"> </script>
-
+<!-- datepicker -->
+<script type="text/javascript" src="../bootstrap/js/bootstrap-datepicker.js"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
@@ -106,5 +107,17 @@
         $("#tableData").dataTable();
       });
     </script>
+
+<script>
+  
+  $(function() 
+  {   $( "#datepicker" ).datepicker({
+          changeMonth:true,
+          changeYear:true,
+          yearRange:"-100:+0",
+          dateFormat:"dd MM yy" });
+  });
+
+ </script>
 </body>
 </html>

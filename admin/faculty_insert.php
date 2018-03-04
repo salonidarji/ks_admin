@@ -8,12 +8,12 @@
    
       
 <table class="table">
-<form method="post" action="faculty_insert_code.php">
+<form method="post" action="faculty_insert_code.php" enctype="multipart/form-Data">
 <div class="form-group">
 <tr><td>Email Id:</td><td><input type="email" name="txtemail" required class="form-control" /> </td></tr>
 <tr><td>Name:</td><td><input type="text" name="txtname"  required class="form-control" /> </td></tr>
 <tr><td>Degree :</td><td><input type="text" name="txtdegree" required  class="form-control"/> </td></tr>
-<tr><td>Join Date :</td><td><input type="text" name="txtdate"  required class="form-control"/> </td></tr>
+<tr><td>Join Date :</td><td><input type="text" name="txtdate"  required  id="datepicker" class="span2 form-control"/> </td></tr>
 <tr><td>Resume :</td><td><input type="file" name="txtresume"  class="form-control"/> </td></tr>
 
 

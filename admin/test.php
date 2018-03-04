@@ -32,7 +32,7 @@ $result=$obj->getAllTest();
    <th>Student Email Id</th>
    <th>Correct Answer</th>
    <th>Wrong Answer</th> 
-   <th colspan="2">Action</th> 
+   <th>Action</th> 
   
    </thead>
    <tbody>  
@@ -45,12 +45,11 @@ $result=$obj->getAllTest();
       echo '<td>'.$row['fk_email_id']. '</td>';
       echo '<td>'.$row['test_correct_cnt']. '</td>';
       echo '<td>'.$row['test_wrong_cnt']. '</td>';
+     
       echo '<td> <a href="test_update.php?id='.  $row["pk_test_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
+           <a href="test_delete_one.php?id='.  $row["pk_test_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>';
+      echo '<a  type="button" class="btn  btn-md" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></td>';
       
-      </td>
-      <td> <a href="test_delete_one.php?id='.  $row["pk_test_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>
-      
-      </td>';
       echo '</tr>';
       
     }

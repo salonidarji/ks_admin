@@ -8,11 +8,11 @@
    
       
 <table class="table">
-<form method="post" action="material_insert_code.php">
+<form method="post" action="material_insert_code.php" enctype="multipart/form-Data">
 <div class="form-group">
 <tr><td>Title :</td><td><input type="text" name="txttitle"  required class="form-control" /> </td></tr>
 <tr><td>Description :</td><td><textarea rows="5" cols="5" required class="form-control" name="txtdesc"></textarea> </td></tr>
-<tr><td> PDF:</td><td><input type="file" name="txturl" class="form-control"/> </td></tr>
+<tr><td> PDF:</td><td><input type="file" name="txturl" required class="form-control"/> </td></tr>
 <tr><td>Year:</td><td>
             <select name="selyear"  class="form-control">
             <option value="0"> --Select Year-- </option>

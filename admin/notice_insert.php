@@ -8,12 +8,12 @@
    
       
 <table class="table">
-<form method="post" action="notice_insert_code.php">
+<form method="post" action="notice_insert_code.php" enctype="multipart/form-Data">
 <div class="form-group">
 <tr><td>Title :</td><td><input type="text" name="txttitle"  required class="form-control" /> </td></tr>
 <tr><td>Description :</td><td><textarea  name="txtdesc" required  class="form-control" rows="5" cols="30"/> </textarea> </td></tr>
 <tr><td>Upload File :</td><td><input type="file" name="txtlink" class="form-control"/> </td></tr>
-<tr><td>Publiced On Date:</td><td><input type="text" name="txtdate" class="form-control"/> </td></tr>
+<tr><td>Publiced On Date:</td><td><input type="text" name="txtdate" id="datepicker" class="span2 form-control"/> </td></tr>
 <tr><td>Days :</td><td><input type="number" name="txtcnt" class="form-control"/> </td></tr>
 <tr><td>Year:</td><td>
             <select name="selyear" class="form-control" >
@@ -42,4 +42,5 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
   <?php require 'bottom.php'; ?>

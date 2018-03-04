@@ -6,8 +6,10 @@ $_email=$_POST["txtemail"];
 $_name=$_POST["txtname"];
 $_degree=$_POST["txtdegree"];
 $_date=$_POST["txtdate"];
-$_resume=$_POST["txtresume"];
+$_resume="../resources/faculty/".basename($_FILES["txtresume"]["name"]);
 
+if(move_uploaded_file($_FILES["txtresume"]["tmp_name"] , $_resume ))
+{
 require '../shared/faculty_db.php';
 $obj=new faculty_db();
 $res=$obj->insertFaculty($_email,$_name,$_id,$_degree,$_date,$_resume);
@@ -29,6 +31,10 @@ if($res)
 else
 {
 echo 'Record Not Inserted';
+}
+}
+else{
+	echo 'error in move uploaded file';
 }
 
 

@@ -21,7 +21,7 @@
       </table>
       
       <div class="dataTables_wrapper">
-      <table class="table table-hover table-bordered table-striped" id="tableData" >
+   <h4> <table class="table table-hover table-striped" id="tableData" >
       <?php 
 require '..\shared\album_db.php';
 $obj=new album_db();
@@ -32,7 +32,7 @@ $result=$obj->getAllAlbum();
   <th>Select</th>
    <th>Name</th>
    
-   <th colspan="2">Action</th> 
+   <th>Action</th> 
   
    </thead>
    <tbody>  
@@ -43,8 +43,10 @@ $result=$obj->getAllAlbum();
       echo '<tr>';
       echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
       echo '<td>'.$row['album_name']. '</td>';
-      echo '<td> <a href="album_update.php?id='.  $row["pk_album_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a></td>
-      <td> <a href="album_delete_one.php?id='.  $row["pk_album_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a></td>';
+      
+      echo '<td> <a href="album_update.php?id='.  $row["pk_album_id"] .'"><span class="glyphicon glyphicon-pencil btn btn-lg"></span></a>
+           <a href="album_delete_one.php?id='.  $row["pk_album_id"] .'"><span class="glyphicon glyphicon-trash btn btn-lg"></span></a>';
+      
       echo '</tr>';
       
     }
@@ -54,6 +56,7 @@ $result=$obj->getAllAlbum();
     
       </tbody> 
       </table>
+  </h4>
       </div>
     
       <div align="left">

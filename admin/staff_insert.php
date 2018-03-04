@@ -12,7 +12,7 @@
 <div class="form-group">
 <tr><td>Email :</td><td><input type="email" name="txtemail" required  class="form-control" /> </td></tr>
 <tr><td>Name :</td><td><input type="text" name="txtname"  required class="form-control"/> </td></tr>
-<tr><td>Join Date:</td><td><input type="text" name="txtdate" class="form-control"/> </td></tr>
+<tr><td>Join Date:</td><td><input type="text" name="txtdate"  id="datepicker" class="span2 form-control"/> </td></tr>
 <tr><td>Designation:</td><td>
 
                         <select class="form-control" name="seldes">

@@ -37,7 +37,7 @@ $_year=$row["fk_student_year"];
 <div class="form-group">
 <tr><td>Id :</td><td><input type="number" name="txtid" class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
 <tr><td>Title :</td><td><input type="text" name="txttitle" class="form-control" value="<?php echo $_title; ?>"/> </td></tr>
-<tr><td>Description :</td><td><input type="text" name="txtdesc" class="form-control" value="<?php echo $_desc; ?>"/> </td></tr>
+<tr><td>Description :</td><td><textarea name="txtdesc" class="form-control" value="<?php echo $_desc; ?>"/></textarea> </td></tr>
 <tr><td>Image / PDF :</td><td><input type="file" name="txturl" class="form-control" value="<?php echo $_url; ?>"/> </td></tr>
 <tr><td>Faculty Email Id:</td><td><input type="email" name="txtemail" class="form-control" value="<?php echo $_email; ?>"/> </td></tr>
 

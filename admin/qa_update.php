@@ -42,7 +42,7 @@ $_email=$row["fk_email_id"];
 <tr><td>Title :</td><td><input type="text" name="txttitle" class="form-control" value="<?php echo $_title; ?>"/> </td></tr>
 <tr><td>Description :</td><td><input type="text" name="txtdesc" class="form-control" value="<?php echo $_desc; ?>"/> </td></tr>
 
-<tr><td>Image :</td><td><input type="text" name="txtimg" class="form-control" value="<?php echo $_img; ?>"/> </td></tr>
+<tr><td>Image :</td><td><input type="file" name="txtimg" class="form-control" value="<?php echo $_img; ?>"/> </td></tr>
 <tr><td>Option A :</td><td><input type="text" name="txtop1" class="form-control" value="<?php echo $_op1; ?>"/> </td></tr>
 <tr><td>Option B:</td><td><input type="text" name="txtop2" class="form-control" value="<?php echo $_op2; ?>"/> </td></tr>
 <tr><td>Option C :</td><td><input type="text" name="txtop3" class="form-control" value="<?php echo $_op3; ?>"/> </td></tr>

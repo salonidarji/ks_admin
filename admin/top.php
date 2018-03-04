@@ -19,7 +19,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
   <link rel="stylesheet" type="text/css" href="DataTables/DataTables-1.10.16/css/dataTables.bootstrap.min.css">
   <!-- AdmLTE for content title-->
-  <link rel="stylesheet" type="text/css" href="\dist\css\AdminLTE.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/AdminLTE.css">
+   <!-- date picker  -->
+   <link rel="stylesheet" href="../bootstrap/css/bootstrap-datepicker.css">
+  
+  
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">

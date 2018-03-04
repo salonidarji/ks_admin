@@ -31,32 +31,64 @@ $result=$obj->getAllVideo();
    <thead bgcolor="silver">
   <th>Select</th>
    <th>Title</th>
-   <th>Description</th>
    <th>Path</th> 
-   <th colspan="2">Action</th> 
+   <th>Action</th> 
   
    </thead>
    <tbody>  
     <?php
+    $modal_cnt=1;
     while($row=$result->fetch_assoc())
     {
       $id=$row["pk_video_id"];
       echo '<tr>';
       echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
       echo '<td> '.$row['video_title']. '</td>';
-      echo '<td>'.$row['video_desc']. '</td>';
-      echo '<td>'.$row['video_url']. '</td>';
-      echo '<td> <a href="video_update.php?id='.  $row["pk_video_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
-      
-      </td>
-      <td> <a href="video_delete_one.php?id='.  $row["pk_video_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>
-      
-      </td>';
-      echo '</tr>';
-      
-    }
-
-    ?>
+     
+     
+      echo '<td><iframe width="150" height="150" src="'.$row['video_url']. '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>';
+      echo '<td> <a href="video_update.php?id='.  $row["pk_video_id"] .'"><span class="glyphicon glyphicon-pencil btn btn-lg"></span></a>
+           <a href="video_delete_one.php?id='.  $row["pk_video_id"] .'"><span class="glyphicon glyphicon-trash btn btn-lg"></span></a>';
+           echo '<a type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-md'.$modal_cnt.'"><span class="glyphicon glyphicon-chevron-right btn-lg" aria-hidden="true"></span></a>
+           </td>';
+           
+           echo '</tr>';
+     
+           
+     echo '
+     <div class="modal  fade bd-example-modal-md'.$modal_cnt.'" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-md">
+       
+         <div class="modal-content btn-info" >
+         <div class="modal-header ">
+             <h3 class="modal-title" id="exampleModalLongTitle">'.$row['video_title']. '
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button></h3>
+           </div>
+         <!-- thumbnail-->
+         <div class="row" >
+         <div class="col-md-12">
+           <div class="thumbnail">
+           <iframe width="150" height="150" src="'.$row['video_url']. '" alt="'.$row['video_title']. '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+             <div class="caption">
+               <h5>'.$row['video_desc']. '</h5>
+             
+              </div>
+           </div>
+         </div>
+       </div>
+        
+         </div>
+       </div>
+     </div>
+         
+         ';
+           $modal_cnt++;
+           
+         }
+     
+         ?>
 
     
       </tbody> 

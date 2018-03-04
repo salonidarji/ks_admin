@@ -30,7 +30,7 @@ class material_db
 		public function getMaterial($_id)
 		{
 			$cnn=material_db::connect();
-			$sql="select * from material_tbl where pk_que_id ".$_id;
+			$sql="select * from material_tbl where pk_material_id ".$_id;
 			$res=$cnn->query($sql);
 			return $res;
 			material_db::disconnect();

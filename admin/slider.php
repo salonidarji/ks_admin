@@ -20,7 +20,7 @@
       </table>
       
       <div class="dataTables_wrapper">
-      <table class="table table-hover table-bordered table-striped" id="tableData" >
+      <h4><table class="table table-hover table-striped" id="tableData" >
       <?php 
 require '..\shared\slider_db.php';
 $obj=new slider_db();
@@ -30,36 +30,65 @@ $result=$obj->getAllSlider();
    <thead bgcolor="silver">
   <th>Select</th>
    <th>Image</th>
-   <th>Count</th>
-   <th>Time</th> 
-   <th colspan="2">Action</th> 
+   <th>Action</th> 
   
    </thead>
    <tbody>  
     <?php
+    $modal_cnt=1;
     while($row=$result->fetch_assoc())
     {
       $id=$row["pk_slider_id"];
       echo '<tr>';
       echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
-      echo '<td> <img src="'.$row['slider_img']. '" height="50" widht="50" alt="Image not available"></td>';
-      echo '<td>'.$row['slider_count']. '</td>';
-      echo '<td>'.$row['slider_time']. '</td>';
-      echo '<td> <a href="slider_update.php?id='.  $row["pk_slider_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
-      
-      </td>
-      <td> <a href="slider_delete_one.php?id='.  $row["pk_slider_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>
-      
-      </td>';
-      echo '</tr>';
-      
-    }
-
-    ?>
+      echo '<td> <img src="'.$row['slider_img']. '" height="50" widht="50" alt="NA"></td>';
+     
+      echo '<td> <a href="slider_update.php?id='.  $row["pk_slider_id"] .'"><span class="glyphicon glyphicon-pencil btn btn-lg"></span></a>
+           <a href="slider_delete_one.php?id='.  $row["pk_slider_id"] .'"><span class="glyphicon glyphicon-trash btn btn-lg"></span></a>';
+           echo '<a type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-md'.$modal_cnt.'"><span class="glyphicon glyphicon-chevron-right btn-lg" aria-hidden="true"></span></a>
+           </td>';
+           
+           echo '</tr>';
+     
+           
+     echo '
+     <div class="modal  fade bd-example-modal-md'.$modal_cnt.'" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-md">
+       
+         <div class="modal-content btn-info" >
+         <div class="modal-header ">
+             <h3 class="modal-title" id="exampleModalLongTitle"> Image'.$modal_cnt. '
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button></h3>
+           </div>
+         <!-- thumbnail-->
+         <div class="row" >
+         <div class="col-md-12">
+           <div class="thumbnail">
+             <img src="'.$row['slider_img']. '" alt="NA" height="100%" width="100%">
+             <div class="caption">
+             <div> <h4>valid From  : '.$row['slider_count']. '</h4> </div>
+              for Time : '.$row['slider_time']. '
+              </div>
+           </div>
+         </div>
+       </div>
+        
+         </div>
+       </div>
+     </div>
+         
+         ';
+           $modal_cnt++;
+           
+         }
+     
+         ?>
 
     
       </tbody> 
-      </table>
+      </table></h4>
       </div>
 
       <div align="left">

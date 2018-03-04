@@ -12,7 +12,7 @@
 	else
 	{
         echo 'Record not deleted';
-		
+	echo "delete from notice_tble where pk_notice_id =".$_id;	
 	}
 
 ?>

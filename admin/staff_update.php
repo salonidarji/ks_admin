@@ -36,7 +36,7 @@ $_designation=$row["staff_designation"];
 <tr><td>Email :</td><td><input type="number" name="txtid" class="form-control" value="<?php echo $_id; ?>" /> </td></tr>
 <tr><td>Email :</td><td><input type="email" name="txtemail" class="form-control" value="<?php echo $_email; ?>" /> </td></tr>
 <tr><td>Name :</td><td><input type="text" name="txtname" class="form-control" value="<?php echo $_name; ?>"/> </td></tr>
-<tr><td>Join Date:</td><td><input type="text" name="txtdate" class="form-control" value="<?php echo $_date; ?>"/> </td></tr>
+<tr><td>Join Date:</td><td><input type="text" name="txtdate"  id="datepicker" class="span2 form-control" value="<?php echo $_date; ?>"/> </td></tr>
 <tr><td>Designation:</td><td>
 
                         <select class="form-control" name="seldes">
