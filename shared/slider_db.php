@@ -16,27 +16,44 @@ class slider_db
 			self::$con=null;
 		}
 		
-		
+		//home slider
 		public function getAllSlider()
 		{
 			$cnn=slider_db::connect();
-			$sql="select * from slider_tbl";
+			$sql="select * from slider_tbl where address ='home'";
 			$res=$cnn->query($sql);
 			return $res;
 			slider_db::disconnect();
 		
 		}
-		
-		public function getSlider($_id)
+		//mba placement slider
+		public function getSlider()
 		{
 			$cnn=slider_db::connect();
-			$sql="select * from slider_tbl where pk_slider_id ".$_id;
+			$sql="select * from slider_tbl where address ='mba_placement'";
 			$res=$cnn->query($sql);
 			return $res;
 			slider_db::disconnect();
 		
         }
-    
+       public function getmSlider()
+		{
+			$cnn=slider_db::connect();
+			$sql="select * from slider_tbl where address ='msc_placement'";
+			$res=$cnn->query($sql);
+			return $res;
+			slider_db::disconnect();
+		
+        }
+		 public function getaboutSlider()
+		{
+			$cnn=slider_db::connect();
+			$sql="select * from slider_tbl where address ='aboutus'";
+			$res=$cnn->query($sql);
+			return $res;
+			slider_db::disconnect();
+		
+        }
         public function insertSlider($_id,$_img,$_cnt,$_time)
 		{
 			$cnn=slider_db::connect();

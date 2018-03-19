@@ -26,14 +26,13 @@ class material_db
 			material_db::disconnect();
 		
 		}
-		
-		public function getMaterial($_id)
+		public function getMaterial($_mAddress)
 		{
-			$cnn=material_db::connect();
-			$sql="select * from material_tbl where pk_material_id ".$_id;
+			$cnn=notice_db::connect();
+			$sql="select * from material_tbl where material_address='".$_mAddress."'";
 			$res=$cnn->query($sql);
 			return $res;
-			material_db::disconnect();
+			notice_db::disconnect();
 		
         }
     

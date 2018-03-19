@@ -26,29 +26,46 @@ class login_db
 			login_db::disconnect();
 		
 		}
-		
-		public function getLogin($_id)
+		*/
+
+		public function updateFlag($id,$_flag)
 		{
 			$cnn=login_db::connect();
-			$sql="select * from login_tbl where pk_que_id ".$_id;
+			$sql="UPDATE login_tbl SET flag=".$_flag." WHERE pk_login_email_id='".$id."' ";
 			$res=$cnn->query($sql);
 			return $res;
 			login_db::disconnect();
-		
-        }
-    
-        public function insertLogin($_id,$_title,$_desc,$_img,$_op1,$_op2,$_op3,$_op4,$_ans,$_year,$_email)
+		}
+		public function getLogin($_id)
 		{
 			$cnn=login_db::connect();
-			
-			$sql="INSERT INTO login_tbl VALUES (". $_id .",'" . $_title . "','" . $_desc . "','" . $_img . "','" . $_op1 . "','" . $_op2 . "','" . $_op3 .  "','" . $_op4 . "','" . $_ans . "'," . $_year . ",'" . $_email . "') ";
-			
+			$sql="select * from login_tbl where pk_login_email_id ='".$_id."'";
 			$res=$cnn->query($sql);
 			return $res;
 			login_db::disconnect();
 		
 		}
+		
+		public function logUser($id,$passwd){
+			$cnn=login_db::connect();
+			$sql="select * from login_tbl where pk_login_email_id='".$id."' and login_passwd='".$passwd."'";
+			$res=$cnn->query($sql);
+			return $res;
+			login_db::disconnect();
+		}
+    
+        public function signUp($_id,$_img,$_name,$_passwd,$_type,$_flag)
+		{
+			$cnn=login_db::connect();
+			
+			$sql="INSERT INTO login_tbl values ( '". $_id ."',  '". $_img ."','". $_name ."','". $_passwd ."',".$_type.",".$_flag.")";
 
+			$res=$cnn->query($sql);
+			return $res;
+			login_db::disconnect();
+		
+		}
+/*
 		public function updateLogin($_id,$_title,$_desc,$_img,$_op1,$_op2,$_op3,$_op4,$_ans,$_year,$_email)
 		{
 			

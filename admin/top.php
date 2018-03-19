@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -66,6 +64,21 @@ desired effect
 |---------------------------------------------------------|
 -->
 <body class="hold-transition skin-blue sidebar-mini ">
+<?php
+session_start();
+if($_SESSION["eid"]=="")
+{
+  echo '<div class="alert alert-danger"> please do login first</div>';
+}
+else{
+  $_id=$_SESSION["eid"];
+require '../shared/login_db.php';
+$obj_login=new login_db();
+$res_login=$obj_login->getLogin($_id);
+$row=$res_login -> fetch_assoc();
+
+}
+?>
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -99,18 +112,18 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="<?php echo $row["login_profile"]?>" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">Admin</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?php echo $row["login_profile"]; ?>" class="img-circle" alt="User Image">
 
                 <p>
-                  < user name > - < Designation >
-                  <small>employee since "join - date of staff" </small>
+                  < <?php echo $row["login_uname"]?> >
+                  
                 </p>
               </li>
               <!-- Menu Body -->
@@ -143,17 +156,17 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo $row["login_profile"]; ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?php echo $row["login_uname"]; ?></p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
 
       <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
+      <!--<form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
@@ -161,16 +174,19 @@ desired effect
                 </button>
               </span>
         </div>
-        </form>
+        </form>-->
       <!-- /.search form -->
 
       <?php
       
         $_hide="";
-        $_SESSION["type"]=0;
-        if($_SESSION["type"]==2)
+        $_type=$_SESSION["login_type"];
+        if($_type==2)
         {
           $_hide="hidden";
+        }
+        else{
+          $_hide="";
         }
       ?>
 
@@ -187,7 +203,7 @@ desired effect
           <li  ><a href="material.php"><i class="fa fa-table"></i> <span > Material</span> </a></li>
           <li <?php echo $_hide; ?> ><a href="notice.php"><i class="fa fa-table"></i> <span > Notice</span></a></li>
           <li  ><a href="qa.php"><i class="fa fa-table"></i> <span > Question-Answer</span> </a></li>
-          <li <?php echo $_hide; ?> ><a href="result.php"><i class="fa fa-table"></i> <span > Result</span> </a></li>
+          <li  ><a href="result.php"><i class="fa fa-table"></i> <span > Result</span> </a></li>
           <li  ><a href="test.php"><i class="fa fa-table"></i> <span > Test</span> </a></li>
           <li <?php echo $_hide; ?> ><a href="slider.php"><i class="fa fa-table"></i> <span > Slider </span> </a></li>  
           <li <?php echo $_hide; ?> ><a href="album.php"><i class="fa fa-table"></i> <span > Album </span></a></li>

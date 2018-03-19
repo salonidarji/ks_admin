@@ -27,10 +27,12 @@ class notice_db
 		
 		}
 		
-		public function getNotice($_id)
+		
+		
+		public function getNotice($_address)
 		{
 			$cnn=notice_db::connect();
-			$sql="select * from notice_tbl where pk_notice_id=".$_id;
+			$sql="select * from notice_tbl where notice_address='".$_address."'";
 			$res=$cnn->query($sql);
 			return $res;
 			notice_db::disconnect();

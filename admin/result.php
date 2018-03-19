@@ -22,7 +22,7 @@
       </table>
       
       <div class="dataTables_wrapper">
-      <table class="table table-hover table-bordered table-striped" id="tableData" >
+      <table class="table table-hover table-bordered table-striped " id="tableData" >
       <?php 
 require '..\shared\result_db.php';
 $obj=new result_db();
@@ -33,65 +33,93 @@ $result=$obj->getAllResult();
   <th>Select</th>
    <th>Type</th>
    <th>Student Email Id</th>
-   <th>Subject 1:</th> 
-   <th>Subject 1 Marks:</th> 
-   <th>Subject 2:</th> 
-   <th>Subject 2 Marks:</th>
-   <th>Subject 3:</th> 
-   <th>Subject 3 Marks:</th>
-   <th>Subject 4:</th> 
-   <th>Subject 4 Marks:</th>
-   <th>Subject 5:</th> 
-   <th>Subject 5 Marks:</th>
-   <th>Subject 6:</th> 
-   <th>Subject 6 Marks:</th>
-   <th>Subject 7:</th> 
-   <th>Subject 7 Marks:</th>
-   <th>Subject 8:</th> 
-   <th>Subject 8 Marks:</th>
-   <th>Subject 9:</th> 
-   <th>Subject 9 Marks:</th>
-   
+   <th>Student Roll No.</th>
    <th>Action</th> 
   
    </thead>
    <tbody>  
     <?php
+    $modal_cnt=1;
     while($row=$result->fetch_assoc())
     {
+      if($row["result_type"]==1)
+      {
+        $type="Final Exam";
+      }
+      else if($row["result_type"]==2){
+        $type="Mid Semister Exam";
+      }
+      else{
+        $type="Not Available";
+      }
       $id=$row["pk_result_id"];
       echo '<tr>';
       echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
-      echo '<td>'.$row['result_type']. '</td>';
+      echo '<td>'.$type. '</td>';
       echo '<td>'.$row['fk_email_id']. '</td>';
-      echo '<td>'.$row['sub1_name']. '</td>';
-      echo '<td>'.$row['sub1_marks']. '</td>';
-      echo '<td>'.$row['sub2_name']. '</td>';
-      echo '<td>'.$row['sub2_marks']. '</td>';
-      echo '<td>'.$row['sub3_name']. '</td>';
-      echo '<td>'.$row['sub3_marks']. '</td>';
-      echo '<td>'.$row['sub4_name']. '</td>';
-      echo '<td>'.$row['sub4_marks']. '</td>';
-      echo '<td>'.$row['sub5_name']. '</td>';
-      echo '<td>'.$row['sub5_marks']. '</td>';
-      echo '<td>'.$row['sub6_name']. '</td>';
-      echo '<td>'.$row['sub6_marks']. '</td>';
-      echo '<td>'.$row['sub7_name']. '</td>';
-      echo '<td>'.$row['sub7_marks']. '</td>';
-      echo '<td>'.$row['sub8_name']. '</td>';
-      echo '<td>'.$row['sub8_marks']. '</td>';
-      echo '<td>'.$row['sub9_name']. '</td>';
-      echo '<td>'.$row['sub9_marks']. '</td>';
+      echo '<td>'.$row['fk_stu_rno']. '</td>';
      
       echo '<td> <a href="result_update.php?id='.  $row["pk_result_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
            <a href="result_delete_one.php?id='.  $row["pk_result_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>';
-      echo '<a  type="button" class="btn  btn-md" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></td>';
-      
-      echo '</tr>';
-      
-    }
-
-    ?>
+           echo '<a type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-md'.$modal_cnt.'"><span class="glyphicon glyphicon-chevron-right btn-lg" aria-hidden="true"></span></a>
+           </td>';
+           
+           echo '</tr>';
+     
+           
+     echo '
+     <div class="modal  fade bd-example-modal-md'.$modal_cnt.'" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-md">
+       
+         <div class="modal-content " >
+         <div class="modal-header ">
+             <h3 class="modal-title" id="exampleModalLongTitle"> Details of subject
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button></h3>
+           </div>
+         <!-- grid-->
+         
+         <div class="row container" >
+         <h3>Roll Number :: '.$row["fk_stu_rno"].'</h3>
+          <div class="col-md-4">
+           <div> <h4>Subject Name</h4> </div>
+            <br>'.$row["sub1_name"].'
+            <br>'.$row["sub2_name"].'
+            <br>'.$row["sub3_name"].'
+            <br>'.$row["sub4_name"].'
+            <br>'.$row["sub5_name"].'
+            <br>'.$row["sub6_name"].'
+            <br>'.$row["sub7_name"].'
+            <br>'.$row["sub8_name"].'
+            <br>'.$row["sub9_name"].'
+           </div>
+             <div class="col-md-8">
+             <h4>Subject Marks</h4>
+             <br>'.$row["sub1_marks"].'
+             <br>'.$row["sub2_marks"].'
+             <br>'.$row["sub3_marks"].'
+             <br>'.$row["sub4_marks"].'
+             <br>'.$row["sub5_marks"].'
+             <br>'.$row["sub6_marks"].'
+             <br>'.$row["sub7_marks"].'
+             <br>'.$row["sub8_marks"].'
+             <br>'.$row["sub9_marks"].'
+             </div>
+        </div>
+       <div class="btn-info">
+       </div>
+        
+         </div>
+       </div>
+     </div>
+         
+         ';
+           $modal_cnt++;
+           
+         }
+     
+         ?>
 
     
       </tbody> 
