@@ -1,29 +1,26 @@
 <?php require 'top.php'; ?>
+<?php
+      if($_SESSION["eid"]==""){
+        echo '<div class=" btn-lg btn-danger" align="center">
+        Please , Do login first
+        </div>';
+      }
+      else{
+     ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
+
+
       
 
-
-
-      <!-- code here --> 
-
-
-
-
-
-
-
-      <section class="content-header">
+<section class="content-header">
       <h1>
         Dashboard
         <small>Control panel</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
+     
     </section>
       <div class="table-responsive">
 <table class="table table-striped table-bordered" align="center">
@@ -34,75 +31,204 @@
     </section>
  <!-- Main content -->
  <section class="content">
-
+<?php if($_SESSION["login_type"]==1){ ?>
 <!-- Your Page Content Here -->
 <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3>150</h3>
+<div class="col-md-6">
+              <!-- USERS LIST -->
+              <?php
+             // require '../shared/login_db.php';
+              $obj_approve=new login_db();
+              $res_approve=$obj_approve->getStudent();
 
-              <p>New Orders</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-bag"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
+              echo '
+              <div class="box box-danger">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Latest Student Request</h3>
 
+                  <div class="box-tools pull-right">
+                    <span class="label label-danger">'.$res_approve->num_rows.' New Students</span>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <form name="starter" action="approve.php" method="post" >
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                  <ul class="users-list clearfix">
+                  
+                  ';
+                  
+                  while($row=$res_approve->fetch_assoc()){
+                    echo '
+                    <li> 
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="checkbox" name="chkdel[]" value="'.$row["pk_login_email_id"]. '">
+                    
+                      <img src="'.$row["login_profile"].'" alt="User Image">
+                      <a class="users-list-name" href="single.php?email='.$row["pk_login_email_id"].'" >'.$row["login_uname"].'</a>
+                      <span class="users-list-date">'.$row["login_approve"].'</span>
+                    </li> ';
+                  }
+                  echo '
+                  </ul>
+                  <!-- /.users-list -->
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer text-center">
+                  <a href="login.php" class="uppercase">View All Students</a>
+                </div>
+                <!-- /.box-footer -->
+              </div>
+              '; ?>
+              <!--/.box -->
+              <div align="left">
+<input type="submit" class="btn btn-primary" value="Approve Students">
+</div> 
+            </div>
+        
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+     
+      <!-- Main row -->
 
-              <p>Bounce Rate</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>44</h3>
+     
+          
+<!--faculty -->
 
-              <p>User Registrations</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>65</h3>
+<div class="col-md-6">
+              <!-- USERS LIST -->
+              <?php
+             // require '../shared/login_db.php';
+              $obj_approve=new login_db();
+              $res_approve=$obj_approve->getFaculty();
 
-              <p>Unique Visitors</p>
+              echo '
+              <div class="box box-danger">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Latest Faculty Request</h3>
+
+                  <div class="box-tools pull-right">
+                    <span class="label label-danger">'.$res_approve->num_rows.' New Staff / Faculty</span>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <form name="starter_staff" action="approve.php" method="post" >
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                  <ul class="users-list clearfix">
+                  
+                  ';
+                  
+                  while($row=$res_approve->fetch_assoc()){
+                    echo '
+                    
+                    <li> 
+                  
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="checkbox" name="chkdel[]" value="'.$row["pk_login_email_id"]. '">
+                      <img src="'.$row["login_profile"].'" alt="User Image">
+                      <a class="users-list-name"  >'.$row["login_uname"].'</a>
+                      <span class="users-list-date">'.$row["login_approve"].'</span>
+                     
+                    </li> ';
+                  }
+                  echo '
+                  </ul>
+                  <!-- /.users-list -->
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer text-center">
+                  <a href="staff.php" class="uppercase">View All Staff</a>
+                </div>
+                <!-- /.box-footer -->
+              </div>
+              '; ?>
+
+
+      <div align="left">
+<input type="submit" class="btn btn-primary" value="Approve Staff">
+</div> 
+              <!--/.box -->
             </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
+        
         <!-- ./col -->
-      </div>
+        </div>
       <!-- /.row -->
       <!-- Main row -->
+                <?php }
+                else if($_SESSION["login_type"]==2){
+                ?>
+                <div class="row">
+                <div class="col-md-6">
+              <!-- USERS LIST -->
+              <?php
+              require '../shared/material_db.php';
+              $obj_approve=new material_db();
+              $res_approve=$obj_approve->getPendingMaterial();
+
+              echo '
+              <div class="box box-danger">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Latest Material Request</h3>
+
+                  <div class="box-tools pull-right">
+                    <span class="label label-danger">'.$res_approve->num_rows.' New Material</span>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <form name="material_approve" action="approve_material.php" method="post" >
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                  <ul class="users-list clearfix">
+                  
+                  ';
+                  
+                  while($row=$res_approve->fetch_assoc()){
+                    echo '
+                    <li> 
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="checkbox" name="chkdel[]" value="'.$row["pk_material_id"]. '">
+                    <iframe src="'.$row['material_url']. '" alt="material_image" height="150px" width="100px"></iframe>
+                    <a class="users-list-name" href="'.$row['material_url']. '" >'.$row["material_title"].'</a>
+                    <span class="users-list-date">'.$row["material_approve"].'</span>
+                    </li> ';
+                  }
+                  echo '
+                  </ul>
+                  <!-- /.users-list -->
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer text-center">
+                  <a href="material.php" class="uppercase">View All Material</a>
+                </div>
+                <!-- /.box-footer -->
+              </div>
+              '; ?>
+              <!--/.box -->
+              <div align="left">
+<input type="submit" class="btn btn-primary" value="Approve Materials">
+</div> 
+            </div>
+        
+        <!-- ./col -->
+     
+      <!-- Main row -->
+
+                  </div>
+                <?php }
+                else{
+                  echo '<h1> You are not aloowed the access</h1>';
+                }
+                ?>
+           
 </section>
 <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+              <?php } ?>
    <?php require 'bottom.php'; ?>

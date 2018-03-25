@@ -1,5 +1,12 @@
 <?php require 'top.php'; ?>
-
+<?php
+      if($_SESSION["login_type"]==2){
+        echo '<div class=" btn-lg btn-danger" align="center">
+          You are not allowed to access this module
+        </div>';
+      }
+      else{
+     ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -15,7 +22,6 @@ $result=$_obj->getFaculty($_id);
 */
 $cnn= faculty_db::connect();
 $sql="select * from faculty_tbl where pk_faculty_id=".$_id;
-
 $result=$cnn->query($sql);
 $row=$result->fetch_assoc();
 if($result->num_rows==1)
@@ -26,7 +32,6 @@ if($result->num_rows==1)
     $_degree=$row["faculty_degree"];
     $_date=$row["faculty_join_date"];
     $_resume=$row["faculty_resume"];
-
 }
 ?>
 <div class="table-responsive">
@@ -59,4 +64,5 @@ if($result->num_rows==1)
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+<?php } ?>
 <?php require 'bottom.php'; ?>

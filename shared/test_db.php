@@ -27,35 +27,18 @@ class test_db
 		
 		}
 		
-		public function getTest($_id)
-		{
-			$cnn=test_db::connect();
-			$sql="select * from test_tbl where pk_test_id ".$_id;
-			$res=$cnn->query($sql);
-			return $res;
-			test_db::disconnect();
 		
-        }
     
-        public function insertTest($_id,$_email,$_correct_cnt,$_wrong_cnt)
+        public function insertTest($_id,$_email,$_correct_cnt,$_wrong_cnt,$_skip)
 		{
 			$cnn=test_db::connect();
-			$sql="INSERT INTO test_tbl VALUES (". $_id .",'" . $_email. "'," . $_correct_cnt . "," . $_wrong_cnt . ") ";
+			$sql="INSERT INTO test_tbl VALUES (". $_id .",'" . $_email. "'," . $_correct_cnt . "," . $_wrong_cnt . ",".$_skip.") ";
 			$res=$cnn->query($sql);
 			return $res;
 			test_db::disconnect();
 		
 		}
 
-		public function updateTest($_id,$_email,$_correct_cnt,$_wrong_cnt)
-		{
-			
-			$cnn=test_db::connect();
-			$sql="update test_tbl set pk_test_id=".$_id.",fk_email_id='".$_email."',test_correct_cnt=".$_correct_cnt.",test_wrong_cnt=".$_wrong_cnt." where pk_test_id=".$_id;
-			$res=$cnn->query($sql);
-			return $res;
-			test_db::disconnect();
-		}
 		
 		
 		public function deleteTest($arr)

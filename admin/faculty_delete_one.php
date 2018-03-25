@@ -1,5 +1,4 @@
 <?php
-
 	$_id=$_GET["id"];
 	require '../shared/faculty_db.php';
 	$_obj=new faculty_db();
@@ -14,5 +13,4 @@
         echo 'Record not deleted';
 		
 	}
-
 ?>

@@ -63,7 +63,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini ">
+<body class="hold-transition skin-blue sidebar-mini " >
 <?php
 session_start();
 if($_SESSION["eid"]=="")
@@ -79,6 +79,14 @@ $row=$res_login -> fetch_assoc();
 
 }
 ?>
+<?php
+      if($_SESSION["eid"]==""){
+        echo '<div class=" btn-lg btn-danger" align="center">
+        Please , Do login first !!!
+        </div>';
+      }
+      else{
+     ?>
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -134,15 +142,13 @@ $row=$res_login -> fetch_assoc();
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
+          
         </ul>
       </div>
     </nav>
@@ -191,11 +197,12 @@ $row=$res_login -> fetch_assoc();
       ?>
 
      <!-- Sidebar Menu -->
+     
       <ul class="sidebar-menu">
        <li class="treeview">
           
-         
-          <li <?php echo $_hide; ?> ><a href=""><i class="fa fa-table"></i> <span > Login </span> </a></li>
+       <li  ><a href="starter.php"><i class="fa fa-home"></i> <span > Dashboard </span> </a></li>
+       <li <?php echo $_hide; ?> ><a href="login.php"><i class="fa fa-table"></i> <span > Login </span> </a></li>
           <li <?php echo $_hide; ?> ><a href="faculty.php"><i class="fa fa-table"></i> <span > Faculty </span></a></li>
           <li <?php echo $_hide; ?> ><a href="staff.php"><i class="fa fa-table"></i> <span > Staff </span></a></li>
           <li <?php echo $_hide; ?> ><a href="student.php"><i class="fa fa-table"></i> <span > Student</span> </a></li>
@@ -213,7 +220,9 @@ $row=$res_login -> fetch_assoc();
         </li>
        
        </ul> <!-- /.sidebar-menu -->
+     
     </section>
     <!-- /.sidebar -->
   </aside>
+  <?php } ?>
 

@@ -53,7 +53,7 @@ class video_db
 		{
 			
 			$cnn=video_db::connect();
-			$sql="update video_tbl set pk_video_id=".$_id.",video_title='".$_title."',video_desc='".$_desc."',video_url='".$_url."' where pk_video_id=".$_id;
+			$sql="update video_tbl set pk_video_id=".$_id.",video_title='".$_title."',video_desc='".$_desc."',url='".$_url."' where pk_video_id=".$_id;
 			$res=$cnn->query($sql);
 			return $res;
 			video_db::disconnect();

@@ -28,11 +28,21 @@ class material_db
 		}
 		public function getMaterial($_mAddress)
 		{
-			$cnn=notice_db::connect();
+			$cnn=material_db::connect();
 			$sql="select * from material_tbl where material_address='".$_mAddress."'";
 			$res=$cnn->query($sql);
 			return $res;
-			notice_db::disconnect();
+			material_db::disconnect();
+		
+		}
+		
+		public function getPendingMaterial()
+		{
+			$cnn=material_db::connect();
+			$sql="select * from material_tbl where material_approve='pending' ";
+			$res=$cnn->query($sql);
+			return $res;
+			material_db::disconnect();
 		
         }
     
@@ -48,7 +58,7 @@ class material_db
 		
 		}
 
-		public function updateMaterial($_id,$_title,$_desc,$_url,$_email,$_year)
+		public function updateMaterial($_id,$_title,$_desc,$_url,$_email,$_year,$_approve)
 		{
 			
 			$cnn=material_db::connect();
@@ -59,6 +69,18 @@ class material_db
 		}
 		
 		
+		
+		public function updateApprove($_arr)
+		{
+			$cnn=material_db::connect();
+			$sql="UPDATE material_tbl SET material_approve='approved' where pk_material_id in ($_arr) ";
+
+
+			$res=$cnn->query($sql);
+			return $res;
+			material_db::disconnect();
+		}
+
 		public function deleteMaterial($arr)
 		{
 			$cnn=material_db::connect();

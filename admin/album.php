@@ -1,4 +1,12 @@
 <?php require 'top.php'; ?>
+<?php
+      if($_SESSION["login_type"]==2){
+        echo '<div class=" btn-lg btn-danger" align="center">
+          You are not allowed to access this module
+        </div>';
+      }
+      else{
+     ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -30,7 +38,7 @@ $result=$obj->getAllAlbum();
 ?>
    <thead bgcolor="silver">
   <th>Select</th>
-   <th>Name</th>
+   <th>url</th>
    
    <th>Action</th> 
   
@@ -42,7 +50,7 @@ $result=$obj->getAllAlbum();
       $id=$row["pk_album_id"];
       echo '<tr>';
       echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
-      echo '<td>'.$row['album_name']. '</td>';
+      echo '<td><img src="'.$row['url']. '" height="50" width="50"></td>';
       
       echo '<td> <a href="album_update.php?id='.  $row["pk_album_id"] .'"><span class="glyphicon glyphicon-pencil btn btn-lg"></span></a>
            <a href="album_delete_one.php?id='.  $row["pk_album_id"] .'"><span class="glyphicon glyphicon-trash btn btn-lg"></span></a>';
@@ -76,4 +84,5 @@ $result=$obj->getAllAlbum();
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+  <?php } ?>
 <?php require 'bottom.php'; ?>

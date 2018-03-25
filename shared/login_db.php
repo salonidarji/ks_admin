@@ -1,6 +1,4 @@
 <?php
-
-
 class login_db
 {
 	private static $con=null;
@@ -17,7 +15,7 @@ class login_db
 		}
 		
 		
-	/*	public function getAllLogin()
+		public function getAllLogin()
 		{
 			$cnn=login_db::connect();
 			$sql="select * from login_tbl";
@@ -26,7 +24,26 @@ class login_db
 			login_db::disconnect();
 		
 		}
-		*/
+		
+		public function getStudent()
+		{
+			$cnn=login_db::connect();
+			$sql="SELECT * from login_tbl where login_approve='pending' && login_type=0";
+			$res=$cnn->query($sql);
+			return $res;
+			login_db::disconnect();
+		
+		}
+
+		public function getFaculty()
+		{
+			$cnn=login_db::connect();
+			$sql="SELECT * from login_tbl where login_approve='pending' && login_type=2";
+			$res=$cnn->query($sql);
+			return $res;
+			login_db::disconnect();
+		
+		}
 
 		public function updateFlag($id,$_flag)
 		{
@@ -36,6 +53,7 @@ class login_db
 			return $res;
 			login_db::disconnect();
 		}
+
 		public function getLogin($_id)
 		{
 			$cnn=login_db::connect();
@@ -45,10 +63,11 @@ class login_db
 			login_db::disconnect();
 		
 		}
+
 		
 		public function logUser($id,$passwd){
 			$cnn=login_db::connect();
-			$sql="select * from login_tbl where pk_login_email_id='".$id."' and login_passwd='".$passwd."'";
+			$sql="select * from login_tbl where pk_login_email_id='".$id."' and login_passwd='".$passwd."' && login_approve='approved'";
 			$res=$cnn->query($sql);
 			return $res;
 			login_db::disconnect();
@@ -58,19 +77,51 @@ class login_db
 		{
 			$cnn=login_db::connect();
 			
-			$sql="INSERT INTO login_tbl values ( '". $_id ."',  '". $_img ."','". $_name ."','". $_passwd ."',".$_type.",".$_flag.")";
+			$sql="INSERT INTO login_tbl values ( '". $_id ."',  '". $_img ."','". $_name ."','". $_passwd ."',".$_type.",".$_flag.",'pending')";
 
 			$res=$cnn->query($sql);
 			return $res;
 			login_db::disconnect();
 		
 		}
-/*
-		public function updateLogin($_id,$_title,$_desc,$_img,$_op1,$_op2,$_op3,$_op4,$_ans,$_year,$_email)
+
+		public function insertLogin($_email,$_profile,$_name,$_password,$_type,$_approve)
+		{
+			$cnn=login_db::connect();
+			
+			$sql="INSERT INTO login_tbl values ( '". $_email ."',  '". $_profile ."','". $_name ."','". $_password ."',".$_type.",0,'".$_approve."')";
+
+			$res=$cnn->query($sql);
+			return $res;
+			login_db::disconnect();
+		
+		}
+
+		public function updateApprove($_arr){
+			$cnn=login_db::connect();
+			
+			$sql="UPDATE login_tbl SET login_approve='approved' where pk_login_email_id in ('$_arr') " ;
+
+			$res=$cnn->query($sql);
+			return $res;
+			login_db::disconnect();
+		}
+
+		public function updateApproveOne($_email){
+			$cnn=login_db::connect();
+			
+			$sql="UPDATE login_tbl SET login_approve='approved' where pk_login_email_id ='".$_email."' " ;
+
+			$res=$cnn->query($sql);
+			return $res;
+			login_db::disconnect();
+		}
+
+		public function updateLogin($_email,$_name,$_type,$_password,$_profile,$_approve)
 		{
 			
 			$cnn=login_db::connect();
-			$sql="update login_tbl set pk_que_id=".$_id.",que_title='".$_title."',que_img='".$_img."',op_1='".$_op1."',op_2='".$_op2."',op_3='".$_op3."',op_4='".$_op4."',ans='".$_ans."',fk_student_year='".$_year."',fk_email_id='".$_email."'  where pk_que_id=".$_id;
+			$sql="update login_tbl set pk_login_email_id='".$_email."',login_profile='".$_profile."',login_uname='".$_name."',login_passwd='".$_password."',login_type=".$_type." ,login_approve='".$_approve."' where pk_login_email_id='".$_email."' ";
 			$res=$cnn->query($sql);
 			return $res;
 			login_db::disconnect();
@@ -80,14 +131,25 @@ class login_db
 		public function deleteLogin($arr)
 		{
 			$cnn=login_db::connect();
-			$sql="delete from login_tbl where pk_que_id in ($arr)";
+			$sql="delete from login_tbl where pk_login_email_id in ('$arr')";
 
 
 			$res=$cnn->query($sql);
 			return $res;
 			login_db::disconnect();
 		}
-    */
+
+		public function deleteLoginOne($_id)
+		{
+			$cnn=login_db::connect();
+			$sql="delete from login_tbl where pk_login_email_id ='".$_id."'";
+
+
+			$res=$cnn->query($sql);
+			return $res;
+			login_db::disconnect();
+		}
+    
 
   /*  public function insertType($_email,$_name,$_type)
     {

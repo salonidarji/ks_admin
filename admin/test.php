@@ -8,14 +8,11 @@
       <form action="test_delete.php" name="test_form" method="post">
       <table class="table">
       <tr><td>
+        
       <h3 class='page-header'>Manage Test </h3>
       </td>
       <td>
-      <div align="right" >
-      <a href="test_insert.php">
-            <button type="button" right class="btn btn-primary">New</button>
-          </a> 
-      </div>
+      
       </td></tr>
       </table>
       
@@ -32,6 +29,7 @@ $result=$obj->getAllTest();
    <th>Student Email Id</th>
    <th>Correct Answer</th>
    <th>Wrong Answer</th> 
+   <th>Skip Answer</th>
    <th>Action</th> 
   
    </thead>
@@ -45,10 +43,11 @@ $result=$obj->getAllTest();
       echo '<td>'.$row['fk_email_id']. '</td>';
       echo '<td>'.$row['test_correct_cnt']. '</td>';
       echo '<td>'.$row['test_wrong_cnt']. '</td>';
+      echo '<td>'.$row['test_skip_cnt']. '</td>';
      
-      echo '<td> <a href="test_update.php?id='.  $row["pk_test_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
+      echo '<td>
            <a href="test_delete_one.php?id='.  $row["pk_test_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>';
-      echo '<a  type="button" class="btn  btn-md" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></td>';
+     
       
       echo '</tr>';
       

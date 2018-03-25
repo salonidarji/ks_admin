@@ -1,5 +1,12 @@
 <?php require 'top.php'; ?>
-
+<?php
+      if($_SESSION["login_type"]==2){
+        echo '<div class=" btn-lg btn-danger" align="center">
+          You are not allowed to access this module
+        </div>';
+      }
+      else{
+     ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -21,7 +28,7 @@ $row=$result->fetch_assoc();
 if($result->num_rows==1)
 {
 
-$_name=$row["album_name"];
+$_url=$row["url"];
 
 }
 ?>
@@ -30,7 +37,7 @@ $_name=$row["album_name"];
 <form method="post" action="album_update_code.php"  enctype="multipart/form-Data" >
 <div class="form-group">
 <tr><td>Id :</td><td><input type="number" name="txtid" class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
-<tr><td>Name:</td><td><input type="text" name="txtname" class="form-control" value="<?php echo $_name; ?>"/> </td></tr>
+<tr><td>url :</td><td><input type="file" name="txturl" required class="form-control" value="<?php echo $_url; ?>" /> </td></tr>
 
 <tr><td  colspan="2"><input type="submit" name="btnupdate" value="UPDATE"class="form-control btn  btn-info"/></td></tr>
 </div>
@@ -49,4 +56,5 @@ $_name=$row["album_name"];
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+<?php } ?>
  <?php require 'bottom.php'; ?>

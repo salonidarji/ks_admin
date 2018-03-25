@@ -35,6 +35,16 @@ class student_db
 			return $res;
 			student_db::disconnect();
 		
+		}
+		
+		public function getStudentEmail($_email)
+		{
+			$cnn=student_db::connect();
+			$sql="select * from student_tbl where fk_email_id = '" . $_email . "' ";
+			$res=$cnn->query($sql);
+			return $res;
+			student_db::disconnect();
+		
         }
     
         public function insertStudent($_rno,$_email,$_name,$_mo_no,$_gender,$_year)

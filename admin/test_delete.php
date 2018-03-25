@@ -3,10 +3,10 @@
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
 
-	$_arr=implode(",",$_POST["chkdel"]);
+	$arr=implode("," , $_POST["chkdel"]);
 	require '../shared/test_db.php';
 	$_obj=new test_db();
-	$res=$_obj->deleteTest($_arr);
+	$res=$_obj->deleteTest($arr);
 	
 	if($res)
 	{
@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	else
 	{
         echo 'Record not deleted';
-		
+		echo "delete from test_tbl where pk_test_id in ($arr)";
 		
 	}
 	

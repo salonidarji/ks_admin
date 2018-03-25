@@ -1,6 +1,4 @@
 <?php
-
-
 class faculty_db
 {
 	private static $con=null;
@@ -48,7 +46,6 @@ class faculty_db
 			faculty_db::disconnect();
 		
 		}
-
 		public function updateFaculty($_email,$_name,$_id,$_degree,$_date,$_resume)
 		{
 			
@@ -64,13 +61,10 @@ class faculty_db
 		{
 			$cnn=faculty_db::connect();
 			$sql="delete from faculty_tbl where pk_faculty_id in ($arr)";
-
-
 			$res=$cnn->query($sql);
 			return $res;
 			faculty_db::disconnect();
 		}
-
 		public function deleteFacultyOne($_id)
 		{
 			$cnn=faculty_db::connect();
@@ -81,5 +75,4 @@ class faculty_db
 		}
 	
 }
-
 ?>

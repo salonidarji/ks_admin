@@ -1,5 +1,12 @@
 <?php require 'top.php'; ?>
-
+<?php
+      if($_SESSION["login_type"]==2){
+        echo '<div class=" btn-lg btn-danger" align="center">
+          You are not allowed to access this module
+        </div>';
+      }
+      else{
+     ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -46,7 +53,7 @@ $result=$obj->getAllVideo();
       echo '<td> '.$row['video_title']. '</td>';
      
      
-      echo '<td><iframe width="150" height="150" src="'.$row['video_url']. '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>';
+      echo '<td>  <iframe width="150" height="150" src="'.$row['url'].'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </td>';
       echo '<td> <a href="video_update.php?id='.  $row["pk_video_id"] .'"><span class="glyphicon glyphicon-pencil btn btn-lg"></span></a>
            <a href="video_delete_one.php?id='.  $row["pk_video_id"] .'"><span class="glyphicon glyphicon-trash btn btn-lg"></span></a>';
            echo '<a type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-md'.$modal_cnt.'"><span class="glyphicon glyphicon-chevron-right btn-lg" aria-hidden="true"></span></a>
@@ -70,8 +77,8 @@ $result=$obj->getAllVideo();
          <div class="row" >
          <div class="col-md-12">
            <div class="thumbnail">
-           <iframe width="150" height="150" src="'.$row['video_url']. '" alt="'.$row['video_title']. '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-             <div class="caption">
+                     <iframe width="560" height="315" src="'.$row['url'].'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> 
+           <div class="caption">
                <h5>'.$row['video_desc']. '</h5>
              
               </div>
@@ -112,4 +119,5 @@ $result=$obj->getAllVideo();
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+        <?php } ?>
 <?php require 'bottom.php'; ?>

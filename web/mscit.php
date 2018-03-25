@@ -30,7 +30,7 @@
          
          </td></tr></table>
        		 <?php
-	require 'slider_db.php';
+	require '../shared/slider_db.php';
 	$obj_slider=new slider_db();
 	$res=$obj_slider->getmSlider();
 	?>

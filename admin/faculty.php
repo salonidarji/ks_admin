@@ -1,5 +1,12 @@
 <?php require 'top.php'; ?>
-
+<?php
+      if($_SESSION["login_type"]==2){
+        echo '<div class=" btn-lg btn-danger" align="center">
+          You are not allowed to access this module
+        </div>';
+      }
+      else{
+     ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -26,7 +33,6 @@
 require '..\shared\faculty_db.php';
 $obj=new faculty_db();
 $result=$obj->getAllFaculty();
-
 ?>
    <thead bgcolor="silver">
   <th>Select</th>
@@ -46,7 +52,7 @@ $result=$obj->getAllFaculty();
       echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
       
       echo '<td>'.$row['faculty_name']. '</td>';
-      echo '<td><iframe src="'.$row['faculty_resume']. '"height="50px" width="50px" alt="NA"></iframe></td>';
+      echo '<td><img src="'.$row['faculty_resume']. '"height="50px" width="50px" alt="NA"></img></td>';
      
       echo '<td> <a href="faculty_update.php?id='.  $row["pk_faculty_id"] .'"><span class="glyphicon glyphicon-pencil btn btn-lg"></span></a>
            <a href="faculty_delete_one.php?id='.  $row["pk_faculty_id"] .'"><span class="glyphicon glyphicon-trash btn btn-lg"></span></a>';
@@ -71,7 +77,7 @@ $result=$obj->getAllFaculty();
          <div class="row" >
          <div class="col-md-12">
            <div class="thumbnail">
-             <iframe src="'.$row['faculty_resume']. '" alt="'.$row['faculty_degree']. '" height="100%" width="100%"></iframe>
+             <img src="'.$row['faculty_img']. '" alt="'.$row['faculty_degree']. '" height="10%" width="50%"></img>
              <div class="caption">
              <div> <h4>Degree : '.$row['faculty_degree']. ' Year Students</h4> </div>
                <h5>Working since : '.$row['faculty_join_date']. '</h5>
@@ -115,4 +121,5 @@ $result=$obj->getAllFaculty();
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+        <?php } ?>
 <?php require 'bottom.php'; ?>

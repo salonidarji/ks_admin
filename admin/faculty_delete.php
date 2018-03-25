@@ -2,7 +2,6 @@
 <?php
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
-
 	$_arr=implode(",",$_POST["chkdel"]);
 	require '../shared/faculty_db.php';
 	$_obj=new faculty_db();
@@ -20,5 +19,4 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	}
 	
 }
-
 ?>

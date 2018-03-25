@@ -1,18 +1,11 @@
 <?php
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
-$_id="null";
+$_id=$_POST["txtid"];
 $_title=$_POST["txttitle"];
 $_desc=$_POST["txtdesc"];
-$_url="../resources/video/".basename($_FILES["txturl"]["name"]);
-/*
-echo 'path='.$_FILES["txturl"]["tmp_name"];
-$_extension=pathinfo($_FILES["txturl"]["name"],PATHINFO_EXTENSION);
-echo "ext=".$_extension;
-if(strtolower($_extension)=="mp4")
-{*/
-if(move_uploaded_file($_FILES["txturl"]["tmp_name"] , $_url ))
-{
+$_url=$_POST["txturl"];
+
 require '../shared/video_db.php';
 $obj=new video_db();
 $res=$obj->insertVideo($_id,$_title,$_desc,$_url);
@@ -23,18 +16,8 @@ if($res)
 else
 {
 echo 'Record Not Inserted';
-}
-}
-else{
-	echo 'error in move upload';
-}
-/*
-}
-else{
-	echo 'only mp4 is allowed';
-}
-*/
 
+}
 
 }
 

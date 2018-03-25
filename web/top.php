@@ -159,6 +159,12 @@ session_start();
 					<div class="modal_body_left modal_body_left1">
 						<h3 class="agileinfo_sign">Sign Up</h3>
 						<form action="signup.php" method="post" enctype="multipart/form-data">
+						<div class="styled-input" align="center">
+							<img src="images/avatar.jpg" height="100px" width="100px" class="img img-circle">
+								<br><button class="btn btn-primary">upload profile
+<input type="file" name="txtimg" opacity=0 required=""> 	</button>							</button>
+							</div> 
+							
 							<div class="styled-input agile-styled-input-top">
 								<input type="text" placeholder="Name" name="txtname" required="">
 							</div>
@@ -171,10 +177,7 @@ session_start();
 							<div class="styled-input">
 								<input type="password" placeholder="Confirm Password" name="Confirm Password" id="password2" required="">
 							</div>
-							<div class="styled-input">
-								<input type="file" placeholder="" name="txtimg"  required="">
-							</div>
-							
+						
 							<input type="submit" value="Sign Up">
 						</form>
 						</div>
@@ -326,6 +329,33 @@ session_start();
 								</li>
 							</ul>
 						</li>
+						 <?php
+						 if(isset($_SESSION["login_flag"])){
+						 if( $_SESSION["login_flag"]==1){
+						 echo '
+						<li class="dropdown">
+							<a class="nav-stylehead dropdown-toggle" href="#" data-toggle="dropdown">Student
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu agile_short_dropdown">
+								<li>
+									<a href="">Download Papers</a>
+								</li>
+								<li>
+									<a href="result.php">Result</a>
+								</li>
+								<li>
+									<a href="quiz.php">Online exam</a>
+								
+								</li>
+								<li>
+									<a href="">Download Material</a>
+								</li>
+							</ul>
+						</li>';
+						 }
+						 }
+		 				?>
 						<li class="dropdown">
 							<a class="nav-stylehead dropdown-toggle" href="#" data-toggle="dropdown">Placement
 								<b class="caret"></b>

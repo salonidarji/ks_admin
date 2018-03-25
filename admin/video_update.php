@@ -1,4 +1,12 @@
 <?php require 'top.php'; ?>
+<?php
+      if($_SESSION["login_type"]==2){
+        echo '<div class=" btn-lg btn-danger" align="center">
+          You are not allowed to access this module
+        </div>';
+      }
+      else{
+     ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -22,7 +30,7 @@ if($result->num_rows==1)
 
     $_title=$row["video_title"];
     $_desc=$row["video_desc"];
-    $_url=$row["video_url"];
+    $_url=$row["url"];
 
 }
 ?>
@@ -33,7 +41,7 @@ if($result->num_rows==1)
 <tr><td>Id :</td><td><input type="text" name="txtid" class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
 <tr><td>Title :</td><td><input type="text" name="txttitle" class="form-control" value="<?php echo $_title; ?>"/> </td></tr>
 <tr><td>Description   :</td><td><input type="text" name="txtdesc" class="form-control" value="<?php echo $_desc; ?>"/> </td></tr>
-<tr><td>Path :</td><td><input type="file" accept="video/*" name="txturl" class="form-control" value="<?php echo $_url; ?>"/> </td></tr>
+<tr><td>Path :</td><td><input required type="text" name="txturl" class="form-control" value="<?php echo $_url; ?>"/> </td></tr>
 				
 <tr><td  colspan="2"><input type="submit" name="btnupdate" value="UPDATE"class="form-control btn  btn-info"/></td></tr>
 </div>
@@ -52,4 +60,5 @@ if($result->num_rows==1)
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+<?php } ?>
   <?php require 'bottom.php'; ?>

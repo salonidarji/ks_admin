@@ -7,7 +7,6 @@ $_email=$_POST["txtemail"];
 $_degree=$_POST["txtdegree"];
 $_date=$_POST["txtdate"];
 $_resume="../resources/faculty/".basename($_FILES["txtresume"]["name"]);
-
 if(move_uploaded_file($_FILES["txtresume"]["tmp_name"] , $_resume ))
 {
 require '../shared/faculty_db.php';
@@ -26,8 +25,5 @@ echo "update faculty_tbl set fk_email_id='".$_email."',faculty_name='".$_name."'
 else{
 	echo 'error in move uploaded file';
 }
-
-
 }
-
 ?>

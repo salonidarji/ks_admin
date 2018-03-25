@@ -37,11 +37,11 @@ class album_db
 		
         }
 
-        public function insertAlbum($_id,$_name)
+        public function insertAlbum($_id,$_url)
 		{
 			$cnn=album_db::connect();
 			
-			$sql="INSERT INTO album_tbl VALUES (". $_id .",'" . $_name . "') ";
+			$sql="INSERT INTO album_tbl VALUES (". $_id .",'" . $_url . "') ";
 			
 			$res=$cnn->query($sql);
 			return $res;
@@ -49,11 +49,11 @@ class album_db
 		
 		}
 
-		public function updateAlbum($_id,$_name)
+		public function updateAlbum($_id,$_url)
 		{
 			
 			$cnn=album_db::connect();
-			$sql="update album_tbl set pk_album_id=".$_id.",album_name='".$_name."' where pk_album_id=".$_id;
+			$sql="update album_tbl set pk_album_id=".$_id.",url='".$_url."' where pk_album_id=".$_id;
 			$res=$cnn->query($sql);
 			return $res;
 			album_db::disconnect();
