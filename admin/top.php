@@ -41,7 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  
+
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -93,7 +93,7 @@ $row=$res_login -> fetch_assoc();
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="starter.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>KS</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -120,9 +120,16 @@ $row=$res_login -> fetch_assoc();
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="<?php echo $row["login_profile"]?>" class="user-image" alt="User Image">
+              <img src="<?php echo $row["login_profile"]; ?>" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Admin</span>
+              <?php 
+              if($_SESSION["login_type"]==1){
+                echo'<span class="hidden-xs">Admin</span>';
+              }
+              else{
+                echo'<span class="hidden-xs">Faculty</span>';
+              }
+              ?>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -139,7 +146,7 @@ $row=$res_login -> fetch_assoc();
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="profile.php" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
@@ -205,7 +212,7 @@ $row=$res_login -> fetch_assoc();
        <li <?php echo $_hide; ?> ><a href="login.php"><i class="fa fa-table"></i> <span > Login </span> </a></li>
           <li <?php echo $_hide; ?> ><a href="faculty.php"><i class="fa fa-table"></i> <span > Faculty </span></a></li>
           <li <?php echo $_hide; ?> ><a href="staff.php"><i class="fa fa-table"></i> <span > Staff </span></a></li>
-          <li <?php echo $_hide; ?> ><a href="student.php"><i class="fa fa-table"></i> <span > Student</span> </a></li>
+          <li  ><a href="student.php"><i class="fa fa-table"></i> <span > Student</span> </a></li>
           <li <?php echo $_hide; ?> ><a href="course.php"><i class="fa fa-table"></i> <span >Course </span></a></li>
           <li  ><a href="material.php"><i class="fa fa-table"></i> <span > Material</span> </a></li>
           <li <?php echo $_hide; ?> ><a href="notice.php"><i class="fa fa-table"></i> <span > Notice</span></a></li>

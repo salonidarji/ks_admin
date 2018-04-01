@@ -25,7 +25,7 @@ $result=$obj->getAllTest();
 
 ?>
    <thead bgcolor="silver">
-  <th>Select</th>
+  <th><input type="checkbox" name="select-all" id="select-all" /> Select-All</th>
    <th>Student Email Id</th>
    <th>Correct Answer</th>
    <th>Wrong Answer</th> 

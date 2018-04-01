@@ -36,7 +36,7 @@ $result=$obj->getAllStaff();
 
 ?>
    <thead bgcolor="silver">
-  <th>Select</th>
+  <th><input type="checkbox" name="select-all" id="select-all" /> Select-All</th>
    <th>Name</th>
     
    <th>Action</th> 

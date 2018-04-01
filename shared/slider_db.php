@@ -54,11 +54,11 @@ class slider_db
 			slider_db::disconnect();
 		
         }
-        public function insertSlider($_id,$_img,$_cnt,$_time)
+        public function insertSlider($_id,$_img,$_cnt,$_time,$_address)
 		{
 			$cnn=slider_db::connect();
 			
-			$sql="INSERT INTO slider_tbl VALUES (". $_id .",'" . $_img . "'," . $_cnt . "," . $_time . ") ";
+			$sql="INSERT INTO slider_tbl VALUES (". $_id .",'" . $_img . "'," . $_cnt . "," . $_time . ",'" . $_address . "') ";
 			
 			$res=$cnn->query($sql);
 			return $res;
@@ -66,11 +66,11 @@ class slider_db
 		
 		}
 
-		public function updateSlider($_id,$_img,$_cnt,$_time)
+		public function updateSlider($_id,$_img,$_cnt,$_time,$_address)
 		{
 			
 			$cnn=slider_db::connect();
-			$sql="update slider_tbl set pk_slider_id=".$_id.",slider_img='".$_img."',slider_count=".$_cnt.",slider_time=".$_time." where pk_slider_id=".$_id;
+			$sql="update slider_tbl set pk_slider_id=".$_id.",slider_img='".$_img."',slider_count=".$_cnt.",slider_time=".$_time.",address='".$_address."' where pk_slider_id=".$_id;
 			$res=$cnn->query($sql);
 			return $res;
 			slider_db::disconnect();

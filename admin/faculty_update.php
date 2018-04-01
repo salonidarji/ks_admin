@@ -41,11 +41,16 @@ if($result->num_rows==1)
 <tr><td>Id :</td><td><input type="number" name="txtid" class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
 <tr><td>Email Id :</td><td><input type="email" name="txtemail" class="form-control" value="<?php echo $_email; ?>"/> </td></tr>
 <tr><td>Name :</td><td><input type="text" name="txtname" class="form-control" value="<?php echo $_name; ?>"/> </td></tr>
+<tr><td>Profile :</td><td><input type="file" name="txtimg" class="form-control"/> </td></tr>
 <tr><td>Degree :</td><td><input type="text" name="txtdegree" class="form-control" value="<?php echo $_degree; ?>"/> </td></tr>
 
 <tr><td>Join Date :</td><td><input type="text" name="txtdate"  id="datepicker" class="span2 form-control" value="<?php echo $_date; ?>"/> </td></tr>
 <tr><td>Resume :</td><td><input type="file" name="txtresume" class="form-control"/> </td></tr>
-
+<tr><td>Course :</td><td><select name="selcourse" class="form-control">
+        <option value="null">--Select Course--</option>
+        <option value="msc">Msc(CA & IT)</option>
+        <option value="mba">MBA</option>
+</select></td></tr>
 					
 <tr><td  colspan="2"><input type="submit" name="btnupdate" value="UPDATE"class="form-control btn  btn-info"/></td></tr>
 </div>

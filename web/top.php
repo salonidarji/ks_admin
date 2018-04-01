@@ -22,6 +22,16 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css">
 	<!-- fonts -->
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+	<script>
+    var hash = '<?php echo $hash ?>';
+    function submitPayuForm() {
+      if(hash == '') {
+        return;
+      }
+      var payuForm = document.forms.payuForm;
+      payuForm.submit();
+    }
+  </script>
 </head>
 
 <body>
@@ -125,11 +135,13 @@ session_start();
 							
                          
 	<div class="styled-input agile-styled-input-top">
+	
 								<input type="text" placeholder="User Name" name="txtid" required="">
 							</div>
 							<div class="styled-input">
 								<input type="password" placeholder="Password" name="txtpass" required="">
 							</div>
+							
 							<input type="submit" value="Sign In">
 		
 						</form>
@@ -338,19 +350,43 @@ session_start();
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu agile_short_dropdown">
+							
 								<li>
 									<a href="">Download Papers</a>
-								</li>
-								<li>
-									<a href="result.php">Result</a>
-								</li>
+								
+								<ol><li type="disc">
+								<a href="mba1.php">MBA</a>
+							
+							</li>
+							<li type="disc">
+								<a href="msc1.php">MSC</a>
+							
+							</li></ol>
+							</li><li>
+							<a href="">Download Material</a>
+						
+						<ol><li type="disc">
+						<a href="material-mba.php">MBA</a>
+					
+					</li>
+					<li type="disc">
+						<a href="material-msc.php">MSC</a>
+					
+					</li></ol>
+					</li>
 								<li>
 									<a href="quiz.php">Online exam</a>
 								
 								</li>
 								<li>
-									<a href="">Download Material</a>
+									<a href="result.php">Result</a>
 								</li>
+								<li>
+									<a href="PayUMoney_form.php">Fees Payment</a>
+								
+								</li>
+								
+								
 							</ul>
 						</li>';
 						 }

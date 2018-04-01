@@ -1,12 +1,5 @@
 <?php require 'top.php'; ?>
-<?php
-      if($_SESSION["login_type"]==2){
-        echo '<div class=" btn-lg btn-danger" align="center">
-          You are not allowed to access this module
-        </div>';
-      }
-      else{
-     ?>
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -36,11 +29,12 @@ $result=$obj->getAllStudent();
 
 ?>
    <thead bgcolor="silver">
-  <th>Select</th>
+  <th><input type="checkbox" name="select-all" id="select-all" /> Select-All</th>
    <th>Roll Number</th>
    <th>Name</th> 
    <th>Gender</th> 
-   <th>Year</th> 
+   <th>Year</th>
+   <th>Semister</th> 
    
    <th>Action</th> 
   
@@ -50,16 +44,72 @@ $result=$obj->getAllStudent();
     $modal_cnt=1;
     while($row=$result->fetch_assoc())
     {
+      if($row['stu_year']==1){
+        $year="First";
+      }
+      else if($row['stu_year']==2){
+        $year="Second";
+      }
+      else if($row['stu_year']==3){
+        $year="Third";
+      }
+      else if($row['stu_year']==4){
+        $year="Fourth";
+      }
+      else if($row['stu_year']==5){
+        $year="Fifth";
+      }
+      else{
+        $year="";
+      }
+
+      if($row['stu_semister']==1){
+        $sem="one";
+      }
+      else if($row['stu_semister']==2){
+        $sem="two";
+      }
+      else if($row['stu_semister']==3){
+        $sem="three";
+      }
+      else if($row['stu_semister']==4){
+        $sem="four";
+      }
+      else if($row['stu_semister']==5){
+        $sem="five";
+      }
+      else if($row['stu_semister']==6){
+        $sem="six";
+      }
+      else if($row['stu_semister']==7){
+        $sem="seven";
+      }
+      else if($row['stu_semister']==8){
+        $sem="eight";
+      }
+      else if($row['stu_semister']==9){
+        $sem="nine";
+      }
+      else if($row['stu_semister']==10){
+        $sem="ten";
+      }
+      else{
+        $sem="";
+      }
+     
       $rno=$row["pk_stu_rno"];
       echo '<tr>';
       echo '<td> <input type="checkbox" name="chkdel[]" value="'.$rno.'"> </td>';
       echo '<td>'.$row['pk_stu_rno']. '</td>';
       echo '<td>'.$row['stu_name']. '</td>';
       echo '<td>'.$row['stu_gender']. '</td>';
-      echo '<td>'.$row['stu_year']. '</td>';
-     
-      echo '<td> <a href="student_update.php?id='.  $row["pk_stu_rno"] .'"><span class="glyphicon glyphicon-pencil btn btn-lg"></span></a>
+      echo '<td>'.$year. '</td>';
+      echo '<td>'.$sem.'</td>';
+      echo '<td>';
+     if($_SESSION["login_type"]==1){
+      echo ' <a href="student_update.php?id='.  $row["pk_stu_rno"] .'"><span class="glyphicon glyphicon-pencil btn btn-lg"></span></a>
            <a href="student_delete_one.php?id='.  $row["pk_stu_rno"] .'"><span class="glyphicon glyphicon-trash btn btn-lg"></span></a>';
+     }
            echo '<a type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-md'.$modal_cnt.'"><span class="glyphicon glyphicon-chevron-right btn-lg" aria-hidden="true"></span></a>
            </td>';
            
@@ -83,7 +133,7 @@ $result=$obj->getAllStudent();
            <div class="thumbnail">
             
              <div class="caption">
-             <div> <h4>Studing in : '.$row['stu_year']. ' Year </h4> </div>
+             <div> <h4>Studing in : '.$year. ' Year </h4> </div>
                <h5>'.$row['stu_gender']. '</h5>
                <div align="right"> <h4>Contact : <a >'.$row['fk_email_id']. '</a>
                     <br> '.$row['stu_mobile_no']. '</h4>
@@ -129,5 +179,5 @@ $result=$obj->getAllStudent();
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-        <?php } ?>
+     
 <?php require 'bottom.php'; ?>

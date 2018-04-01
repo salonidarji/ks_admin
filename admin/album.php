@@ -37,7 +37,7 @@ $result=$obj->getAllAlbum();
 
 ?>
    <thead bgcolor="silver">
-  <th>Select</th>
+  <th><input type="checkbox" name="select-all" id="select-all" /> Select-All</th>
    <th>url</th>
    
    <th>Action</th> 

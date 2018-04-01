@@ -78,17 +78,15 @@
                     <h3>Student Zone</h3>
                     <ul>
                             <li>
-                                    <a href="about.html">Download Papers</a>
+                                    <a href="">Download Papers</a>
                                 </li>
                                 <li>
-                                        <a href="about.html">&nbsp;&nbsp;&nbsp;&nbsp;MBA</a>
+                                        <a href="mba1.html">&nbsp;&nbsp;&nbsp;&nbsp;MBA</a>
                                     </li>
                                     <li>
-                                            <a href="about.html">&nbsp;&nbsp;&nbsp;&nbsp;Msc(CA & IT)</a>
+                                            <a href="msc1.html">&nbsp;&nbsp;&nbsp;&nbsp;Msc(CA & IT)</a>
                                         </li>
-                                        <li>
-                                                <a href="result.php">Result</a>
-                                            </li>	
+                                        	
                     </ul>
                 </div>
             </div>
@@ -99,12 +97,12 @@
                 <div class="social">
                     <ul>
                         <li>
-                            <a class="icon fb" href="#">
+                            <a class="icon fb" href="https://www.facebook.com/kssbmgujuni/">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </li>
                         <li>
-                            <a class="icon tw" href="#">
+                            <a class="icon tw" href="https://twitter.com/hashtag/technomantra">
                                 <i class="fa fa-twitter"></i>
                             </a>
                         </li>
@@ -133,7 +131,7 @@
 <!-- copyright -->
 <div class="copy-right">
     <div class="container">
-        <p>Copyright © KSSBM. All rights reserved. 
+        <p>Copyright © KSSBM@2018 All rights reserved. 
         </p>
     </div>
 </div>
@@ -167,6 +165,8 @@
     $('#').modal('show');
 </script> -->
 <!-- //popup modal (for signin & signup)-->
+
+
 
 <!-- cart-js -->
 <script src="js/minicart.js"></script>
@@ -305,7 +305,6 @@
 <script src="js/bootstrap.js"></script>
 <!-- //for bootstrap working -->
 <!-- //js-files -->
-
 
 </body>
 

@@ -122,7 +122,8 @@ echo '
         
 <tr><td><input type="text" name="txtsub9" class="form-control" readonly value="'.$sub9.':"/> </td>
         <td><input type="number" name="txtsub9_marks" class="form-control" value="'.$sub9_marks.'"/> </td></tr>
- ';
+        <td><input type="number" name="txtrno" class="form-control" required/> </td></tr>
+        <tr><td>Enter Grade Point: </td>';
  $_SESSION["n_sub"]=$n_sub;
  $_SESSION["year"]=$year;
  $_SESSION["sem"]=$sem;

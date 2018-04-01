@@ -30,10 +30,11 @@ $result=$obj->getAllResult();
 
 ?>
    <thead bgcolor="silver">
-  <th>Select</th>
+  <th><input type="checkbox" name="select-all" id="select-all" /> Select-All</th>
    <th>Type</th>
    <th>Student Email Id</th>
    <th>Student Roll No.</th>
+   <th>Student GPA</th>
    <th>Action</th> 
   
    </thead>
@@ -58,6 +59,7 @@ $result=$obj->getAllResult();
       echo '<td>'.$type. '</td>';
       echo '<td>'.$row['fk_email_id']. '</td>';
       echo '<td>'.$row['fk_stu_rno']. '</td>';
+      echo '<td>'.$row['stu_gpa']. '</td>';
      
       echo '<td> <a href="result_update.php?id='.  $row["pk_result_id"] .'"><span class="glyphicon glyphicon-pencil btn"></span></a>
            <a href="result_delete_one.php?id='.  $row["pk_result_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>';

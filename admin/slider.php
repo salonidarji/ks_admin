@@ -36,7 +36,7 @@ $result=$obj->getAllSlider();
 
 ?>
    <thead bgcolor="silver">
-  <th>Select</th>
+  <th><input type="checkbox" name="select-all" id="select-all" /> Select-All</th>
    <th>Image</th>
    <th>Action</th> 
   

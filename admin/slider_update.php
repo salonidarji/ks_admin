@@ -42,7 +42,14 @@ if($result->num_rows==1)
 <tr><td>Image :</td><td><input type="file" name="txtimg" class="form-control" value="<?php echo $_img; ?>"/> </td></tr>
 <tr><td>Count   :</td><td><input type="number" name="txtcnt" class="form-control" value="<?php echo $_cnt; ?>"/> </td></tr>
 <tr><td>Time (in Seconds) :</td><td><input type="number" name="txttime" class="form-control" value="<?php echo $_time; ?>"/> </td></tr>
-				
+<tr><td> Address (Where to Insert) :</td><td><select name="seladdress" required  class="form-control"/>
+<option value="home">--select address--</option>
+<option value="home">Home</option>
+<option value="aboutus">About Us</option>
+<option value="msc_placement">MSC Placement</option>
+<option value="mba_placement">MBA Placement</option>
+
+ </select> </td></tr>				
 <tr><td  colspan="2"><input type="submit" name="btnupdate" value="UPDATE"class="form-control btn  btn-info"/></td></tr>
 </div>
 </form>

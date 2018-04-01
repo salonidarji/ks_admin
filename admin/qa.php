@@ -27,11 +27,12 @@
       <?php 
 require '..\shared\qa_db.php';
 $obj=new qa_db();
-$result=$obj->getAllQa();
-
+$result=$obj->getQaEmail($_SESSION["eid"]);
+if(mysqli_num_rows($result) > 0)
+{
 ?>
    <thead bgcolor="silver">
-  <th>Select</th>
+  <th><input type="checkbox" name="select-all" id="select-all" /> Select-All</th>
    <th>Title</th>
    <th>Image</th> 
    <th>Answer</th>
@@ -98,8 +99,15 @@ $result=$obj->getAllQa();
            $modal_cnt++;
            
          }
-     
+       
          
+        }
+        else{
+
+          echo '<div class="alert alert-danger">
+          You have not Givven any question answer
+          </div>';
+        }   
 
     ?>
 
@@ -107,10 +115,15 @@ $result=$obj->getAllQa();
       </tbody> 
       </table></h4>
       </div>
-   
+      <?php
+      if(mysqli_num_rows($result) > 0)
+      {
+        echo '
       <div align="left">
-<input type="submit" class="btn btn-primary" value="DELETE ALL">
-</div>  
+   <input type="submit" class="btn btn-primary" value="DELETE ALL">
+   </div>';
+      }
+      ?>
     
 
            
@@ -121,7 +134,8 @@ $result=$obj->getAllQa();
     <section class="content">
 
       <!-- Your Page Content Here -->
-
+      
+         
     </section>
     <!-- /.content -->
   </div>

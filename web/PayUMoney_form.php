@@ -1,7 +1,7 @@
 
 
 <?php
-
+session_start();
 $MERCHANT_KEY = "EVTHjTnn";
 $SALT = "gBCdrXAnGt";
 // Merchant Key and Salt as provided by Payu.
@@ -68,6 +68,7 @@ if(empty($posted['hash']) && sizeof($posted) > 0) {
 
 <html>
   <head>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
   <script>
     var hash = '<?php echo $hash ?>';
     function submitPayuForm() {
@@ -79,8 +80,25 @@ if(empty($posted['hash']) && sizeof($posted) > 0) {
     }
   </script>
   </head>
-  <body onload="submitPayuForm()">
-    <h2>PayU Form</h2>
+  <body onload="submitPayuForm()" class="container">
+  <?php
+  require '../shared/login_db.php';
+  $obj=new login_db();
+  $res=$obj->getLogin($_SESSION["eid"]);
+  $row=$res->fetch_assoc();
+  ?>
+  <div class="col-md-4  img-responsive">
+				<h1>
+					<a href="index.php">
+						<img src="kslogo.jpg" align="left" alt=" ">
+					</a>
+				</h1>
+      </div>
+      <div class="col-md-8 header">
+      <h2>K.S School of Business Management</h2>
+  </div>
+  <br><br><br>
+    <h5>  </h5>
     <br/>
     <?php if($formError) { ?>
 	
@@ -92,26 +110,35 @@ if(empty($posted['hash']) && sizeof($posted) > 0) {
       <input type="hidden" name="key" value="<?php echo $MERCHANT_KEY ?>" />
       <input type="hidden" name="hash" value="<?php echo $hash ?>"/>
       <input type="hidden" name="txnid" value="<?php echo $txnid ?>" />
-      <table>
+      <table class="table table-responsive">
         <tr>
-          <td><b>Mandatory Parameters</b></td>
+          <!-- <td><b>Mandatory Parameters</b></td> -->
         </tr>
         <tr>
           <td>Amount: </td>
-          <td><input name="amount" value="<?php echo (empty($posted['amount'])) ? '' : $posted['amount'] ?>" /></td>
+          <td><input class="form-control" name="amount" readonly value="9000" /></td>
           <td>First Name: </td>
-          <td><input name="firstname" id="firstname" value="<?php echo (empty($posted['firstname'])) ? '' : $posted['firstname']; ?>" /></td>
+          <td><input class="form-control" name="firstname" id="firstname" readonly value="<?php echo $row['login_uname']; ?>" /></td>
         </tr>
         <tr>
           <td>Email: </td>
-          <td><input name="email" id="email" value="<?php echo (empty($posted['email'])) ? '' : $posted['email']; ?>" /></td>
+          <td><input  class="form-control"  class="form-control" name="email" id="email" readonly value="<?php echo $row['pk_login_email_id']; ?>" /></td>
+         <?php 
+          require '../shared/student_db.php';
+          $obj_stu=new student_db();
+          $res_stu=$obj_stu->getStudentEmail($_SESSION["eid"]);
+          $row_stu=$res_stu->fetch_assoc();
+          $mobile=$row_stu["stu_mobile_no"];
+         ?>
           <td>Phone: </td>
-          <td><input name="phone" value="<?php echo (empty($posted['phone'])) ? '' : $posted['phone']; ?>" /></td>
+          <td><input  class="form-control" name="phone" readonly value="<?php echo $mobile; ?>" /></td>
         </tr>
+        
         <tr>
-          <td>Product Info: </td>
-          <td colspan="3"><textarea name="productinfo"><?php echo (empty($posted['productinfo'])) ? '' : $posted['productinfo'] ?></textarea></td>
+          <td>Purpose </td>
+          <td colspan="3"><textarea  class="form-control" readonly name="productinfo"><?php echo 'Fees Payment'; ?></textarea></td>
         </tr>
+      
         <tr hidden>
           <td>Success URI: </td>
           <td colspan="3"><input name="surl" value="http://localhost/ks_admin/web/success.php" size="64" /></td>
@@ -124,55 +151,56 @@ if(empty($posted['hash']) && sizeof($posted) > 0) {
         <tr>
           <td colspan="3"><input type="hidden" name="service_provider" value="payu_paisa" size="64" /></td>
         </tr>
-
+<!--
         <tr>
           <td><b>Optional Parameters</b></td>
         </tr>
         <tr>
           <td>Last Name: </td>
-          <td><input name="lastname" id="lastname" value="<?php echo (empty($posted['lastname'])) ? '' : $posted['lastname']; ?>" /></td>
+          <td><input name="lastname" id="lastname" value="<?php // echo (empty($posted['lastname'])) ? '' : $posted['lastname']; ?>" /></td>
           <td>Cancel URI: </td>
           <td><input name="curl" value="" /></td>
         </tr>
         <tr>
           <td>Address1: </td>
-          <td><input name="address1" value="<?php echo (empty($posted['address1'])) ? '' : $posted['address1']; ?>" /></td>
+          <td><input name="address1" value="<?php // echo (empty($posted['address1'])) ? '' : $posted['address1']; ?>" /></td>
           <td>Address2: </td>
-          <td><input name="address2" value="<?php echo (empty($posted['address2'])) ? '' : $posted['address2']; ?>" /></td>
+          <td><input name="address2" value="<?php  // echo (empty($posted['address2'])) ? '' : $posted['address2']; ?>" /></td>
         </tr>
         <tr>
           <td>City: </td>
-          <td><input name="city" value="<?php echo (empty($posted['city'])) ? '' : $posted['city']; ?>" /></td>
+          <td><input name="city" value="<?php //  echo (empty($posted['city'])) ? '' : $posted['city']; ?>" /></td>
           <td>State: </td>
-          <td><input name="state" value="<?php echo (empty($posted['state'])) ? '' : $posted['state']; ?>" /></td>
+          <td><input name="state" value="<?php //  echo (empty($posted['state'])) ? '' : $posted['state']; ?>" /></td>
         </tr>
         <tr>
           <td>Country: </td>
-          <td><input name="country" value="<?php echo (empty($posted['country'])) ? '' : $posted['country']; ?>" /></td>
+          <td><input name="country" value="<?php //  echo (empty($posted['country'])) ? '' : $posted['country']; ?>" /></td>
           <td>Zipcode: </td>
-          <td><input name="zipcode" value="<?php echo (empty($posted['zipcode'])) ? '' : $posted['zipcode']; ?>" /></td>
+          <td><input name="zipcode" value="<?php //  echo (empty($posted['zipcode'])) ? '' : $posted['zipcode']; ?>" /></td>
         </tr>
         <tr>
           <td>UDF1: </td>
-          <td><input name="udf1" value="<?php echo (empty($posted['udf1'])) ? '' : $posted['udf1']; ?>" /></td>
+          <td><input name="udf1" value="<?php //  echo (empty($posted['udf1'])) ? '' : $posted['udf1']; ?>" /></td>
           <td>UDF2: </td>
-          <td><input name="udf2" value="<?php echo (empty($posted['udf2'])) ? '' : $posted['udf2']; ?>" /></td>
+          <td><input name="udf2" value="<?php //  echo (empty($posted['udf2'])) ? '' : $posted['udf2']; ?>" /></td>
         </tr>
         <tr>
           <td>UDF3: </td>
-          <td><input name="udf3" value="<?php echo (empty($posted['udf3'])) ? '' : $posted['udf3']; ?>" /></td>
+          <td><input name="udf3" value="<?php //  echo (empty($posted['udf3'])) ? '' : $posted['udf3']; ?>" /></td>
           <td>UDF4: </td>
-          <td><input name="udf4" value="<?php echo (empty($posted['udf4'])) ? '' : $posted['udf4']; ?>" /></td>
+          <td><input name="udf4" value="<?php //  echo (empty($posted['udf4'])) ? '' : $posted['udf4']; ?>" /></td>
         </tr>
         <tr>
           <td>UDF5: </td>
-          <td><input name="udf5" value="<?php echo (empty($posted['udf5'])) ? '' : $posted['udf5']; ?>" /></td>
+          <td><input name="udf5" value="<?php  // echo (empty($posted['udf5'])) ? '' : $posted['udf5']; ?>" /></td>
           <td>PG: </td>
-          <td><input name="pg" value="<?php echo (empty($posted['pg'])) ? '' : $posted['pg']; ?>" /></td>
+          <td><input name="pg" value="<?php  // echo (empty($posted['pg'])) ? '' : $posted['pg']; ?>" /></td>
         </tr>
+        -->
         <tr>
           <?php if(!$hash) { ?>
-            <td colspan="4"><input type="submit" value="Submit" /></td>
+            <td colspan="4" align="center"><input  class="btn btn-primary" type="submit" value="Pay Now" /></td>
           <?php } ?>
         </tr>
       </table>

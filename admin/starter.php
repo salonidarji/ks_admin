@@ -33,28 +33,29 @@
  <section class="content">
 <?php if($_SESSION["login_type"]==1){ ?>
 <!-- Your Page Content Here -->
-<div class="row">
-<div class="col-md-6">
+
+                <div class="row">
+                <div class="col-md-6">
               <!-- USERS LIST -->
               <?php
-             // require '../shared/login_db.php';
-              $obj_approve=new login_db();
-              $res_approve=$obj_approve->getStudent();
+              require '../shared/material_db.php';
+              $obj_approve=new material_db();
+              $res_approve=$obj_approve->getPendingMaterial();
 
               echo '
               <div class="box box-danger">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Latest Student Request</h3>
+                  <h3 class="box-title">Latest Material Request</h3>
 
                   <div class="box-tools pull-right">
-                    <span class="label label-danger">'.$res_approve->num_rows.' New Students</span>
+                    <span class="label label-danger">'.$res_approve->num_rows.' New Material</span>
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                     </button>
                     <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
                     </button>
                   </div>
                 </div>
-                <form name="starter" action="approve.php" method="post" >
+                <form name="material_approve" action="approve_material.php" method="post" >
                 <!-- /.box-header -->
                 <div class="box-body no-padding">
                   <ul class="users-list clearfix">
@@ -64,11 +65,10 @@
                   while($row=$res_approve->fetch_assoc()){
                     echo '
                     <li> 
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="checkbox" name="chkdel[]" value="'.$row["pk_login_email_id"]. '">
-                    
-                      <img src="'.$row["login_profile"].'" alt="User Image">
-                      <a class="users-list-name" href="single.php?email='.$row["pk_login_email_id"].'" >'.$row["login_uname"].'</a>
-                      <span class="users-list-date">'.$row["login_approve"].'</span>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="checkbox" name="chkdel[]" value="'.$row["pk_material_id"]. '">
+                    <iframe src="'.$row['material_url']. '" alt="material_image" height="150px" width="100px"></iframe>
+                    <a class="users-list-name" href="'.$row['material_url']. '" >'.$row["material_title"].'</a>
+                    <span class="users-list-date">'.$row["material_approve"].'</span>
                     </li> ';
                   }
                   echo '
@@ -77,14 +77,14 @@
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer text-center">
-                  <a href="login.php" class="uppercase">View All Students</a>
+                  <a href="material.php" class="uppercase">View All Material</a>
                 </div>
                 <!-- /.box-footer -->
               </div>
               '; ?>
               <!--/.box -->
               <div align="left">
-<input type="submit" class="btn btn-primary" value="Approve Students">
+<input type="submit" class="btn btn-primary" value="Approve Materials">
 </div> 
             </div>
         
@@ -161,65 +161,11 @@
                 <?php }
                 else if($_SESSION["login_type"]==2){
                 ?>
-                <div class="row">
-                <div class="col-md-6">
-              <!-- USERS LIST -->
-              <?php
-              require '../shared/material_db.php';
-              $obj_approve=new material_db();
-              $res_approve=$obj_approve->getPendingMaterial();
-
-              echo '
-              <div class="box box-danger">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Latest Material Request</h3>
-
-                  <div class="box-tools pull-right">
-                    <span class="label label-danger">'.$res_approve->num_rows.' New Material</span>
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
-                    </button>
-                  </div>
-                </div>
-                <form name="material_approve" action="approve_material.php" method="post" >
-                <!-- /.box-header -->
-                <div class="box-body no-padding">
-                  <ul class="users-list clearfix">
-                  
-                  ';
-                  
-                  while($row=$res_approve->fetch_assoc()){
-                    echo '
-                    <li> 
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="checkbox" name="chkdel[]" value="'.$row["pk_material_id"]. '">
-                    <iframe src="'.$row['material_url']. '" alt="material_image" height="150px" width="100px"></iframe>
-                    <a class="users-list-name" href="'.$row['material_url']. '" >'.$row["material_title"].'</a>
-                    <span class="users-list-date">'.$row["material_approve"].'</span>
-                    </li> ';
-                  }
-                  echo '
-                  </ul>
-                  <!-- /.users-list -->
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer text-center">
-                  <a href="material.php" class="uppercase">View All Material</a>
-                </div>
-                <!-- /.box-footer -->
-              </div>
-              '; ?>
-              <!--/.box -->
-              <div align="left">
-<input type="submit" class="btn btn-primary" value="Approve Materials">
-</div> 
-            </div>
-        
         <!-- ./col -->
      
       <!-- Main row -->
 
-                  </div>
+                  
                 <?php }
                 else{
                   echo '<h1> You are not aloowed the access</h1>';

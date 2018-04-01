@@ -1,3 +1,6 @@
+ <!-- Bootstrap 3.3.6 -->
+ <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  
 <?php
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
@@ -15,7 +18,12 @@ if($res)
 }
 else
 {
-echo 'Record Not Updated';
+	echo '<br><br><br><br><br><br>
+	<div align="center"  class="container jumbotron alert-danger "><h1><span class="glyphicon glyphicon-alert"></h1>
+	<h2> Some Error Occured !!!<br>Try Again</h2>
+	<br><button class="btn btn-default btn-lg"><a href="video_update.php">Back</a></button>
+	</div>
+	';
 
 }
 

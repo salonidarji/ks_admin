@@ -1,3 +1,6 @@
+ <!-- Bootstrap 3.3.6 -->
+ <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  
 <?php
 session_start();
 if($_SERVER["REQUEST_METHOD"]=="POST")
@@ -9,7 +12,7 @@ $_type=$_POST["seltype"];
 
 $_email=$_POST["txtemail"];
 $_rno=$_POST["txtrno"];
-
+$_gpa=$_POST["txtgpa"];
 $_year=$_SESSION["year"];
 $_sem=$_SESSION["sem"];
 if($n_sub>1)
@@ -66,17 +69,19 @@ $sub9_marks=$_POST["txtsub9_marks"];
 }
 require '../shared/result_db.php';
 $obj=new result_db();
-$res=$obj->updateResult($_id,$_type,$_email,$_rno,$_year,$_sem,$sub1,$sub1_marks,$sub2,$sub2_marks,$sub3,$sub3_marks,$sub4,$sub4_marks,$sub5,$sub5_marks,$sub6,$sub6_marks,$sub7,$sub7_marks,$sub8,$sub8_marks,$sub9,$sub9_marks);
+$res=$obj->updateResult($_id,$_type,$_email,$_rno,$_year,$_sem,$_gpa,$sub1,$sub1_marks,$sub2,$sub2_marks,$sub3,$sub3_marks,$sub4,$sub4_marks,$sub5,$sub5_marks,$sub6,$sub6_marks,$sub7,$sub7_marks,$sub8,$sub8_marks,$sub9,$sub9_marks);
 if($res)
 {
 	header('location:result.php');
 }
 else
 {
-echo 'Record Not Updated';
-echo "<br> r".$res;
-echo "UPDATE `result_tbl` SET `pk_result_id`=".$_id.",`result_type`=".$_type.",`fk_email_id`='".$_email."',`fk_stu_rno`=".$_rno.",`stu_year`=".$_year.",`stu_semister`=".$_sem.",`sub1_name`='".$sub1."',`sub1_marks`=".$sub1_marks."	,`sub2_name`='".$sub2."',`sub2_marks`=".$sub2_marks."	,`sub3_name`='".$sub3."',`sub3_marks`=".$sub3_marks."	,`sub4_name`='".$sub4."',`sub4_marks`=".$sub4_marks."	,`sub5_name`='".$sub5."',`sub5_marks`=".$sub5_marks."	,`sub6_name`='".$sub6."',`sub6_marks`=".$sub6_marks." ,`sub7_name`='".$sub7."',`sub7_marks`=".$sub7_marks." ,`sub8_name`='".$sub8."',`sub8_marks`=".$sub8_marks." ,`sub9_name`='".$sub9."',`sub9_marks`=".$sub9_marks." WHERE pk_result_id=".$_id;
-}
+	echo '<br><br><br><br><br><br>
+	<div align="center"  class="container jumbotron alert-danger "><h1><span class="glyphicon glyphicon-alert"></h1>
+	<h2> Some Error Occured !!!<br>Try Again</h2>
+	<br><button class="btn btn-default btn-lg"><a href="result_update.php">Back</a></button>
+	</div>
+	';}
 
 
 }

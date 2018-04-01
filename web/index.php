@@ -12,7 +12,7 @@
 <!-- Wrapper for slides -->
 <div class="carousel-inner">
   <div class="item active">
-	<img src="image1.jpg" alt="Los Angeles" style="width:100%;">
+	<img src="../resources/slider/main.jpg" alt="Los Angeles" style="width:100%;">
   </div>
 <?php
 while($row=$res->fetch_assoc())
@@ -128,7 +128,7 @@ while($row=$res->fetch_assoc())
 						echo'<div class="w3l-specilamk">
 							<div class="speioffer-agile">
 								<a href="gallary.php">
-									<img src="'.$row["album_url"].'" height="300px" width="300px">
+									<img src="'.$row["url"].'" height="300px" width="300px">
 								</a>
 							</div>
 							</div>

@@ -120,7 +120,23 @@
 
  </script>
 
-
+<script>
+// Listen for click on toggle checkbox
+$('#select-all').click(function(event) {   
+  if(this.checked) {
+      // Iterate each checkbox
+      $(':checkbox').each(function() {
+          this.checked = true;                        
+      });
+  }
+  else{
+     // Iterate each checkbox
+     $(':checkbox').each(function() {
+          this.checked = false;                        
+      });
+  }
+});
+</script>
 
 </body>
 </html>

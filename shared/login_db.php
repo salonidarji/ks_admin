@@ -73,11 +73,11 @@ class login_db
 			login_db::disconnect();
 		}
     
-        public function signUp($_id,$_img,$_name,$_passwd,$_type,$_flag)
+        public function signUp($_id,$_enrol,$_img,$_name,$_passwd,$_type,$_flag)
 		{
 			$cnn=login_db::connect();
 			
-			$sql="INSERT INTO login_tbl values ( '". $_id ."',  '". $_img ."','". $_name ."','". $_passwd ."',".$_type.",".$_flag.",'pending')";
+			$sql="INSERT INTO login_tbl values ( '". $_id ."',  '". $_enrol ."',  '". $_img ."','". $_name ."','". $_passwd ."',".$_type.",".$_flag.",'pending')";
 
 			$res=$cnn->query($sql);
 			return $res;
@@ -85,11 +85,11 @@ class login_db
 		
 		}
 
-		public function insertLogin($_email,$_profile,$_name,$_password,$_type,$_approve)
+		public function insertLogin($_email,$_enrol,$_profile,$_name,$_password,$_type,$_approve)
 		{
 			$cnn=login_db::connect();
 			
-			$sql="INSERT INTO login_tbl values ( '". $_email ."',  '". $_profile ."','". $_name ."','". $_password ."',".$_type.",0,'".$_approve."')";
+			$sql="INSERT INTO login_tbl values ( '". $_email ."',  '". $_enrol ."',  '". $_profile ."','". $_name ."','". $_password ."',".$_type.",0,'".$_approve."')";
 
 			$res=$cnn->query($sql);
 			return $res;
@@ -117,7 +117,7 @@ class login_db
 			login_db::disconnect();
 		}
 
-		public function updateLogin($_email,$_name,$_type,$_password,$_profile,$_approve)
+		public function updateLogin($_email,$_profile,$_name,$_password,$_type,$_approve)
 		{
 			
 			$cnn=login_db::connect();
@@ -143,26 +143,32 @@ class login_db
 		{
 			$cnn=login_db::connect();
 			$sql="delete from login_tbl where pk_login_email_id ='".$_id."'";
-
-
 			$res=$cnn->query($sql);
 			return $res;
 			login_db::disconnect();
 		}
     
 
-  /*  public function insertType($_email,$_name,$_type)
+		public function insertType($_email,$_name,$_type)
+		{
+			$cnn=login_db::connect();
+			$sql="update login_tbl set pk_login_email_id='".$_email."',login_uname='".$_name."',login_passwd='null',login_type=".$_type."  where pk_login_email_id=' ".$_email."' ";
+			$res=$cnn->query($sql);
+			return $res;
+			login_db::disconnect();
+		
+		}
+	
+	
+    public function changePass($id,$npaw)
     {
         $cnn=login_db::connect();
-        
-        $sql="update login_tbl set pk_login_email_id='".$_email."',login_uname='".$_name."',login_passwd='null',login_type=".$_type."  where pk_login_email_id=".$_email;
-        
+		$sql="update login_tbl set login_passwd='.$npaw.'  where pk_login_email_id=' ".$id."' ";
         $res=$cnn->query($sql);
         return $res;
         login_db::disconnect();
     
-	} */
-    
+	}
 }
 
 ?>

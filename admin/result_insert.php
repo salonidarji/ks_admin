@@ -70,7 +70,7 @@ $sem=0;
       $sub3="COMPUTER ORIENTED NUMERICAL METHODS ";
       $sub4="OPEN SOURCE TECHNOLOGY";
       $sub5="SYSTEM ANALYSIS , DESIGN AND
-      MODELINGCLIENT SERVER ARCHITECTURE";
+      MODELING";
       $sub6="CLIENT SERVER ARCHITECTURE";
       $sub7="IMPLEMENTATION OF OPEN SOURCE TECHNOLOGY (PRACTICAL ON CC-244)";
       $sub8="WEB TECHNOLOGY (PRACTICAL) javascript / vb script/xml";
@@ -222,7 +222,8 @@ if($n_sub>1)
         <td><input type="number" name="txttype" value="'. $type.'" /> </td></tr>
 <tr><td>Roll number: </td>
         <td><input type="number" name="txtrno" class="form-control" required/> </td></tr>
-
+        <tr><td>Enter Grade Point: </td>
+        <td><input type="text" name="txtgpa" class="form-control" required/> </td></tr>
 <tr><td><input type="text" name="txtsub1" class="form-control" readonly value="'.$sub1.':"/> </td>
         <td><input type="number" name="txtsub1_marks" class="form-control" required/> </td></tr>
         
@@ -254,9 +255,11 @@ else if($n_sub==1){
         <td><input type="number" name="txttype" value="'. $type.'" /> </td></tr>
 <tr><td>Roll number: </td>
         <td><input type="number" name="txtrno" class="form-control" required/> </td></tr>
-  <tr><td><input type="text" name="txtsub1" class="form-control" readonly value="'.$sub1.':"/> </td>
-        <td><input type="number" name="txtsub1_marks" class="form-control" required/> </td></tr>';
-}
+        <tr><td>Enter Grade Point: </td>
+        <td><input type="text" name="txtgpa" class="form-control" required/> </td></tr>
+        <tr><td><input type="text" name="txtsub1" class="form-control" readonly value="'.$sub1.':"/> </td>
+        <td><input type="number" name="txtsub1_marks" class="form-control" required/> </td></tr>   ';
+      }
 else{
 }
        
@@ -264,6 +267,8 @@ else{
           echo '<tr><td><input type="text" name="txtsub9" class="form-control" readonly value="'.$sub9.':"/> </td>
         <td><input type="number" name="txtsub9_marks" class="form-control" required/> </td></tr>
         ';}
+
+
         $_SESSION["n_sub"]=$n_sub;
         $_SESSION["year"]=$year;
         $_SESSION["sem"]=$sem;

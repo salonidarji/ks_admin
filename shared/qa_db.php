@@ -30,7 +30,16 @@ class qa_db
 		public function getQa($_id)
 		{
 			$cnn=qa_db::connect();
-			$sql="select * from qa_tbl where pk_que_id ".$_id;
+			$sql="select * from qa_tbl where pk_que_id =".$_id;
+			$res=$cnn->query($sql);
+			return $res;
+			qa_db::disconnect();
+		
+		}
+		public function getQaEmail($_email)
+		{
+			$cnn=qa_db::connect();
+			$sql="select * from qa_tbl where fk_email_id ='".$_email."' ";
 			$res=$cnn->query($sql);
 			return $res;
 			qa_db::disconnect();

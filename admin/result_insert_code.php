@@ -1,3 +1,6 @@
+ <!-- Bootstrap 3.3.6 -->
+ <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  
 <?php
 session_start();
 if($_SERVER["REQUEST_METHOD"]=="POST")
@@ -11,6 +14,7 @@ $_id="null";
 
 $_type=$_POST["txttype"];
 $_rno=$_POST["txtrno"];
+$_gpa=$_POST["txtgpa"];
 
 $res_email=$obj->getStudentEmail($_rno);
 
@@ -75,16 +79,19 @@ $_sub9=$_POST["txtsub9"];
 $_sub9_marks=$_POST["txtsub9_marks"];
 }
 
-$res=$obj->insertResult($_id,$_type,$_email,$_rno,$_year,$_sem,$_sub1,$_sub1_marks,$_sub2,$_sub2_marks,$_sub3,$_sub3_marks,$_sub4,$_sub4_marks,$_sub5,$_sub5_marks,$_sub6,$_sub6_marks,$_sub7,$_sub7_marks,$_sub8,$_sub8_marks,$_sub9,$_sub9_marks);
+$res=$obj->insertResult($_id,$_type,$_email,$_rno,$_year,$_sem,$_gpa,$_sub1,$_sub1_marks,$_sub2,$_sub2_marks,$_sub3,$_sub3_marks,$_sub4,$_sub4_marks,$_sub5,$_sub5_marks,$_sub6,$_sub6_marks,$_sub7,$_sub7_marks,$_sub8,$_sub8_marks,$_sub9,$_sub9_marks);
 if($res)
 {
 	header('location:result.php');
 }
 else
 {
-echo 'Record Not Inserted';
-echo "<br> r".$res;
-echo "INSERT INTO result_tbl VALUES (".$_id.",".$_type.",'" .$_email." '," .$_rno." ," .$_year." ," .$_sem." ,' ".$_sub1." '," .$_sub1_marks. ",'" .$_sub2. "'," .$_sub2_marks. ",'". $_sub3. "'," .$_sub3_marks. ",'" .$_sub4. "'," .$_sub4_marks .",'". $_sub5 ."',".$_sub5_marks.",'".$_sub6."',".$_sub6_marks.",'".$_sub7."',".$_sub7_marks.",'".$_sub8."',".$_sub8_marks.",'".$_sub9."',".$_sub9_marks.") ";
+	echo '<br><br><br><br><br><br>
+	<div align="center"  class="container jumbotron alert-danger "><h1><span class="glyphicon glyphicon-alert"></h1>
+	<h2> Some Error Occured !!!<br>Try Again</h2>
+	<br><button class="btn btn-default btn-lg"><a href="result_insert.php">Back</a></button>
+	</div>
+	';
 }
 
 

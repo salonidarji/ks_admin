@@ -13,9 +13,10 @@
 					<i></i>
 				</span>
 			</h3>
-			<table class="table table-bordered"><tr><td>
-			<div align="center" ><h4><a href="gallary.php?type=1"> Show Images </a></h4></div></td><td>
-			<div align="center"> <h4><a href="gallary.php?type=2">Show Videos </a> </h4></div></td></tr>
+			
+			<table class="table"><tr><td>
+			<div align="center" class="product-sec1" ><h4><a href="gallary.php?type=1"> Show Images </a></h4></div></td><td>
+			<div align="center" class="product-sec1"> <h4><a href="gallary.php?type=2">Show Videos </a> </h4></div></td></tr>
 			</table>
      <?php
 	$type=1;
@@ -43,7 +44,14 @@
              echo '<td>';
             	echo '<div class="men-pro-item simpleCart_shelfItem" width="100%">';
 	echo '<div class="men-thumb-item" width="100%">';
+	if($type==1)
+	{
 	echo '<img src="'.$row["url"].'" height="300px" width="320px">';
+	}
+	else if($type==2){
+	echo '<iframe  src="' . $row["url"] . '" height="300px" width="320px" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+	
+	}
 									echo '<div class="men-cart-pro">';
 										echo '<div class="inner-men-cart-pro">';
 											//echo '<a href="single.html" class="link-product-add-cart">Quick View</a>';

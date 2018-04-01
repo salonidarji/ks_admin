@@ -26,7 +26,8 @@
       </div>
       </td></tr>
       </table>
-      
+     
+
       <div class="dataTables_wrapper">
       <h4><table class="table table-hover table-striped" id="tableData" >
       <?php 
@@ -35,7 +36,7 @@ $obj=new faculty_db();
 $result=$obj->getAllFaculty();
 ?>
    <thead bgcolor="silver">
-  <th>Select</th>
+  <th><input type="checkbox" name="select-all" id="select-all" /> Select-All</th>
    <th>Name</th>
    <th>Resume</th> 
    
