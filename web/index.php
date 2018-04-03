@@ -3,7 +3,7 @@
 	<?php
 	require '../shared/slider_db.php';
 	$obj_slider=new slider_db();
-	$res=$obj_slider->getAllSlider();
+	$res=$obj_slider->getHomeSlider();
 	?>
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 

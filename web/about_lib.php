@@ -14,7 +14,7 @@
          while($row=$result->fetch_assoc())
          {
              echo '<table class="table">';
-             echo '<tr><td><img src="'.$row["gallary_url"].'"></td>';
+             echo '<tr><td><img src="'.$row["gallary_url"].'" height="300px" width="500px"></td>';
              
               echo '<td colspan="2"></td>';
              echo '<td>';
@@ -22,11 +22,11 @@
 
          }
          ?>
-         <b>Library At Glance</b>
+       <font size="4px" color="black">  <b>Library At Glance</b>
          <br>
          K.S. School of Business Management is endowed with a library with rich collection of latest and most relevant books, journals, reference materials etc. Occupying a vast space in the third floor of the building, it provides calm and serene atmosphere for avid readers, studious students, focused faculty members.
          
-         Digitalised data base of collection of books makes it easy to locate the items. KSSBM library houses more than 4255 resources which include books, bound volumes of journals, theses, students' project reports etc. The library collection covers all the subjects of Management and Information technology. More than 31 national & international periodicals are subscribed to keep the users updated with the trends in the field. KSSBM Library collect a variety of learning resources in different formats like print, electronic, digital.
+         Digitalised data base of collection of books makes it easy to locate the items. KSSBM library houses more than 4255 resources which include books, bound volumes of journals, theses, students' project reports etc. The library collection covers all the subjects of Management and Information technology. More than 31 national & international periodicals are subscribed to keep the users updated with the trends in the field. KSSBM Library collect a variety of learning resources in different formats like print, electronic, digital.</font>
          
          
          

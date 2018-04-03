@@ -1,12 +1,12 @@
 <?php require 'top.php'; ?>
 	<!-- //navigation -->
 	<!-- banner-2 -->
-	<div class="page-head_agile_info_w3l">
+	<!-- <div class="page-head_agile_info_w3l">
 
-	</div>
+	</div> -->
 	<!-- //banner-2 -->
 	<!-- page -->
-	<div class="services-breadcrumb">
+	<!-- <div class="services-breadcrumb">
 		<div class="agile_inner_breadcrumb">
 			<div class="container">
 				<ul class="w3_short">
@@ -18,13 +18,13 @@
 				</ul>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- //page -->
 	<!-- Single Page -->
 	<div class="banner-bootom-w3-agileits">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l">Single Page
+			<h3 class="tittle-w3l"> Faculty Detail
 				<span class="heading-style">
 					<i></i>
 					<i></i>

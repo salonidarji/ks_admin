@@ -1,5 +1,5 @@
 <?php require 'top.php'; ?>
-  <h3 class="tittle-w3l">Technomantra
+  <h3 class="tittle-w3l">TechnoMantra
        
 				<span class="heading-style">
 					<i></i>

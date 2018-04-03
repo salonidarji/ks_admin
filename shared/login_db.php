@@ -77,7 +77,7 @@ class login_db
 		{
 			$cnn=login_db::connect();
 			
-			$sql="INSERT INTO login_tbl values ( '". $_id ."',  '". $_enrol ."',  '". $_img ."','". $_name ."','". $_passwd ."',".$_type.",".$_flag.",'pending')";
+			$sql="UPDATE  login_tbl SET login_profile='". $_img ."',login_uname='".$_name."',login_approve='approved' where pk_login_email_id='".$_id."' && login_enrolno='".$_enrol."' && login_passwd='".$_passwd."' ";
 
 			$res=$cnn->query($sql);
 			return $res;

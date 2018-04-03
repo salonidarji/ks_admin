@@ -32,7 +32,7 @@
              echo '<td>';
             	echo '<div class="men-pro-item simpleCart_shelfItem" width="100%">';
 	echo '<div class="men-thumb-item" width="100%">';
-	echo '<img src="'.$row["faculty_img"].'" height="450px" width="500px">';
+	echo '<img src="'.$row["faculty_img"].'" height="300px" width="320px">';
 									echo '<div class="men-cart-pro">';
 										echo '<div class="inner-men-cart-pro">';
 										echo '<input type="submit" value="Quick View" name="submit"  class="link-product-add-cart">';
@@ -48,7 +48,7 @@
 							echo '</div>';
 							echo'</td>';	
          $fac_cnt++;
-		 if($fac_cnt==2){
+		 if($fac_cnt==3){
 			 echo '</tr><tr>';
 			 $fac_cnt=0;
 		 }

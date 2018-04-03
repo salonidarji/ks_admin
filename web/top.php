@@ -101,12 +101,15 @@ session_start();
 							<span class="fa fa-pencil-square-o" aria-hidden="true"></span> Sign Up </a>
 					</li>
 					</div>
-					<div '. $hide_2 .' >
-					<li><a href="" ><span></span>  </a></li>
+					<div '. $hide_2 .' align="right" >
+					<a href="profile.php" >
+					<img class="img img-responsive img-circle" src="'.$row["login_profile"].'" height="40" width="40"> </a>
+				
 					<li>
 						<a href="logout.php">
 							<span class="fa fa-lock" aria-hidden="true"></span> Sign Out </a>
 					</li>
+					
 					</div>
 				</ul>
 				<!-- //cart details -->
@@ -182,6 +185,9 @@ session_start();
 							</div>
 							<div class="styled-input">
 								<input type="email" placeholder="E-mail" name="txtid" required="">
+							</div>
+							<div class="styled-input">
+								<input type="text" placeholder="Enrollment Number" required name="txtenrol">
 							</div>
 							<div class="styled-input">
 								<input type="password" placeholder="Password" name="txtpass" id="password1" required="">
@@ -352,17 +358,6 @@ session_start();
 							<ul class="dropdown-menu agile_short_dropdown">
 							
 								<li>
-									<a href="">Download Papers</a>
-								
-								<ol><li type="disc">
-								<a href="mba1.php">MBA</a>
-							
-							</li>
-							<li type="disc">
-								<a href="msc1.php">MSC</a>
-							
-							</li></ol>
-							</li><li>
 							<a href="">Download Material</a>
 						
 						<ol><li type="disc">

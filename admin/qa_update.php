@@ -59,7 +59,17 @@ $_email=$row["fk_email_id"];
 					</select>
 
 
-				</td></tr>
+        </td></tr>
+        <tr><td>Address:</td><td>
+            <select name="seladdress" class="form-control" >
+            <option value="0"> --Select Address-- </option>
+            <option value="mba"> MBA </option>
+            <option value="msc"> MSC </option>
+            <option value="academic"> Academic </option>
+            <option value="holidays"> Holidays </option>
+            
+
+            </select>
 
 					
 <tr><td  colspan="2"><input type="submit" name="btnupdate" value="UPDATE"class="form-control btn  btn-info"/></td></tr>

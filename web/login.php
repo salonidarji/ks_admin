@@ -1,11 +1,12 @@
-					    <?php
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />            
+            <?php
               
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
   session_start();
 $id=$_POST["txtid"];
 $passwd=$_POST["txtpass"];
-
+ 
 require '../shared/login_db.php';
 $obj=new login_db();
 $res=$obj->logUser($id,$passwd);
@@ -38,8 +39,9 @@ if($res->num_rows==1)
 }
 else
 {
-  echo '<div class="alert alert-warning">INVALID ID OR PASSWORD</div>';
-  echo "select * from login_tbl where pk_login_email_id='".$id."' and login_passwd='".$passwd."'";
+  echo '<div class="alert alert-warning">Not Authorised </div>';
+ // echo "select * from login_tbl where pk_login_email_id='".$id."' and login_passwd='".$passwd."'";
+  echo '<button><a href="index.php" >Back</a></button>';
 }
 }
 ?>

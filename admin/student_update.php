@@ -41,6 +41,7 @@ $_mo_no=$row["stu_mobile_no"];
 <form method="post" action="student_update_code.php">
 <div class="form-group">
 <tr><td>Roll Number :</td><td><input type="number" name="txtrno" class="form-control" value="<?php echo $_rno; ?>"/> </td></tr>
+<tr><td>Enrollment Number :</td><td><input type="number" name="txtenrol"  required class="form-control" /> </td></tr>
 <tr><td>Email Id :</td><td><input type="email" name="txtemail" class="form-control" value="<?php echo $_email; ?>"/> </td></tr>
 <tr><td>Name:</td><td><input type="text" name="txtname" class="form-control" value="<?php echo $_name; ?>"/> </td></tr>
 <tr><td>Mobile Number:</td><td><input type="number" name="txtmo_no" class="form-control" value="<?php echo $_mo_no; ?>"/> </td></tr>
@@ -61,6 +62,29 @@ $_mo_no=$row["stu_mobile_no"];
                     <option value="3">Third</option>
                     <option value="4">Fourth</option>
                     <option value="5">Fifth</option>
+                    </select>
+            </td></tr>
+            <tr><td>Semister :</td><td>
+                    <select class="form-control" name="selsem">
+                    <option value="0">--Select Semister--</option>
+                    <option value="1">one</option>
+                    <option value="2">two</option>
+                    <option value="3">Three</option>
+                    <option value="4">Four</option>
+                    <option value="5">Five</option>
+                    <option value="6">Six</option>
+                    <option value="7">Seven</option>
+                    <option value="8">Eight</option>
+                    <option value="9">Four</option>
+                    <option value="10">Ten</option>
+                    </select>
+            </td></tr>
+            <tr><td>Course:</td><td>
+                    <select class="form-control" name="selcourse">
+                    <option value="0">--Select Course--</option>
+                    <option value="msc">MSC</option>
+                    <option value="mba">MBA</option>
+                    
                     </select>
             </td></tr>
 <tr><td colspan="2"><input type="submit" name="btnupdate" value="UPDATE" class="form-control btn btn-info "/></td></tr>

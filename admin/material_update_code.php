@@ -10,14 +10,14 @@ $_title=$_POST["txttitle"];
 $_desc=$_POST["txtdesc"];
 $_url="../resources/material/".basename($_FILES["txturl"]["name"]);
 $_year=$_POST["selyear"];
-
+$_address=$_POST["seladdress"];
+$_approve="pending";
 $_email=$_SESSION["eid"];
-
 if(move_uploaded_file($_FILES["txturl"]["tmp_name"] , $_url ))
 {
 require '../shared/material_db.php';
 $obj=new material_db();
-$res=$obj->updateMaterial($_id,$_title,$_desc,$_url,$_email,$_year);
+$res=$obj->updateMaterial($_id,$_title,$_desc,$_url,$_email,$_year,$_address,$_approve);
 if($res)
 {
 	header('location:material.php');

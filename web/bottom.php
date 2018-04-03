@@ -35,16 +35,16 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li>
-                            <a href="product.html">Alumni</a>
+                            <a href="">Alumni</a>
                         </li>
                         <li>
-                            <a href="product.html">&nbsp;&nbsp;&nbsp;&nbsp;	MBA</a>
+                            <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;	MBA</a>
                         </li>
                         <li>
-                            <a href="product.html">&nbsp;&nbsp;&nbsp;&nbsp;Msc(CA & IT)</a>
+                            <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Msc(CA & IT)</a>
                         </li>
                         <li>
-                            <a href="product.html">FAQs'</a>
+                            <a href="#">FAQs'</a>
                         </li>
                         <li>
                             <a href="gallary.php">Gallery</a>
@@ -81,10 +81,10 @@
                                     <a href="">Download Papers</a>
                                 </li>
                                 <li>
-                                        <a href="mba1.html">&nbsp;&nbsp;&nbsp;&nbsp;MBA</a>
+                                        <a href="mba1.php">&nbsp;&nbsp;&nbsp;&nbsp;MBA</a>
                                     </li>
                                     <li>
-                                            <a href="msc1.html">&nbsp;&nbsp;&nbsp;&nbsp;Msc(CA & IT)</a>
+                                            <a href="msc1.php">&nbsp;&nbsp;&nbsp;&nbsp;Msc(CA & IT)</a>
                                         </li>
                                         	
                     </ul>

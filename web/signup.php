@@ -1,3 +1,4 @@
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />            
 <?php
 session_start();
 if($_SERVER["REQUEST_METHOD"]=="POST"){
@@ -5,6 +6,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $_id=$_POST["txtid"];
     $_img="../resources/login/".basename($_FILES["txtimg"]["name"]);
     $_name=$_POST["txtname"];
+    $_enrol=$_POST["txtenrol"];
     $_passwd=$_POST["txtpass"];
     $_type=0;
      $_flag=1;
@@ -15,7 +17,7 @@ if(move_uploaded_file($_FILES["txtimg"]["tmp_name"] , $_img ))
 {
 require '../shared/login_db.php';
 $obj=new login_db();
-$res=$obj->signUp($_id,$_img,$_name,$_passwd,$_type,$_flag);
+$res=$obj->signUp($_id,$_enrol,$_img,$_name,$_passwd,$_type,$_flag);
 
 if ($res===true){
     
@@ -27,11 +29,11 @@ if ($res===true){
 }
 else{
     echo "Please Enter Valid Data!!!";
-    echo "<br>INSERT INTO login_tbl values('". $_id ."','". $_name ."','". $_passwd ."',".$_type.",".$_flag.")";
+    echo "<br>UPDATE  login_tbl SET login_profile='". $_img ."',login_approve='approved' where pk_login_email_id='".$_id."' && login_enrolno='".$_enrol."' && login_passwd='".$_passwd."' ";
   }
 }
 else{
-    echo 'error in move uploaded file';
+    echo '<div class="alert alert-warning">Not Authorised Student </div>';
 }
 }
 ?>

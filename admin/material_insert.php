@@ -25,6 +25,16 @@
             </select>
 
              </td></tr>
+             <tr><td>Address:</td><td>
+            <select name="seladdress" class="form-control" >
+            <option value="0"> --Select Address-- </option>
+            <option value="mba"> MBA </option>
+            <option value="msc"> MSC </option>
+            <option value="academic"> Academic </option>
+            <option value="holidays"> Holidays </option>
+            
+
+            </select>
 
 <tr><td colspan="2"><input type="submit" name="btninsert" value="INSERT" class="form-control btn btn-info "/></td></tr>
 </div>

@@ -8,12 +8,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 $_id="null";
 $_title=$_POST["txttitle"];
 $_desc=$_POST["txtdesc"];
-if(isset($_POST["txtimg"])){
 $_img="../resources/exam/".basename($_FILES["txtimg"]["name"]);
-}
-else{
-	$_img="null";
-}
+
 $_op1=$_POST["txtop1"];
 $_op2=$_POST["txtop2"];
 $_op3=$_POST["txtop3"];
@@ -42,6 +38,7 @@ else
 }
 }
 else{
+	$_img="null";
 	require '../shared/qa_db.php';
 $obj=new qa_db();
 $res=$obj->insertQa($_id,$_title,$_desc,$_img,$_op1,$_op2,$_op3,$_op4,$_ans,$_year,$_email);

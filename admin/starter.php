@@ -93,7 +93,7 @@
       <!-- Main row -->
 
      
-          
+                </form>        
 <!--faculty -->
 
 <div class="col-md-6">
@@ -151,9 +151,10 @@
       <div align="left">
 <input type="submit" class="btn btn-primary" value="Approve Staff">
 </div> 
+               
               <!--/.box -->
             </div>
-        
+            </form>
         <!-- ./col -->
         </div>
       <!-- /.row -->

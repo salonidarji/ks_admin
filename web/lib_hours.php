@@ -16,8 +16,8 @@
             
              echo '<center>';
              echo '<img src="'.$row["gallary_url"].'">';
-            echo 'Mon- Fri. 8.00 AM to 5.30 PM
-            Sat	8.00AM to 4.00PM';
+            echo '<font size="4px" color="black">Mon- Fri. 8.00 AM to 5.30 PM
+            Sat	8.00AM to 4.00PM</font>';
              echo '</center>';
               
              

@@ -47,11 +47,11 @@ class student_db
 		
         }
     
-        public function insertStudent($_rno,$_email,$_name,$_enrol,$_mo_no,$_gender,$_year)
+        public function insertStudent($_rno,$_email,$_name,$_enrol,$_mo_no,$_gender,$_year,$_sem,$_course)
 		{
 			$cnn=student_db::connect();
 			
-			$sql="INSERT INTO student_tbl VALUES (".$_rno.",'".$_email."','".$_name."','".$_enrol."',".$_mo_no.",'".$_gender."',".$_year.")";
+			$sql="INSERT INTO student_tbl VALUES (".$_rno.",'".$_email."','".$_name."','".$_enrol."','".$_mo_no."','".$_gender."',".$_year.",".$_sem.",'".$_course."')";
 			
 			$res=$cnn->query($sql);
 			return $res;
@@ -59,11 +59,11 @@ class student_db
 		
 		}
 
-		public function updateStudent($_rno,$_email,$_name,$_enrol,$_mo_no,$_gender,$_year)
+		public function updateStudent($_rno,$_email,$_name,$_enrol,$_mo_no,$_gender,$_year,$_sem,$_course)
 		{
 			
 			$cnn=student_db::connect();
-			$sql="update student_tbl set pk_stu_rno=".$_rno.",fk_email_id='".$_email."',stu_name='".$_name."',stu_name='".$_enrol."',stu_mobile_no='".$_mo_no."',stu_gender='".$_gender."',stu_year=".$_year." where pk_stu_rno=".$_rno;
+			$sql="update student_tbl set pk_stu_rno=".$_rno.",fk_email_id='".$_email."',stu_name='".$_name."',stu_name='".$_enrol."',stu_mobile_no=' ".$_mo_no." ',stu_gender='".$_gender."',stu_year=".$_year.",stu_sem=".$_sem.",fk_course_name='".$_course."' where pk_stu_rno=".$_rno;
 			$res=$cnn->query($sql);
 			return $res;
 			student_db::disconnect();

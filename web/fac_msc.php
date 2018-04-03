@@ -26,22 +26,22 @@
              echo '<td>';
             	echo '<div class="men-pro-item simpleCart_shelfItem" width="100%">';
 	echo '<div class="men-thumb-item" width="100%">';
-	echo '<img src="'.$row["faculty_img"].'" height="450px" width="500px">';
+	echo '<img src="'.$row["faculty_img"].'" height="300px" width="320px">';
 									echo '<div class="men-cart-pro">';
 										echo '<div class="inner-men-cart-pro">';
-											echo '<a href="single.html" class="link-product-add-cart">Quick View</a>';
+											echo '<a href="#" class="link-product-add-cart">Quick View</a>';
 										echo '</div>';
 									echo '</div>';
 								echo '</div>';
 								echo '<div class="item-info-product " width="100%">';
 									echo '<h4>';
-										echo '<a href="single.html">'.$row["faculty_name"].'</a>';
+										echo '<a href="#">'.$row["faculty_name"].'</a>';
 									echo '</h4>';
 									 echo '</div>';
 							echo '</div>';
 							echo'</td>';	
          $fac_cnt++;
-		 if($fac_cnt==2){
+		 if($fac_cnt==3){
 			 echo '</tr><tr>';
 			 $fac_cnt=0;
 		 }

@@ -14,7 +14,7 @@
          while($row=$result->fetch_assoc())
          {
              echo '<table class="table">';
-             echo '<tr><td><img src="'.$row["gallary_url"].'"></td>';
+             echo '<tr><td><img src="'.$row["gallary_url"].'" height="400px" width="500px"></td>';
              
               echo '<td colspan="2"></td>';
              echo '<td>';
@@ -22,7 +22,7 @@
 
          }
          ?>
-        "An investment in knowledge pays the best interest" - Benjamin Franklin.
+        <font size="4px" color="black">An investment in knowledge pays the best interest" - Benjamin Franklin.
         
         Investment in education is the best gift parents can ever make for the future of their children, which in turn leads to betterment of the society at large and the nation as a whole.
         
@@ -34,7 +34,7 @@
         
         <br>- Dr. Radha Ravichandran
         <br>Joint Director,
-        <br>K. S. School of Business Management.
+        <br>K. S. School of Business Management.</font>
          
          
          </td></tr></table>

@@ -51,7 +51,7 @@ while($row=$res->fetch_assoc())
 </div>
 
 <div class="container">
-   <br> K. S. School of Business Management is one of the pioneer institutes offering Integrated MBA and MSc (Computer Applications & Information Technology) in India. Established under the aegis of Gujarat University, KSSBM started with five year integrated programme in MBA in 1993, followed by five year integrated programme in MSc (CA&IT) in 1998. Both the programmes have grown in size and stature, attracting Gujarat state´s young budding students after their 12th standard from all walks of life.
+   <br><font size="4px" color="black"> K. S. School of Business Management is one of the pioneer institutes offering Integrated MBA and MSc (Computer Applications & Information Technology) in India. Established under the aegis of Gujarat University, KSSBM started with five year integrated programme in MBA in 1993, followed by five year integrated programme in MSc (CA&IT) in 1998. Both the programmes have grown in size and stature, attracting Gujarat state´s young budding students after their 12th standard from all walks of life.
 
 Our mission at the school is "Igniting young minds to grow in terms of knowledge and wisdom and stand up high in the corporate world". With the support of syllabus updated to the latest changes in subject and content on the lines of CBCS pattern, project study and field study, students are nurtured and groomed in five years to meet the industry expectation. And this is made possible by the unconditional support of highly qualified faculty members who are endowed with rich experience in academia and industry with a single motive of "committed to contribute".
 
@@ -59,7 +59,7 @@ The institute is located in the rich flora and fauna environment of Gujarat Univ
 
 Full fledged Placement Cell, under the guidance of faculty placement coordinator, is operational for each of the courses separately. The placement heads of the respective courses groom the students to face companies in interviews and facilitate students´ smooth transition from college to corporate. Over the years, our Alumni are spread across national and international borders.
 
-To harness the skills and personality of students, the school constantly engages students in co-curricular and extra curricular activities. Academic and cultural events and competitions are held regularly, giving the students opportunity to show case their talents.
+To harness the skills and personality of students, the school constantly engages students in co-curricular and extra curricular activities. Academic and cultural events and competitions are held regularly, giving the students opportunity to show case their talents.</font>
 </div>
 
 <?php require 'bottom.php'; ?>

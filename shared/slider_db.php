@@ -15,9 +15,19 @@ class slider_db
 			mysqli_close(self::$con);
 			self::$con=null;
 		}
+		public function getAllSlider()
+		{
+			$cnn=slider_db::connect();
+			$sql="select * from slider_tbl";
+			$res=$cnn->query($sql);
+			return $res;
+			slider_db::disconnect();
+		
+		}
+		
 		
 		//home slider
-		public function getAllSlider()
+		public function getHomeSlider()
 		{
 			$cnn=slider_db::connect();
 			$sql="select * from slider_tbl where address ='home'";

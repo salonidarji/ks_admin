@@ -14,7 +14,7 @@
          while($row=$result->fetch_assoc())
          {
              echo '<table class="table">';
-             echo '<tr><td><img src="'.$row["gallary_url"].'"></td>';
+             echo '<tr><td><img src="'.$row["gallary_url"].'" height="400px" width="500px"></td>';
              
               echo '<td colspan="2"></td>';
              echo '<td>';
@@ -22,7 +22,7 @@
 
          }
          ?>
-         K. S. School of Business Management is the culmination of the dream and vision of Philanthropist Dr. Biharibhai Kaniyalal, who was an old world textile magnet, one of the last of a breed and Dr. Narhari Parikh who shaped and made the dream of Biharibhai and nurtured an excellent institute in Gujarat University campus.
+        <font size="4px" color="black"> K. S. School of Business Management is the culmination of the dream and vision of Philanthropist Dr. Biharibhai Kaniyalal, who was an old world textile magnet, one of the last of a breed and Dr. Narhari Parikh who shaped and made the dream of Biharibhai and nurtured an excellent institute in Gujarat University campus.
          
          They both conceptualized a five year integrated BBA-MBA programme for Gujarat State students who used to face a dearth of courses and colleges after 12th standard. K.S.S.B.M. was established with the aim of providing quality management education to the students of the state at an affordable cost.
          
@@ -34,7 +34,7 @@
          
          <br>-Dr. Jayraj K. Pandya
          <br>Director,
-         <br>K. S. School of Business Management.
+         <br>K. S. School of Business Management.</font>
          
          
          </td></tr></table>
