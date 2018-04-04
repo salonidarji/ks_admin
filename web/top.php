@@ -22,16 +22,7 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css">
 	<!-- fonts -->
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
-	<script>
-    var hash = '<?php echo $hash ?>';
-    function submitPayuForm() {
-      if(hash == '') {
-        return;
-      }
-      var payuForm = document.forms.payuForm;
-      payuForm.submit();
-    }
-  </script>
+	
 </head>
 
 <body>
@@ -102,9 +93,9 @@ session_start();
 					</li>
 					</div>
 					<div '. $hide_2 .' align="right" >
-					<a href="profile.php" >
-					<img class="img img-responsive img-circle" src="'.$row["login_profile"].'" height="40" width="40"> </a>
-				
+					<li>
+						<a><span ></span> </a>
+					</li>	
 					<li>
 						<a href="logout.php">
 							<span class="fa fa-lock" aria-hidden="true"></span> Sign Out </a>
@@ -247,9 +238,7 @@ session_start();
 									</li>
 								</ul>
 							</li>
-							<li class="">
-									<a class="nav-stylehead" href="index.php">Culture</a>
-								</li>
+							
 								
 			                 <li class="dropdown">
 							<a class="nav-stylehead dropdown-toggle" href="#" data-toggle="dropdown">Academic
@@ -406,6 +395,28 @@ session_start();
 								<li class="">
 									<a class="nav-stylehead" href="contact.php">Contact</a>
 								</li>
+								 
+								 
+								<li class="dropdown"  >
+								
+								<a class="nav-stylehead dropdown-toggle" href="#" data-toggle="dropdown"><div <?php echo $hide_2; ?> >  Profile
+									<b class="caret"></b> </div>
+								</a>
+								<ul class="dropdown-menu agile_short_dropdown">
+								<li>
+								<a href="profile.php">View Profile</a>
+								</li>
+								<li>
+										<a href="change_passwd.php">Change Password</a>
+									</li>
+									
+								</ul>
+								
+							    </li>
+								 
+							
+								
+
 							</ul>
 						</div>
 					</div>
