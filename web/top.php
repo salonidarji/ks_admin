@@ -22,7 +22,16 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css">
 	<!-- fonts -->
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
-	
+	<script type="text/javascript">
+	var searchPic;
+    function doOnClick() {
+        document.getElementById('linkid').click();
+        //Should alert('/testlocation');
+		searchPic=document.getElementById("linkid").value;
+		
+		document.getElementById("pic1").src = searchPic;
+    }
+</script>
 </head>
 
 <body>
@@ -166,9 +175,10 @@ session_start();
 						<h3 class="agileinfo_sign">Sign Up</h3>
 						<form action="signup.php" method="post" enctype="multipart/form-data">
 						<div class="styled-input" align="center">
-							<img src="images/avatar.jpg" height="100px" width="100px" class="img img-circle">
-								<br><button class="btn btn-primary">upload profile
-<input type="file" name="txtimg" opacity=0 required=""> 	</button>							</button>
+							<img src="images/avatar.jpg" id="pic1" height="100px" width="100px" class="img img-circle">
+								<br><br><button class="btn btn-primary" onclick="doOnClick()">Upload profile</button>
+								<div>
+								<input type="file" name="txtimg" id="linkid"></div> 		
 							</div> 
 							
 							<div class="styled-input agile-styled-input-top">
