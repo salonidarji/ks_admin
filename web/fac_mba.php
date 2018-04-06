@@ -16,7 +16,7 @@
      <?php
 								
   $cnn=new mysqli("localhost","root","","ks_admin_db");
-         $sql="select * from faculty_tbl where faculty_course='mba'";
+         $sql="select * from faculty_tbl where faculty_course='MBA'";
          $result=$cnn->query($sql);
 		 $fac_cnt=0;
 		
@@ -28,7 +28,7 @@
          while($row=$result->fetch_assoc())
          {
 			 $id=$row['pk_faculty_id'];
-			 echo '<form action="dispfaculty1.php?id='.$id.'" method="post">';
+			 echo '<form action="dispmbafaculty.php?id='.$id.'" method="post">';
              echo '<td>';
             	echo '<div class="men-pro-item simpleCart_shelfItem" width="100%">';
 	echo '<div class="men-thumb-item" width="100%">';
@@ -41,9 +41,15 @@
 									echo '</div>';
 								echo '</div>';
 								echo '<div class="item-info-product " width="100%">';
-									echo '<h4>';
-										echo '<a href="dispFaculty1.php?id='.$id.'">'.$row["faculty_name"].'</a>';
-									echo '</h4>';
+									echo '<h3>';
+										echo '<a href="dispmbafaculty.php?id='.$id.'">'.$row["faculty_name"].'</a>';
+									echo '</h3>';
+									echo '<h4>
+									<br>
+									Designation:<a href="dispmbafaculty.php?id='.$id.'">'.$row["faculty_desig"].'</a>
+									<br>Course:<a href="dispmbafaculty.php?id='.$id.'">'.$row["faculty_course"].'</a>
+									<br>Qualification:<a href="dispmbafaculty.php?id='.$id.'">'.$row["faculty_degree"].'</a>
+									';
 									 echo '</div>';
 							echo '</div>';
 							echo'</td>';	

@@ -89,7 +89,7 @@ class login_db
 		{
 			$cnn=login_db::connect();
 			
-			$sql="INSERT INTO login_tbl values ( '". $_email ."',  '". $_enrol ."',  '". $_profile ."','". $_name ."','". $_password ."',".$_type.",0,'".$_approve."')";
+			$sql="INSERT INTO login_tbl values ( '". $_email ."',  '". $_enrol ."',  '". $_profile ."','". $_name ."','". $_password ."',".$_type.",'".$_approve."')";
 
 			$res=$cnn->query($sql);
 			return $res;
@@ -117,11 +117,11 @@ class login_db
 			login_db::disconnect();
 		}
 
-		public function updateLogin($_email,$_profile,$_name,$_password,$_type,$_approve)
+		public function updateLogin($_email,$_enrol,$_profile,$_name,$_password,$_type,$_approve)
 		{
 			
 			$cnn=login_db::connect();
-			$sql="update login_tbl set pk_login_email_id='".$_email."',login_profile='".$_profile."',login_uname='".$_name."',login_passwd='".$_password."',login_type=".$_type." ,login_approve='".$_approve."' where pk_login_email_id='".$_email."' ";
+			$sql="update login_tbl set pk_login_email_id='".$_email."',login_enrolno='".$_enrol."',login_profile='".$_profile."',login_uname='".$_name."',login_passwd='".$_password."',login_type=".$_type." ,login_approve='".$_approve."' where pk_login_email_id='".$_email."' ";
 			$res=$cnn->query($sql);
 			return $res;
 			login_db::disconnect();
@@ -163,7 +163,7 @@ class login_db
     public function changePass($id,$npaw)
     {
         $cnn=login_db::connect();
-		$sql="update login_tbl set login_passwd='.$npaw.'  where pk_login_email_id=' ".$id."' ";
+		$sql="UPDATE `login_tbl` SET `login_passwd` = '".$npaw."' WHERE `login_tbl`.`pk_login_email_id` = '".$id."' ";
         $res=$cnn->query($sql);
         return $res;
         login_db::disconnect();

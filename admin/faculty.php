@@ -38,7 +38,7 @@ $result=$obj->getAllFaculty();
    <thead bgcolor="silver">
   <th><input type="checkbox" name="select-all" id="select-all" /> Select-All</th>
    <th>Name</th>
-   <th>Resume</th> 
+   <th>Image</th> 
    
    <th>Action</th> 
   
@@ -53,7 +53,7 @@ $result=$obj->getAllFaculty();
       echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
       
       echo '<td>'.$row['faculty_name']. '</td>';
-      echo '<td><img src="'.$row['faculty_resume']. '"height="50px" width="50px" alt="NA"></img></td>';
+      echo '<td><img src="'.$row['faculty_img']. '"height="50px" width="50px" alt="NA"></img></td>';
      
       echo '<td> <a href="faculty_update.php?id='.  $row["pk_faculty_id"] .'"><span class="glyphicon glyphicon-pencil btn btn-lg"></span></a>
            <a href="faculty_delete_one.php?id='.  $row["pk_faculty_id"] .'"><span class="glyphicon glyphicon-trash btn btn-lg"></span></a>';
@@ -81,7 +81,7 @@ $result=$obj->getAllFaculty();
              <img src="'.$row['faculty_img']. '" alt="'.$row['faculty_degree']. '" height="10%" width="50%"></img>
              <div class="caption">
              <div> <h4>Degree : '.$row['faculty_degree']. ' Year Students</h4> </div>
-               <h5>Working since : '.$row['faculty_join_date']. '</h5>
+               <h5>Working since : '.$row['faculty_description']. '</h5>
                <div align="right"> <h4>Contact : <a >'.$row['fk_email_id']. '</h4></a> </div>
              
               </div>

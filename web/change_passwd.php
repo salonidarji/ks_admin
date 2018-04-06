@@ -15,6 +15,7 @@
 <div class="row">
       
 <?php
+
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
 $opaw=$_POST["txtpas1"];
@@ -22,6 +23,7 @@ $npaw=$_POST["txtpas2"];
 $cpaw=$_POST["txtpas3"];
 if($npaw==$cpaw)
  {
+
 $id=$_SESSION["eid"];
  //require '../shared/login_db.php';
  $obj=new login_db();
@@ -33,7 +35,8 @@ $id=$_SESSION["eid"];
 	 Password Successfully Changed</h3>
   
 	</div>
-	';
+  ';
+ 
  }
  else{
   echo '<br><br><br><br><br><br>

@@ -35,22 +35,22 @@ class faculty_db
 		
         }
     
-        public function insertFaculty($_email,$_name,$_id,$_date,$_img,$_course,$_resume,$_degree)
+        public function insertFaculty($_email,$_name,$_id,$_img,$_course,$_desig,$_degree,$_desc)
 		{
 			$cnn=faculty_db::connect();
 			
-			$sql="INSERT INTO faculty_tbl VALUES ('".$_email."','".$_name."',".$_id.",'".$_date."','".$_img."','".$_course."','".$_resume."','".$_degree."' ) ";
+			$sql="INSERT INTO faculty_tbl VALUES ('".$_email."','".$_name."',".$_id.",'".$_img."','".$_course."','".$_desig."','".$_degree."','".$_desc."' ) ";
 			
 			$res=$cnn->query($sql);
 			return $res;
 			faculty_db::disconnect();
 		
 		}
-		public function updateFaculty($_email,$_name,$_id,$_date,$_img,$_course,$_resume,$_degree)
+		public function updateFaculty($_email,$_name,$_id,$_img,$_course,$_desig,$_degree,$_desc)
 		{
 			
 			$cnn=faculty_db::connect();
-			$sql="update faculty_tbl set fk_email_id='".$_email."',faculty_name='".$_name."', pk_faculty_id=".$_id.",faculty_join_date='".$_date."',faculty_img='".$_img."',faculty_course='".$_course."',faculty_resume='".$_resume."',faculty_degree='".$_degree."'  where pk_faculty_id=".$_id;
+			$sql="update faculty_tbl set fk_email_id='".$_email."',faculty_name='".$_name."', pk_faculty_id=".$_id.",faculty_img='".$_img."',faculty_course='".$_course."',faculty_desig='".$_desig."',faculty_degree='".$_degree."',faculty_description='".$_desc."'  where pk_faculty_id=".$_id;
 			$res=$cnn->query($sql);
 			return $res;
 			faculty_db::disconnect();
