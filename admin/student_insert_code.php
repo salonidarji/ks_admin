@@ -40,6 +40,7 @@ if($res)
 	</div>
 	';
 	} 
+	echo "INSERT INTO login_tbl values ( '". $_email ."',  '". $_enrol ."',  '". $_profile ."','". $_name ."','". $_password ."',".$_type.",'".$_approve."')";
 }
 else
 {

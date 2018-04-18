@@ -1,12 +1,5 @@
 <?php require 'top.php'; ?>
-<?php
-      if($_SESSION["login_type"]==2){
-        echo '<div class=" btn-lg btn-danger" align="center">
-          You are not allowed to access this module
-        </div>';
-      }
-      else{
-     ?>
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -102,5 +95,5 @@ $_mo_no=$row["stu_mobile_no"];
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-<?php } ?>
+
   <?php require 'bottom.php'; ?>
