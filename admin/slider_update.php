@@ -29,25 +29,21 @@ if($result->num_rows==1)
 {
 
     $_img=$row["slider_img"];
-    $_cnt=$row["slider_count"];
-    $_time=$row["slider_time"];
-
+    $_address=$row["address"];
 }
 ?>
 <div class="table-responsive">
 <table class="table">
 <form method="post" action="slider_update_code.php"  enctype="multipart/form-Data" >
 <div class="form-group">
-<tr><td>Id :</td><td><input type="text" name="txtid" class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
-<tr><td>Image :</td><td><input type="file" name="txtimg" class="form-control" value="<?php echo $_img; ?>"/> </td></tr>
-<tr><td>Count   :</td><td><input type="number" name="txtcnt" class="form-control" value="<?php echo $_cnt; ?>"/> </td></tr>
-<tr><td>Time (in Seconds) :</td><td><input type="number" name="txttime" class="form-control" value="<?php echo $_time; ?>"/> </td></tr>
+<tr><td>Id :</td><td><input type="text" name="txtid" reeadonly class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
+<tr><td>Image :</td><td><input type="file" name="txtimg" required class="form-control" value="<?php echo $_img; ?>"/> </td></tr>
 <tr><td> Address (Where to Insert) :</td><td><select name="seladdress" required  class="form-control"/>
-<option value="home">--select address--</option>
-<option value="home">Home</option>
-<option value="aboutus">About Us</option>
-<option value="msc_placement">MSC Placement</option>
-<option value="mba_placement">MBA Placement</option>
+<option value="home" >--select address--</option>
+<option value="home" <?=$_address == 'home' ? ' selected="selected"' : '';?>>Home</option>
+<option value="aboutus" <?=$_address == 'aboutus' ? ' selected="selected"' : '';?>>About Us</option>
+<option value="msc_placement" <?=$_address == 'msc_placement' ? ' selected="selected"' : '';?>>MSC Placement</option>
+<option value="mba_placement" <?=$_address == 'mba_placement' ? ' selected="selected"' : '';?>>MBA Placement</option>
 
  </select> </td></tr>				
 <tr><td  colspan="2"><input type="submit" name="btnupdate" value="UPDATE"class="form-control btn  btn-info"/></td></tr>

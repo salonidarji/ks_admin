@@ -33,7 +33,7 @@ $_name=$row["login_uname"];
 $_password=$row["login_passwd"];
 $_type=$row["login_type"];
 $_profile=$row["login_profile"];
-
+$_approve=$row["login_approve"];
 
 }
 ?>
@@ -43,14 +43,14 @@ $_profile=$row["login_profile"];
 <div class="form-group">
 <tr><td>Email :</td><td><input type="email" name="txtemail" required  class="form-control" value="<?php echo $_email; ?>"/> </td></tr>
 <tr><td>Profile :</td><td><input type="file" name="txtprofile"  required class="form-control" value="<?php echo $_profile; ?>"/> </td></tr>
-<tr><td>Name:</td><td><input type="text" name="txtname" class="form-control" value="<?php echo $_name; ?>"/> </td></tr>
-<tr><td>Password:</td><td><input type="password" name="txtpass" class="form-control" value="<?php echo $_password; ?>"/> </td></tr>
+<tr><td>Name:</td><td><input type="text" name="txtname" required class="form-control" value="<?php echo $_name; ?>"/> </td></tr>
+<tr><td>Password:</td><td><input type="password" name="txtpass" required class="form-control" value="<?php echo $_password; ?>"/> </td></tr>
 <tr><td>Type:</td><td>
 
-                        <select class="form-control" name="seltype">
-                        <option value="0">Student</option>
-                        <option value="1">Admin</option>
-                        <option value="2">login / Faculty</option>
+                        <select class="form-control" name="seltype" required>
+                        <option value="0" <?=$_type == '0' ? ' selected="selected"' : '';?>>Student</option>
+                        <option value="1" <?=$_type == '1' ? ' selected="selected"' : '';?>>Admin</option>
+                        <option value="2" <?=$_type == '2' ? ' selected="selected"' : '';?>>login / Faculty</option>
                         
                        
                         </select>
@@ -58,10 +58,10 @@ $_profile=$row["login_profile"];
 
                     <tr><td>Approve Status:</td><td>
 
-<select class="form-control" name="selapprove">
+<select class="form-control" name="selapprove" required>
 <option value="0">--Select--</option>
-<option value="pending">Pending</option>
-<option value="approve">Approve</option>
+<option value="pending" <?=$_approve == 'pending' ? ' selected="selected"' : '';?>>Pending</option>
+<option value="approved" <?=$_approve == 'approved' ? ' selected="selected"' : '';?>>Approved</option>
 
 
 </select>

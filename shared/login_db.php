@@ -89,7 +89,7 @@ class login_db
 		{
 			$cnn=login_db::connect();
 			
-			$sql="INSERT INTO login_tbl values ( '". $_email ."',  '". $_enrol ."',  '". $_profile ."','". $_name ."','". $_password ."',".$_type.",'".$_approve."')";
+			$sql="INSERT INTO login_tbl values ( '". $_email ."',  '". $_enrol ."',  '". $_profile ."','". $_name ."','". $_password ."',".$_type.",0,'".$_approve."')";
 
 			$res=$cnn->query($sql);
 			return $res;

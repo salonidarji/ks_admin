@@ -20,10 +20,10 @@
 <div class="form-group">
 <tr><td>Email :</td><td><input type="email" name="txtemail" required  class="form-control" /> </td></tr>
 <tr><td>Name :</td><td><input type="text" name="txtname"  required class="form-control"/> </td></tr>
-<tr><td>Join Date:</td><td><input type="text" name="txtdate"  id="datepicker" class="span2 form-control"/> </td></tr>
+<tr><td>Join Date:</td><td><input type="text" name="txtdate" required id="datepicker" class="span2 form-control"/> </td></tr>
 <tr><td>Designation:</td><td>
 
-                        <select class="form-control" name="seldes">
+                        <select class="form-control" name="seldes" required>
                         <option value="0">--Select Designation--</option>
                         <option value="office-head">Office Head</option>
                         <option value="librarian">Librarian</option>

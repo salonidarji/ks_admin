@@ -40,16 +40,16 @@ $_designation=$row["staff_designation"];
 <table class="table">
 <form method="post" action="staff_update_code.php"  enctype="multipart/form-Data" >
 <div class="form-group">
-<tr><td>Email :</td><td><input type="number" name="txtid" class="form-control" value="<?php echo $_id; ?>" /> </td></tr>
-<tr><td>Email :</td><td><input type="email" name="txtemail" class="form-control" value="<?php echo $_email; ?>" /> </td></tr>
-<tr><td>Name :</td><td><input type="text" name="txtname" class="form-control" value="<?php echo $_name; ?>"/> </td></tr>
-<tr><td>Join Date:</td><td><input type="text" name="txtdate"  id="datepicker" class="span2 form-control" value="<?php echo $_date; ?>"/> </td></tr>
+<tr><td>Id:</td><td><input type="number" name="txtid" readonly class="form-control" value="<?php echo $_id; ?>" /> </td></tr>
+<tr><td>Email :</td><td><input type="email" name="txtemail" required class="form-control" value="<?php echo $_email; ?>" /> </td></tr>
+<tr><td>Name :</td><td><input type="text" name="txtname" required class="form-control" value="<?php echo $_name; ?>"/> </td></tr>
+<tr><td>Join Date:</td><td><input type="text" name="txtdate" required id="datepicker" class="span2 form-control" value="<?php echo $_date; ?>"/> </td></tr>
 <tr><td>Designation:</td><td>
 
-                        <select class="form-control" name="seldes">
+                        <select class="form-control" name="seldes" required>
                         <option value="0">--Select Designation--</option>
-                        <option value="office-head">Office Head</option>
-                        <option value="librarian">Librarian</option>
+                        <option value="office-head" <?=$_designation == 'office-head' ? ' selected="selected"' : '';?>>Office Head</option>
+                        <option value="librarian" <?=$_designation == 'librarian' ? ' selected="selected"' : '';?>>Librarian</option>
                        
                         </select>
                     </td></tr>

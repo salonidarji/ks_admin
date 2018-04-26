@@ -10,7 +10,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	
 	if($res)
 	{
+		require '../shared/login_db.php';
+		$_obj_login=new login_db();
+		$res_login=$_obj_login->deleteLogin($_arr);
+		if($res_login){
 		header('location:student.php');
+		}
+				else{
+			echo 'error while deleting login';
+				}
 	}
 	else
 	{

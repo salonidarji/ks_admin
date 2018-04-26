@@ -26,8 +26,9 @@
 <table class="table table-striped table-bordered" align="center">
 
       
-      </div>
+      
       </table>
+      </div>
     </section>
  <!-- Main content -->
  <section class="content">
@@ -161,6 +162,12 @@
       <!-- Main row -->
                 <?php }
                 else if($_SESSION["login_type"]==2){
+
+                  echo '
+                 <a href="changeYearRno.php"> <button >Change roll number yearly</button></a>
+                  ';
+                  
+                  
                 ?>
         <!-- ./col -->
      

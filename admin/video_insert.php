@@ -19,7 +19,7 @@
 <form method="post" action="video_insert_code.php" enctype="multipart/form-Data">
 <div class="form-group">
 <tr><td>Title:</td><td><input type="text" name="txttitle" required  class="form-control" /> </td></tr>
-<tr><td>Description :</td><td><textarea name="txtdesc" rows="5" cols="5" class="form-control"/></textarea> </td></tr>
+<tr><td>Description :</td><td><textarea name="txtdesc" required rows="5" cols="5" class="form-control"/></textarea> </td></tr>
 <tr><td>Path :</td><td><input type="text"  required name="txturl" class="form-control"/> </td></tr>
 
 

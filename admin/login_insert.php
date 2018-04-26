@@ -20,11 +20,11 @@
 <div class="form-group">
 <tr><td>Email :</td><td><input type="email" name="txtemail" required  class="form-control" /> </td></tr>
 <tr><td>Profile :</td><td><input type="file" name="txtprofile"  required class="form-control"/> </td></tr>
-<tr><td>Name:</td><td><input type="text" name="txtname" class="form-control"/> </td></tr>
-<tr><td>Password:</td><td><input type="password" name="txtpass" class="form-control"/> </td></tr>
+<tr><td>Name:</td><td><input type="text" name="txtname" required class="form-control"/> </td></tr>
+<tr><td>Password:</td><td><input type="password" name="txtpass" required class="form-control"/> </td></tr>
 <tr><td>Type:</td><td>
 
-                        <select class="form-control" name="seltype">
+                        <select class="form-control" name="seltype" required>
                         <option value="0">Student</option>
                         <option value="1">Admin</option>
                         <option value="2">Staff / Faculty</option>
@@ -37,7 +37,7 @@
 <select class="form-control" name="selapprove">
 <option value="0">--Select--</option>
 <option value="pending">Pending</option>
-<option value="approve">Approve</option>
+<option value="approved">Approved</option>
 
 
 </select>

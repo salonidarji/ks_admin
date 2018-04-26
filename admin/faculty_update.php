@@ -32,7 +32,12 @@ if($result->num_rows==1)
   $_degree=$row["faculty_degree"];
   $_desc=$row["faculty_description"];
   $_desig=$row["faculty_desig"];
-
+ $_course=$row["faculty_course"];
+ $_teach_exp=$row["teaching_experience"];
+ $_phd=$row["phd_details"];
+ $_paper=$row["paper_presented"];
+ $_specialization=$row["specialization"];
+ $_activities=$row["activities"];
 
 }
 ?>
@@ -40,19 +45,27 @@ if($result->num_rows==1)
 <table class="table">
 <form method="post" action="faculty_update_code.php"  enctype="multipart/form-Data" >
 <div class="form-group">
-<tr><td>Id :</td><td><input type="number" name="txtid" class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
-<tr><td>Email Id :</td><td><input type="email" name="txtemail" class="form-control" value="<?php echo $_email; ?>"/> </td></tr>
-<tr><td>Name :</td><td><input type="text" name="txtname" class="form-control" value="<?php echo $_name; ?>"/> </td></tr>
-<tr><td>Profile :</td><td><input type="file" name="txtimg" class="form-control"/> </td></tr>
-<tr><td>Degree :</td><td><input type="text" name="txtdegree" class="form-control" value="<?php echo $_degree; ?>"/> </td></tr>
-<tr><td>Designation :</td><td><input type="text" name="txtdesig"  class="form-control" value="<?php echo $_desig; ?>"/> </td></tr>
-<tr><td>Description :</td><td><textarea name="txtdesc" rows="10" class="span2 form-control"><?php echo $_desc; ?></textarea></td></tr>
-<tr><td>Course :</td><td><select name="selcourse" class="form-control">
+<tr><td>Id :</td><td><input type="number" name="txtid" required class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
+<tr><td>Email Id :</td><td><input type="email" name="txtemail" required class="form-control" value="<?php echo $_email; ?>"/> </td></tr>
+<tr><td>Name :</td><td><input type="text" name="txtname" required class="form-control" value="<?php echo $_name; ?>"/> </td></tr>
+<tr><td>Profile :</td><td><input type="file" name="txtimg" required class="form-control"/> </td></tr>
+<tr><td>Degree :</td><td><input type="text" name="txtdegree" required class="form-control" value="<?php echo $_degree; ?>"/> </td></tr>
+<tr><td>Designation :</td><td><input type="text" name="txtdesig" required class="form-control" value="<?php echo $_desig; ?>"/> </td></tr>
+<tr><td>Description :</td><td><textarea name="txtdesc" rows="10" required class="span2 form-control"><?php echo $_desc; ?></textarea></td></tr>
+<tr><td>Course :</td><td><select name="selcourse" class="form-control" required>
         <option value="null">--Select Course--</option>
-        <option value="msc">Msc(CA & IT)</option>
-        <option value="mba">MBA</option>
+        <option value="msc" <?=$_course == 'msc' ? ' selected="selected"' : '';?>>Msc(CA & IT)</option>
+        <option value="mba" <?=$_course == 'mba' ? ' selected="selected"' : '';?>>MBA</option>
 </select></td></tr>
-					
+
+  
+<tr><td>Teaching Experience :</td><td><input type="text" name="txtteach_exp"  class="form-control" value="<?php echo $_teach_exp; ?>"/> </td></tr>
+<tr><td>PHD Details :</td><td><input type="text" name="txtphd" class="form-control" value="<?php echo $_phd; ?>"/> </td></tr>
+<tr><td>Paper Presented Details :</td><td><input type="text" name="txtpaper" class="form-control" value="<?php echo $_paper; ?>"/> </td></tr>
+<tr><td>Specialization Areas :</td><td><input type="text" name="txtspec"  class="form-control" value="<?php echo $_specialization; ?>"/> </td></tr>
+<tr><td>Extra Activities :</td><td><input type="text" name="txtactivities"  class="form-control" value="<?php echo $_activities; ?>"/> </td></tr>
+
+				
 <tr><td  colspan="2"><input type="submit" name="btnupdate" value="UPDATE"class="form-control btn  btn-info"/></td></tr>
 </div>
 </form>

@@ -45,19 +45,7 @@ $sub8=$row["sub8_name"];
 $sub8_marks=$row["sub8_marks"];
 $sub9=$row["sub9_name"];
 $sub9_marks=$row["sub9_marks"];
-if($_type==1)
-{
-  $sel_1="selected";
-  $sel_2="";
-}
-else if($_type==2){
-  $sel_2="selected";
-  $sel_1="";
-}
-else{
-  $sel_1="";
-  $sel_2="";
-}
+
 
 
 if($sem>=1 && $sem<=9)
@@ -86,10 +74,10 @@ else{
 <div class="form-group">
 <tr><td>Id :</td><td><input type="text" name="txtid" class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
 <tr><td>Type :</td><td>
-                <select name="seltype">
+                <select name="seltype" class="form-control">
                 <option value="0">--Select Type--</option>
-                <option value="1" <?php echo $sel_1; ?>>Final Exam</option>
-                <option value="2" <?php echo $sel_2; ?>>Mid Exam</option>
+                <option value="1" <?=$_type == '1' ? ' selected="selected"' : '';?>>Final Exam</option>
+                <option value="2" <?=$_type == '2' ? ' selected="selected"' : '';?>>Mid Exam</option>
                 </select>
              </td></tr>
              <tr><td>Email Id :</td><td><input type="email" name="txtemail" class="form-control" value="<?php echo $_email; ?>"/> </td></tr>
@@ -122,8 +110,9 @@ echo '
         
 <tr><td><input type="text" name="txtsub9" class="form-control" readonly value="'.$sub9.':"/> </td>
         <td><input type="number" name="txtsub9_marks" class="form-control" value="'.$sub9_marks.'"/> </td></tr>
-        <td><input type="number" name="txtrno" class="form-control" required/> </td></tr>
-        <tr><td>Enter Grade Point: </td>';
+        
+        <tr><td>Enter Grade Point: </td><td><input type="text" name="txtgpa" class="form-control" required/> </td>
+       </td> </tr>';
  $_SESSION["n_sub"]=$n_sub;
  $_SESSION["year"]=$year;
  $_SESSION["sem"]=$sem;

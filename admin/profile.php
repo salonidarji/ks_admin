@@ -25,7 +25,7 @@
              
 
               <p class="text-muted text-center"><?php if($_SESSION["login_type"]==1){ echo 'Admin'; } else { echo 'Faculty'; } ?>
-              <a href="login_update.php?id=<?php echo  $row["pk_login_email_id"]; ?>"><span class="glyphicon glyphicon-pencil btn btn-sm"></span></a>
+<?php if($_SESSION["login_type"]==1){ ?><a href="login_update.php?id=<?php echo  $row["pk_login_email_id"]; ?>"><span class="glyphicon glyphicon-pencil btn btn-sm"></span></a> <?php } ?>
 </p>
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
@@ -40,6 +40,14 @@
               </ul>
 
               <a href="change_passwd.php" class="btn btn-primary btn-block"><b>Change Password</b></a>
+              <?php 
+              if($_SESSION["login_type"]==2){
+
+                echo '
+                <a href="fac_info.php" class="btn btn-primary btn-block"><b>Show Extra Details</b></a>
+                ';
+              }
+              ?>
             </div>
             <!-- /.box-body -->
           </div>
@@ -51,5 +59,4 @@
                 </div>
 </div>
 </section>
-</div>
           <?php require 'bottom.php'; ?>

@@ -76,8 +76,7 @@ $result=$obj->getAllSlider();
            <div class="thumbnail">
              <img src="'.$row['slider_img']. '" alt="NA" height="100%" width="100%">
              <div class="caption">
-             <div> <h4>valid From  : '.$row['slider_count']. '</h4> </div>
-              for Time : '.$row['slider_time']. '
+             For '.$row['address'].'
               </div>
            </div>
          </div>

@@ -89,6 +89,15 @@ class student_db
 			return $res;
 			student_db::disconnect();
 		}
+
+		public function changeYear($newRno,$newYear,$newSem,$email)
+		{
+			$cnn=student_db::connect();
+			$sql="update student_tbl set pk_stu_rno=".$newRno.",stu_year=".$newYear.",stu_semister=".$newSem." where fk_email_id='".$email."' ";
+			$res=$cnn->query($sql);
+			return $res;
+			student_db::disconnect();
+		}
 	
 }
 

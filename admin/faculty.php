@@ -81,7 +81,12 @@ $result=$obj->getAllFaculty();
              <img src="'.$row['faculty_img']. '" alt="'.$row['faculty_degree']. '" height="10%" width="50%"></img>
              <div class="caption">
              <div> <h4>Degree : '.$row['faculty_degree']. ' Year Students</h4> </div>
-               <h5>Working since : '.$row['faculty_description']. '</h5>
+               <h5>Description : '.$row['faculty_description']. '</h5>
+               teaching experience : '.$row['teaching_experience'].'
+               PHD information: '.$row['phd_details'].'
+             Paper presented : '.$row['paper_presented'].'
+              Specialization Area : '.$row['specialization'].'
+              Extra Activities : '.$row['activities'].'
                <div align="right"> <h4>Contact : <a >'.$row['fk_email_id']. '</h4></a> </div>
              
               </div>

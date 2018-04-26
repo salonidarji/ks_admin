@@ -38,7 +38,7 @@ if($result->num_rows==1)
 <table class="table">
 <form method="post" action="video_update_code.php"  enctype="multipart/form-Data" >
 <div class="form-group">
-<tr><td>Id :</td><td><input type="text" name="txtid" class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
+<tr><td>Id :</td><td><input type="text" name="txtid" readonly class="form-control" value="<?php echo $_id; ?>"/> </td></tr>
 <tr><td>Title :</td><td><input type="text" name="txttitle" class="form-control" value="<?php echo $_title; ?>"/> </td></tr>
 <tr><td>Description   :</td><td><input type="text" name="txtdesc" class="form-control" value="<?php echo $_desc; ?>"/> </td></tr>
 <tr><td>Path :</td><td><input required type="text" name="txturl" class="form-control" value="<?php echo $_url; ?>"/> </td></tr>

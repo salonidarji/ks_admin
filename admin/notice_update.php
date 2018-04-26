@@ -17,17 +17,13 @@
 <?php 
 $_id=$_GET["id"];
 require '..\shared\notice_db.php';
-/*$_obj=new notice_db();
-$result=$_obj->getNotice($_id);
-*/
-$cnn= notice_db::connect();
-$sql="select * from notice_tble where pk_notice_id=".$_id;
+$_obj=new notice_db();
+$result=$_obj->getNoticeById($_id);
 
-$result=$cnn->query($sql);
-$row=$result->fetch_assoc();
+
 if($result->num_rows==1)
 {
-
+  $row=$result->fetch_assoc();
 $_title=$row["notice_title"];
 $_desc=$row["notice_desc"];
 $_link=$row["notice_link"];
@@ -49,17 +45,17 @@ $_year=$row["notice_year"];
 <tr><td>Description :</td><td><input type="text" name="txtdesc" class="form-control" value="<?php echo $_desc; ?>"/> </td></tr>
 
 <tr><td>Link :</td><td><input type="file" name="txtlink" class="form-control" value="<?php echo $_link; ?>"/> </td></tr>
-<tr><td>Published On:</td><td><input type="text" name="txtdate" class="form-control" value="<?php echo $_date; ?>"/> </td></tr>
+<tr><td>Published On:</td><td><input type="text" name="txtdate" id="datepicker" class="span2 form-control" value="<?php echo $_date; ?>"/> </td></tr>
 <tr><td>Days:</td><td><input type="number" name="txtcnt" class="form-control" value="<?php echo $_cnt; ?>"/> </td></tr>
 <tr><td>Email Id :</td><td><input type="email" name="txtemail" class="form-control" value="<?php echo $_email; ?>"/> </td></tr>
 <tr><td>Student Year:</td><td>
 					<select name="selyear" class="form-control">
                     <option value="0">--Select Year--</option>
-                    <option value="1">First</option>
-                    <option value="2">Second</option>
-                    <option value="3">Third</option>
-                    <option value="4">Fourth</option>
-                    <option value="5">Fifth</option>
+                    <option value="1" <?=$_year == '1' ? ' selected="selected"' : '';?>>First</option>
+                    <option value="2" <?=$_year == '2' ? ' selected="selected"' : '';?>>Second</option>
+                    <option value="3" <?=$_year == '3' ? ' selected="selected"' : '';?>>Third</option>
+                    <option value="4" <?=$_year == '4' ? ' selected="selected"' : '';?>>Fourth</option>
+                    <option value="5" <?=$_year == '5' ? ' selected="selected"' : '';?>>Fifth</option>
 					</select>
 
 

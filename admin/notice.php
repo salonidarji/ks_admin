@@ -54,7 +54,7 @@ $result=$obj->getAllNotice();
       echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> </td>';
       echo '<td>'.$row['notice_title']. '</td>';
      
-      echo '<td><img src="'.$row['notice_link']. '" height="50" width="50" alt="NA"></td>';
+      echo '<td><iframe src="'.$row['notice_link']. '" height="50" width="50" alt="NA"></iframe></td>';
       
      
       echo '<td> <a href="notice_update.php?id='.  $row["pk_notice_id"] .'"><span class="glyphicon glyphicon-pencil btn btn-lg"></span></a>

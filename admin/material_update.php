@@ -44,11 +44,11 @@ $_year=$row["fk_student_year"];
 <tr><td>Student Year:</td><td>
 					<select name="selyear" class="form-control">
                     <option value="0">--Select Year--</option>
-                    <option value="1">First</option>
-                    <option value="2">Second</option>
-                    <option value="3">Third</option>
-                    <option value="4">Fourth</option>
-                    <option value="5">Fifth</option>
+                    <option value="1" <?=$_year == '1' ? ' selected="selected"' : '';?>>First</option>
+                    <option value="2" <?=$_year == '2' ? ' selected="selected"' : '';?>>Second</option>
+                    <option value="3" <?=$_year == '3' ? ' selected="selected"' : '';?>>Third</option>
+                    <option value="4" <?=$_year == '4' ? ' selected="selected"' : '';?>>Fourth</option>
+                    <option value="5" <?=$_year == '5' ? ' selected="selected"' : '';?>>Fifth</option>
 					</select>
 
 

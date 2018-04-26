@@ -17,7 +17,7 @@
 <tr><td>Name:</td><td><input type="text" name="txtname"  required class="form-control"/> </td></tr>
 <tr><td>Mobile Number:</td><td><input type="number" name="txtmo_no"  required class="form-control"/> </td></tr>
 <tr><td>Gender:</td><td>
-                    <select class="form-control" name="selgen">
+                    <select class="form-control" name="selgen" required>
                     <option value="0">--Select Gender--</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -26,7 +26,7 @@
 
 </td></tr>
 <tr><td>Year :</td><td>
-                    <select class="form-control" name="selyear">
+                    <select class="form-control" name="selyear" required>
                     <option value="0">--Select Year--</option>
                     <option value="1">First</option>
                     <option value="2">Second</option>
@@ -36,7 +36,7 @@
                     </select>
             </td></tr>
             <tr><td>Semister :</td><td>
-                    <select class="form-control" name="selsem">
+                    <select class="form-control" name="selsem" required>
                     <option value="0">--Select Semister--</option>
                     <option value="1">one</option>
                     <option value="2">two</option>
@@ -51,7 +51,7 @@
                     </select>
             </td></tr>
             <tr><td>Course:</td><td>
-                    <select class="form-control" name="selcourse">
+                    <select class="form-control" name="selcourse" required>
                     <option value="0">--Select Course--</option>
                     <option value="msc">MSC</option>
                     <option value="mba">MBA</option>
