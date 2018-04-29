@@ -30,7 +30,7 @@ if($res)
 	$res_l=$obj_l->insertLogin($_email,$_enrol,$_img,$_name,$_password,$_type,$_approve);
 	if($res_l)
 	{ 
-	header('location:login.php');
+	header('location:student.php');
 	 }
 	else{
 		echo '<br><br><br><br><br><br>

@@ -134,6 +134,7 @@ $result=$obj->getAllStudent();
             
              <div class="caption">
              <div> <h4>Studing in : '.$year. ' Year </h4> </div>
+             <p>Enrollment Number :'.$row['stu_enrolno'].' </p>
                <h5>'.$row['stu_gender']. '</h5>
                <div align="right"> <h4>Contact : <a >'.$row['fk_email_id']. '</a>
                     <br> '.$row['stu_mobile_no']. '</h4>

@@ -20,6 +20,8 @@
           </div>
           <div class="col-md-6">
 <!-- Profile Image -->
+<a href="profile.php" class="btn btn-primary">Back</a>
+<br><br>
 <div class="box box-primary">
           <div class="box-body box-profile">
            

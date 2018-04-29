@@ -200,7 +200,8 @@ if(empty($posted['hash']) && sizeof($posted) > 0) {
         -->
         <tr>
           <?php if(!$hash) { ?>
-            <td colspan="4" align="center"><input  class="btn btn-primary" type="submit" value="Pay Now" /></td>
+            <td colspan="2" align="center"><button  class="btn btn-default btn-block"><a href="index.php"  />Back</a></button></td>
+            <td colspan="2" align="center"><input  class="btn btn-primary btn-block" type="submit" value="Pay Now" /></td>
           <?php } ?>
         </tr>
       </table>

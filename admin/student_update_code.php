@@ -23,12 +23,35 @@ if($res)
 }
 else
 {
-    echo '<br><br><br><br><br><br>
+	require 'top.php'; 
+
+	echo ' <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      
+      <!-- code here --> 
+    <br><br><br><br><br><br>
 	<div align="center"  class="container jumbotron alert-danger "><h1><span class="glyphicon glyphicon-alert"></h1>
 	<h2> Some Error Occured !!!<br>Try Again</h2>
-	<br><button class="btn btn-default btn-lg"><a href="student_update.php">Back</a></button>
+	<br><button class="btn btn-default btn-lg"><a href="student_update.php?id='.$_rno.'">Back</a></button>
 	</div>
-	';
+	
+	</section>
+';
+echo "<br>update student_tbl set pk_stu_rno=".$_rno.",fk_email_id='".$_email."',stu_name='".$_name."',stu_enrolno='".$_enrol."',stu_mobile_no=' ".$_mo_no." ',stu_gender='".$_gender."',stu_year=".$_year.",stu_sem=".$_sem.",fk_course_name='".$_course."' where pk_stu_rno=".$_rno;
+echo '
+<!-- Main content -->
+<section class="content">
+
+  <!-- Your Page Content Here -->
+
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->';
+
+ require 'bottom.php';  
     
 	
 }

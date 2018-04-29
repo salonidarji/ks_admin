@@ -32,7 +32,11 @@
     </section>
  <!-- Main content -->
  <section class="content">
-<?php if($_SESSION["login_type"]==1){ ?>
+<?php if($_SESSION["login_type"]==1){ 
+  
+  
+  
+  ?>
 <!-- Your Page Content Here -->
 
                 <div class="row">
@@ -158,17 +162,137 @@
             </form>
         <!-- ./col -->
         </div>
+        <?php 
+     echo '<br><br>
+     <a href="changeYearRno.php" > <button class="btn btn-success">Change roll number yearly</button></a>
+       ';
+     ?>
       <!-- /.row -->
       <!-- Main row -->
                 <?php }
                 else if($_SESSION["login_type"]==2){
 
-                  echo '
-                 <a href="changeYearRno.php"> <button >Change roll number yearly</button></a>
-                  ';
+                 
+                  ?>
+<h3 align="center">Attendents Zone</h3>
+
+
+                  <div class="row">
+
+                  <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                      <div class="inner">
+                        <h3>1<sup>st</sup> Year</h3>
+          
+                        <p>Students</p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-person"></i>
+                      </div>
+                      <a href="attendance.php?year=1" class="small-box-footer">Click Here For attendance <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+
+
+                  <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green">
+                      <div class="inner">
+                        <h3>2<sup>nd</sup> Year</h3>
+          
+                        <p>Students</p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-person"></i>
+                      </div>
+                      <a href="attendance.php?year=2" class="small-box-footer">Click Here For attendance <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-yellow">
+                      <div class="inner">
+                        <h3>3<sup>rd</sup> Year</h3>
+          
+                        <p>Students</p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-person"></i>
+                      </div>
+                      <a href="attendance.php?year=3" class="small-box-footer">Click Here For attendance <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
                   
-                  
-                ?>
+
+                  <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-yellow">
+                      <div class="inner">
+                        <h3>4<sup>th</sup> Year</h3>
+          
+                        <p>Students</p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-person"></i>
+                      </div>
+                      <a href="attendance.php?year=4" class="small-box-footer">Click Here For attendance <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+
+
+                  <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                      <div class="inner">
+                        <h3>5<sup>th</sup> Year</h3>
+          
+                        <p>Students</p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-person"></i>
+                      </div>
+                      <a href="attendance.php?year=5" class="small-box-footer">Click Here For attendance <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green">
+                      <div class="inner">
+                        <h3>Show</h3>
+          
+                        <p>Attendents</p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-person"></i>
+                      </div>
+                      <a href="attendance_show.php" class="small-box-footer">Click Here To View attendance <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+     <h3 align="center">Upload Material</h3>
+     <div class="col-lg-4 col-xs-6">
+                </div>
+                <div class="col-lg-4 col-xs-6">
+                  <div class="info-box"><a href="material_link.php">
+            <span class="info-box-icon bg-red"><i class="fa fa-files-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Uploads</span>
+              <span class="info-box-number">(Notes)</span>
+            </div>
+                </a>
+            <!-- /.info-box-content -->
+          </div>
+          
+                </div>
+                  <!--row-->
+                  </div>
+
+                 
+
+                
         <!-- ./col -->
      
       <!-- Main row -->

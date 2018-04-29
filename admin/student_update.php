@@ -23,6 +23,7 @@ if($result->num_rows==1)
 {
 
 $_email=$row["fk_email_id"];
+$_enrol=$row["stu_enrolno"];
 $_name=$row["stu_name"];
 $_mo_no=$row["stu_mobile_no"];
 $_year=$row["stu_year"];
@@ -35,7 +36,7 @@ $_course=$row["fk_course_name"];
 <form method="post" action="student_update_code.php">
 <div class="form-group">
 <tr><td>Roll Number :</td><td><input type="number" name="txtrno" readonly class="form-control" value="<?php echo $_rno; ?>"/> </td></tr>
-<tr><td>Enrollment Number :</td><td><input type="number" name="txtenrol"  required class="form-control" /> </td></tr>
+<tr><td>Enrollment Number :</td><td><input type="number" name="txtenrol"  required class="form-control" value="<?php echo $_enrol; ?>"/> </td></tr>
 <tr><td>Email Id :</td><td><input type="email" name="txtemail" class="form-control" required value="<?php echo $_email; ?>"/> </td></tr>
 <tr><td>Name:</td><td><input type="text" name="txtname" class="form-control" required value="<?php echo $_name; ?>"/> </td></tr>
 <tr><td>Mobile Number:</td><td><input type="text" name="txtmo_no" required class="form-control" value="<?php echo $_mo_no; ?>"/> </td></tr>
@@ -84,7 +85,9 @@ $_course=$row["fk_course_name"];
 <tr><td colspan="2"><input type="submit" name="btnupdate" value="UPDATE" class="form-control btn btn-info "/></td></tr>
 </div>
 </form>
-</table></div>
+</table>
+</div>
+
     </section>
 
     <!-- Main content -->

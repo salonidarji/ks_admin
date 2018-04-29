@@ -39,9 +39,17 @@ if($res->num_rows==1)
 }
 else
 {
-  echo '<div class="alert alert-warning">Not Authorised </div>';
+  session_abort();
+  include_once 'top.php';
+  echo '<br><br>
+  <div class="product-sec1 container-fluid">
+  <div align="center"  class="container jumbotron alert alert-danger "><h1><span class="glyphicon glyphicon-alert"></h1>
+	<h2> Not Authorised User !!!<br>May be User Name or Password is Wrong</h2>
+	<br><button class="btn btn-default btn-lg"><a href="index.php">Back</a></button>
+  </div>
+  </div>';
  // echo "select * from login_tbl where pk_login_email_id='".$id."' and login_passwd='".$passwd."'";
-  echo '<button><a href="index.php" >Back</a></button>';
+ 
 }
 }
 ?>

@@ -28,12 +28,28 @@ if ($res===true){
      header('location:index.php');
 }
 else{
-    echo "Please Enter Valid Data!!!";
+    session_abort();
+    include_once 'top.php';
+  echo '<br><br>
+  <div class="product-sec1 container-fluid">
+  <div align="center"  class="container jumbotron alert alert-danger "><h1><span class="glyphicon glyphicon-alert"></h1>
+	<h2> Not Authorised User !!!<br>May be User Name or Password is Wrong</h2>
+	<br><button class="btn btn-default btn-lg"><a href="index.php">Back</a></button>
+  </div>
+  </div>';
     echo "<br>UPDATE  login_tbl SET login_profile='". $_img ."',login_approve='approved' where pk_login_email_id='".$_id."' && login_enrolno='".$_enrol."' && login_passwd='".$_passwd."' ";
   }
 }
 else{
-    echo '<div class="alert alert-warning">Not Authorised Student </div>';
+    session_abort();
+    include_once 'top.php';
+    echo '<br><br>
+    <div class="product-sec1 container-fluid">
+    <div align="center"  class="container jumbotron alert alert-danger "><h1><span class="glyphicon glyphicon-alert"></h1>
+      <h2> Not Authorised Student !!!<br>May be User Name or Password is Wrong</h2>
+      <br><button class="btn btn-default btn-lg"><a href="index.php">Back</a></button>
+    </div>
+    </div>';
 }
 }
 ?>

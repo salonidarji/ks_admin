@@ -1,7 +1,7 @@
 <?php
 
 
-class student_db
+class attendance_db
 {
 	private static $con=null;
 		public static function connect()
@@ -17,7 +17,7 @@ class student_db
 		}
 		
 		
-		public function getAllStudent()
+	/*	public function getAllStudent()
 		{
 			$cnn=student_db::connect();
 			$sql="select * from student_tbl";
@@ -55,13 +55,12 @@ class student_db
 			return $res;
 			student_db::disconnect();
 		
-        }
-    
-        public function insertStudent($_rno,$_email,$_name,$_enrol,$_mo_no,$_gender,$_year,$_sem,$_course)
+        }*/
+		public function getAllDate()
 		{
-			$cnn=student_db::connect();
+			$cnn=attendance_db::connect();
 			
-			$sql="INSERT INTO student_tbl VALUES (".$_rno.",'".$_email."','".$_name."','".$_enrol."','".$_mo_no."','".$_gender."',".$_year.",".$_sem.",'".$_course."')";
+			$sql="select distinct date from attendance_tbl";
 			
 			$res=$cnn->query($sql);
 			return $res;
@@ -69,11 +68,35 @@ class student_db
 		
 		}
 
+		public function getAllAttendance($_date,$_email)
+		{
+			$cnn=attendance_db::connect();
+			
+			$sql="select * from attendance_tbl where date='".$_date."' && fk_email_id='".$_email."' ";
+			
+			$res=$cnn->query($sql);
+			return $res;
+		    student_db::disconnect();
+		
+		}
+
+        public function insertAttendance($a_id,$rno,$date,$year,$email,$status)
+		{
+			$cnn=attendance_db::connect();
+			
+			$sql="INSERT INTO attendance_tbl VALUES (".$a_id.",'".$rno."','".$date."',".$year.",'".$email."','".$status."')";
+			
+			$res=$cnn->query($sql);
+			return $res;
+		    student_db::disconnect();
+		
+		}
+/*
 		public function updateStudent($_rno,$_email,$_name,$_enrol,$_mo_no,$_gender,$_year,$_sem,$_course)
 		{
 			
 			$cnn=student_db::connect();
-			$sql="update student_tbl set pk_stu_rno=".$_rno.",fk_email_id='".$_email."',stu_name='".$_name."',stu_enrolno='".$_enrol."',stu_mobile_no=' ".$_mo_no." ',stu_gender='".$_gender."',stu_year=".$_year.",stu_semister=".$_sem.",fk_course_name='".$_course."' where pk_stu_rno=".$_rno;
+			$sql="update student_tbl set pk_stu_rno=".$_rno.",fk_email_id='".$_email."',stu_name='".$_name."',stu_name='".$_enrol."',stu_mobile_no=' ".$_mo_no." ',stu_gender='".$_gender."',stu_year=".$_year.",stu_sem=".$_sem.",fk_course_name='".$_course."' where pk_stu_rno=".$_rno;
 			$res=$cnn->query($sql);
 			return $res;
 			student_db::disconnect();
@@ -98,16 +121,7 @@ class student_db
 			$res=$cnn->query($sql);
 			return $res;
 			student_db::disconnect();
-		}
-
-		public function changeYear($newRno,$newYear,$newSem,$email)
-		{
-			$cnn=student_db::connect();
-			$sql="update student_tbl set pk_stu_rno=".$newRno.",stu_year=".$newYear.",stu_semister=".$newSem." where fk_email_id='".$email."' ";
-			$res=$cnn->query($sql);
-			return $res;
-			student_db::disconnect();
-		}
+        }*/
 	
 }
 

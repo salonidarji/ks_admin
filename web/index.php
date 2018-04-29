@@ -49,7 +49,7 @@ while($row=$res->fetch_assoc())
 			<!-- //tittle heading -->
 					<!-- //second section (nuts special) -->
 					<!-- third section (oils) -->
-					<div class="product-sec1">
+					<div class="product-sec1" >
 						<?php
 		 $cnn=new mysqli("localhost","root","","ks_admin_db");
          $sql="select * from notice_tbl where notice_address='News'";

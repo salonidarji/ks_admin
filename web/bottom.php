@@ -44,7 +44,7 @@
                             <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Msc(CA & IT)</a>
                         </li>
                         <li>
-                            <a href="#">FAQs'</a>
+                            <a href="faq.php">FAQs'</a>
                         </li>
                         <li>
                             <a href="gallary.php">Gallery</a>
