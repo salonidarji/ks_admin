@@ -30,7 +30,7 @@ $_op4=$row["op_4"];
 $_ans=$row["ans"];
 $_year=$row["fk_student_year"];
 $_email=$row["fk_email_id"];
-
+$_SESSION["img"]=$_img;
 
 }
 ?>

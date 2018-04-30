@@ -6,7 +6,7 @@
     <section class="content-header">
       
       <!-- code here --> 
- <form action="attendance_detail.php"  name="attendance_form" method="post">
+ <form action="attendance_delete.php"  name="attendance_form" method="post">
  
  <h3 class='page-header'>Manage Student</h3>
 
@@ -14,7 +14,7 @@
  <div class="dataTables_wrapper">
  <h4><table class="table table-hover table-striped" id="tableData" >
      <thead bgcolor="silver">
-         <th>Sr No.</th>
+     <th><input type="checkbox" name="select-all" id="select-all" /> Select-All</th>
 <th>Date</th>
 <th>Action</th>
 
@@ -28,12 +28,16 @@
     if($res){
         $ctr=1;
         while($row=$res->fetch_assoc()){
+            $id=$row["date"];
             echo '<tr>';
-            echo '<td>'.$ctr.'</td>';
+
+              echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> 
+              <a href="attendance_delete_one.php?id='.$id .'"><span class="glyphicon glyphicon-trash btn btn-lg"></span></a>
+              </td>';
             echo '<td><a href="">'.$row["date"].'</a></td>';
                echo '
                 <input type="hidden" name="date" value="'.$row['date'].'">
-                <td><input type="submit" name="submit" class="btn btn-success btn-block" value="View More"></td>
+                <td><a href="attendance_detail.php?date='.$row['date'].'" class="btn btn-success btn-block">View More</a></td>
                ';  
             echo '</tr>';
             $ctr++;
@@ -47,10 +51,9 @@
       </table></h4>
       </div>
 
-      
       <div align="left">
-<input type="submit" class="btn btn-primary " name="submit" value="Insert Attendance">
-</div> 
+      <input type="submit" class="btn btn-primary" value="DELETE ALL">
+      </div> 
 
       </form>
     </section>

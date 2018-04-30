@@ -30,6 +30,7 @@ if($result->num_rows==1)
 
     $_img=$row["slider_img"];
     $_address=$row["address"];
+    $_SESSION["img"]=$_img;
 }
 ?>
 <div class="table-responsive">

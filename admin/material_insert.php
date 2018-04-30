@@ -13,18 +13,7 @@
 <tr><td>Title :</td><td><input type="text" name="txttitle"  required class="form-control" /> </td></tr>
 <tr><td>Description :</td><td><textarea rows="5" cols="5" required class="form-control" name="txtdesc"></textarea> </td></tr>
 <tr><td> PDF:</td><td><input type="file" name="txturl" required class="form-control"/> </td></tr>
-<tr><td>Year:</td><td>
-            <select name="selyear"  class="form-control">
-            <option value="0"> --Select Year-- </option>
-            <option value="1"> First </option>
-            <option value="2"> Second </option>
-            <option value="3"> Third </option>
-            <option value="4"> Fourth </option>
-            <option value="5"> Fifth </option>
 
-            </select>
-
-             </td></tr>
              <tr><td>Address:</td><td>
             <select name="seladdress" class="form-control" >
             <option value="0"> --Select Address-- </option>

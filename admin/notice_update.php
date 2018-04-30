@@ -31,7 +31,7 @@ $_date=$row["notice_start_date"];
 $_cnt=$row["notice_end_count"];
 $_email=$row["fk_email_id"];
 $_year=$row["notice_year"];
-
+$_SESSION["img"]=$_link;
 
 
 }

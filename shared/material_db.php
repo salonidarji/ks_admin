@@ -46,11 +46,11 @@ class material_db
 		
         }
     
-        public function insertMaterial($_id,$_title,$_desc,$_url,$_email,$_year,$_address,$_approve)
+        public function insertMaterial($_id,$_title,$_desc,$_url,$_email,$_address,$_approve)
 		{
 			$cnn=material_db::connect();
 			
-			$sql="INSERT INTO material_tbl VALUES (". $_id .",'" . $_title . "','" . $_desc . "','" . $_url . "','" . $_email . "'," . $_year. ",'" . $_address . "','" . $_approve . "') ";
+			$sql="INSERT INTO material_tbl VALUES (". $_id .",'" . $_title . "','" . $_desc . "','" . $_url . "','" . $_email . "','" . $_address . "','" . $_approve . "') ";
 			
 			$res=$cnn->query($sql);
 			return $res;
@@ -58,11 +58,11 @@ class material_db
 		
 		}
 
-		public function updateMaterial($_id,$_title,$_desc,$_url,$_email,$_year,$_address,$_approve)
+		public function updateMaterial($_id,$_title,$_desc,$_url,$_email,$_address,$_approve)
 		{
 			
 			$cnn=material_db::connect();
-			$sql="update material_tbl set pk_material_id=".$_id.",material_title='".$_title."',material_url='".$_url."',fk_email_id='".$_email."',fk_student_year=".$_year.",material_address='".$_address."',material_approve='".$_approve."'  where pk_material_id=".$_id;
+			$sql="update material_tbl set pk_material_id=".$_id.",material_title='".$_title."',material_url='".$_url."',fk_email_id='".$_email."',material_address='".$_address."',material_approve='".$_approve."'  where pk_material_id=".$_id;
 			$res=$cnn->query($sql);
 			return $res;
 			material_db::disconnect();

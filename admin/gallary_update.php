@@ -32,7 +32,7 @@ $_title=$row["gallary_title"];
 $_type=$row["gallary_type"];
 $_url=$row["gallary_url"];
 $_album_id=$row["fk_album_id"];
-
+$_SESSION["img"]=$_url;
 }
 ?>
 <div class="table-responsive">

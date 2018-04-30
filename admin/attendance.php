@@ -8,7 +8,7 @@
       <!-- code here --> 
  <form action="attendance_insert.php"  name="attendance_form" method="post">
  
- <h3 class='page-header'>Manage Student</h3>
+ <h3 class='page-header'>Manage Attendance</h3>
 
 <h3> <div class="text-center"><?php echo "Date: ".date("Y-m-d"); ?>  </div> </h3>
  <div class="dataTables_wrapper">
@@ -35,11 +35,12 @@ if($_year >0 && $_year < 6){
             echo '<tr>';
             echo '<td>'.$ctr.'</td>';
             echo '<td>'.$row["pk_stu_rno"].'
-                    <input type="text" name="txtrno[]" hidden value="'.$row["pk_stu_rno"].'" </td>';
+                    <input type="text" name="txtrno['.$cnt_status.']" hidden value="'.$row["pk_stu_rno"].'" </td>';
             echo '<td><input type="radio" name="status['.$cnt_status.']" value="P">Present
-            <input type="radio" name="status[]" value="A">Absent </td>';
+            <input type="radio" name="status['.$cnt_status.']" value="A">Absent </td>';
             echo '</tr>';
             $cnt_status++;
+            $ctr++;
         }
        
     }

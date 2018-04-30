@@ -76,7 +76,7 @@ echo '
       <div class="thumbnail">
         <iframe src="'.$row['material_url']. '" alt="'.$row['material_title']. '" height="100%" width="100%"></iframe>
         <div class="caption">
-        <div> <h4>For : '.$row['fk_student_year']. ' Year Students</h4> </div>
+        <div> <h4>ForAddress : '.$row['material_address']. ' </h4> </div>
           <h5>'.$row['material_desc']. '</h5>
           <div align="right"> <h4>By , <a >'.$row['fk_email_id']. '</h4></a> </div>
         

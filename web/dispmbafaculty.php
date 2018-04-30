@@ -22,14 +22,12 @@
             
               
 
-      echo '
-      <div class="container">
-      <div class="product-sec1">
+			echo '
 			<div class="col-md-13 single-right-left simpleCart_shelfItem">
 				<table class="table table-bordered" width="100%">
   
     <tr>
-      <td rowspan="4"><center><img src="'.$row["faculty_img"].'" data-imagezoom="true" class="img-responsive" alt="" height="2000px" width="2500px"></center> </th>
+      <td rowspan="4"><center><img src="'.$row["faculty_img"].'" data-imagezoom="true" class="img-responsive" alt="" height="400px" width="400px"></center> </th>
       <td scope="col"><b>Name:</th>
       <td scope="col"><b>'.$row["faculty_name"].'</b></th>
     
@@ -48,7 +46,31 @@
       <th scope="row">Qualification</th>
       <td colspan="2"><b>'.$row["faculty_degree"].'</b></td>
    
-    </tr>
+     </tr>
+     <tr>
+      <th scope="row">Teaching Experience</th>
+      <td colspan="2"><b>'.$row["teaching_experience"].'</b></td>
+     </tr>
+     <tr>
+      <th scope="row">M.Phil/Ph.D Guideship: </th>
+      <td colspan="2"><b>'.$row["phd_details"].'</b></td>
+   
+     </tr>
+     <tr>
+      <th scope="row">Paper Presented Details :</th>
+      <td colspan="2"><b>'.$row["paper_presented"].'</b></td>
+   
+     </tr>
+     <tr>
+      <th scope="row">Specialization Areas :</th>
+      <td colspan="2"><b>'.$row["specialization"].'</b></td>
+   
+     </tr>
+     <tr>
+      <th scope="row">Extra Activities :</th>
+      <td colspan="2"><b>'.$row["activities"].'</b></td>
+   
+     </tr>
 		<tr>
       <th scope="row">Description:</th>
       <td colspan="2"><b>'.$row["faculty_description"].'</b></td>
@@ -58,9 +80,7 @@
 </table>
 			<div class="clearfix"> </div>
 		</div>
-  </div>
-  </div>
-  </div>';
+	</div>';
   }
             ?>
 			

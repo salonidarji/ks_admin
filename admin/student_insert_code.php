@@ -36,7 +36,7 @@ if($res)
 		echo '<br><br><br><br><br><br>
 	<div align="center"  class="container jumbotron alert-danger "><h1><span class="glyphicon glyphicon-alert"></h1>
 	<h2> Some Error Occured !!!<br>Try Again</h2>
-	<br><button class="btn btn-default btn-lg"><a href="faculty_insert.php">Back</a></button>
+	<br><button class="btn btn-default btn-lg"><a href="student_insert.php">Back</a></button>
 	</div>
 	';
 	} 

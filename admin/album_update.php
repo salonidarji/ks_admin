@@ -29,7 +29,7 @@ if($result->num_rows==1)
 {
 
 $_url=$row["url"];
-
+$_SESSION["img"]=$_url;
 }
 ?>
 <div class="table-responsive">

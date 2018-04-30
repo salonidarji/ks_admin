@@ -34,6 +34,7 @@ $_password=$row["login_passwd"];
 $_type=$row["login_type"];
 $_profile=$row["login_profile"];
 $_approve=$row["login_approve"];
+$_SESSION["img"]=$_profile;
 
 }
 ?>

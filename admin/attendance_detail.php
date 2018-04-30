@@ -17,11 +17,13 @@
      <th>Sr No.</th>
      <th>Student Roll Number</th>
      <th>Attendance Status</th>
+     <th>Update</th>
      </thead>
      <tbody>
 <?php
-    if(isset($_POST["submit"])){
-        $_date=$_POST["date"];
+   // if(isset($_POST["submit"])){
+        $_date=$_GET["date"];
+       // echo 'date='.$_date;
         $_email=$_SESSION["eid"];
     require '../shared/attendance_db.php';
     $obj=new attendance_db();
@@ -33,12 +35,14 @@
             echo '<td>'.$ctr.'</td>';
             echo '<td>'.$row["fk_stu_rno"].' </td>';
             echo '<td>'.$row["attendance_status"].' </td>';
+            echo '<td> <a href="attendance_update_show.php?rno='.  $row["fk_stu_rno"] .'">
+                        <span class="glyphicon glyphicon-pencil btn btn-lg"></span></a></td>';
             echo '</tr>';
            $ctr++;
         }
        
     }
-    }
+   // }
 ?>
 
 </tbody> 

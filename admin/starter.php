@@ -174,7 +174,7 @@
 
                  
                   ?>
-<h3 align="center">Attendents Zone</h3>
+<h3 align="center">Attendance Zone</h3>
 
 
                   <div class="row">
@@ -263,7 +263,7 @@
                       <div class="inner">
                         <h3>Show</h3>
           
-                        <p>Attendents</p>
+                        <p>Attendance</p>
                       </div>
                       <div class="icon">
                         <i class="ion ion-person"></i>
@@ -275,7 +275,7 @@
      <div class="col-lg-4 col-xs-6">
                 </div>
                 <div class="col-lg-4 col-xs-6">
-                  <div class="info-box"><a href="material_link.php">
+                  <div class="info-box"><a href="material_link_update.php">
             <span class="info-box-icon bg-red"><i class="fa fa-files-o"></i></span>
 
             <div class="info-box-content">
