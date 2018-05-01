@@ -25,6 +25,7 @@ if($result->num_rows==1)
 $_type=$row["result_type"];
 $_email=$row["fk_email_id"];
 $_rno=$row["fk_stu_rno"];
+$course=$row["fk_course_name"];
 $year=$row["stu_year"];
 $sem=$row["stu_semister"];
 $sub1=$row["sub1_name"];
@@ -51,7 +52,7 @@ $sub9_marks=$row["sub9_marks"];
 if($sem>=1 && $sem<=9)
 {
   $n_sub=9;
-  if($sem==9 && $sem==8 && $sem==7 && $sem==6 && $sem==5)
+  if($sem==9 || $sem==8 || $sem==7 || $sem==6 || $sem==5)
   {
     $n_sub=8;
    
@@ -111,11 +112,12 @@ echo '
 <tr><td><input type="text" name="txtsub9" class="form-control" readonly value="'.$sub9.':"/> </td>
         <td><input type="number" name="txtsub9_marks" class="form-control" value="'.$sub9_marks.'"/> </td></tr>
         
-        <tr><td>Enter Grade Point: </td><td><input type="text" name="txtgpa" class="form-control" required/> </td>
+        <tr><td>Enter Grade Point: </td><td><input type="text" name="txtgpa" class="form-control" value="'.$row["stu_gpa"].'" required/> </td>
        </td> </tr>';
  $_SESSION["n_sub"]=$n_sub;
  $_SESSION["year"]=$year;
  $_SESSION["sem"]=$sem;
+ $_SESSION["course"]=$course;
 ?>       
 <tr><td  colspan="2"><input type="submit" name="btnupdate" value="UPDATE"class="form-control btn  btn-info"/></td></tr>
 </div>

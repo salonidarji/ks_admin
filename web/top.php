@@ -27,10 +27,17 @@ session_start();
     function doOnClick() {
         document.getElementById('linkid').click();
         //Should alert('/testlocation');
-		searchPic=document.getElementById("linkid").value;
 		
-		document.getElementById("pic1").src = searchPic;
-    }
+		
+	
+		//document.getElementById("pic1").src = searchPic;
+	}
+	function setImage(){
+		searchPic=document.getElementById("linkid").value;
+		 searchPic= searchPic.substring(searchPic.lastIndexOf('/')+ 1,strlen(searchPic)+1);
+		 alert( searchPic);
+		$("#pic1").attr("src", searchPic);
+	}
 </script>
 </head>
 
@@ -177,9 +184,10 @@ session_start();
 						<div class="styled-input" align="center">
 							<img src="images/avatar.jpg" id="pic1" height="100px" width="100px" class="img img-circle">
 								<br><br><button class="btn btn-primary" onclick="doOnClick()">Upload profile</button>
-								<div>
-								<input type="file" name="txtimg" id="linkid"></div> 		
+								<div hidden> 
+								<input type="file" name="txtimg"  id="linkid" onchange="setImage()"></div> 		
 							</div> 
+							
 							
 							<div class="styled-input agile-styled-input-top">
 								<input type="text" placeholder="Name" name="txtname" required="">

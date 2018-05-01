@@ -23,12 +23,16 @@
            <i></i>
        </span>
        </h3>
-		
+		<?php if(isset($_GET["email"])){
+            
+            ?>
 		<form action="grade.php" method="post" id="quiz">
-		<?php
+        <?php
+        $email=$_GET["email"];
         $cnn=mysqli_connect('localhost','root','','ks_admin_db');
-			$sql="select * from qa_tbl";
-			$res=$cnn->query($sql);
+			$sql="select * from qa_tbl where fk_email_id='".$email."' ";
+            $res=$cnn->query($sql);
+            if(mysqli_num_rows($res)>0){
           
             
                   $i=0;
@@ -67,14 +71,66 @@
                ';
             
          }
+         
+         echo '<input type="hidden" name="email" value="'.$email.'"> ';
    echo ' </ol>';
          
         ?>
         <center>
         <input type="submit" name="submit" value="Submit Quiz" class="btn btn-primary"/>
         </center>
+        <?php }
+                else{
+                    echo '<br><br>
+                <div class="product-sec1">
+                <div align="center"  class=" jumbotron alert alert-danger "><h1><span class="glyphicon glyphicon-alert"></h1>
+                  <h2> Selected Faculty Have NOT Assigned Any Exam !!!<br></h2>
+                  <br><button class="btn btn-default btn-lg"><a href="quiz.php">Back</a></button>
+                </div>
+                </div>';
+                }
+        ?>
 		</form>
-	
+        <?php }
+        else{
+            require '../shared/student_db.php';
+            $obj_stu=new student_db();
+            $email_stu= $_SESSION["eid"];
+            $res_stu=$obj_stu->getStudentEmail($email_stu);
+            if($res){
+                $row_stu=$res_stu->fetch_assoc();
+                $course=$row_stu["fk_course_name"];
+            }
+            else{
+                echo '<br><br>
+                <div class="product-sec1">
+                <div align="center"  class="jumbotron alert alert-danger "><h1><span class="glyphicon glyphicon-alert"></h1>
+                  <h2> Some Error occured !!!<br>Try Again Later</h2>
+                  <br><button class="btn btn-default btn-lg"><a href="index.php">Back</a></button>
+                </div>
+                </div>';
+            }
+            ?>
+            <div class="product-sec1">
+             
+                    <p>Select Which Professor Exam You Want to Give</p>
+            
+            <br>
+            <?php
+            require '../shared/faculty_db.php';
+            $obj=new faculty_db();
+            $res=$obj->getFacultyCourse($course);
+            if($res){
+                while($row=$res->fetch_assoc()){
+                    echo '<a href="quiz.php?email='.$row["fk_email_id"].'"><div class="product-sec1" align="center"><h3>'.$row["faculty_name"].'</h3></div></a><br>';
+                }
+            }
+            
+            ?>
+        
+        </div>
+            <?php
+        } ?>
 	</div>
 	
 	<script type="text/javascript">

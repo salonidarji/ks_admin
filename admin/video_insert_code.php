@@ -4,10 +4,15 @@
 <?php
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
-$_id=$_POST["txtid"];
+$_id="null";
 $_title=$_POST["txttitle"];
 $_desc=$_POST["txtdesc"];
 $_url=$_POST["txturl"];
+$pos=strpos($_url,"v=");
+$_url="https://www.youtube.com/embed/".substr($_url,$pos+2,strlen($_url));
+
+
+echo "<br>url=".$_url;
 
 require '../shared/video_db.php';
 $obj=new video_db();
@@ -24,6 +29,7 @@ else
 	<br><button class="btn btn-default btn-lg"><a href="video_insert.php">Back</a></button>
 	</div>
 	';
+	//echo "INSERT INTO video_tbl VALUES (". $_id .",'" . $_title. "','" . $_desc . "','" . $_url . "') ";
 
 }
 

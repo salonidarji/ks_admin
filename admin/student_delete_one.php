@@ -1,6 +1,6 @@
 <?php
 
-	$_id=$_GET["rno"];
+	$_id=$_GET["id"];
 	require '../shared/student_db.php';
 	$_obj=new student_db();
 	$res=$_obj->deleteStudentOne($_id);

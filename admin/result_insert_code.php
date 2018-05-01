@@ -3,6 +3,8 @@
   
 <?php
 session_start();
+include 'validation.php';
+$msg="";
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
 	require '../shared/result_db.php';
@@ -13,17 +15,29 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 $_id="null";
 
 $_type=$_POST["txttype"];
-$_rno=$_POST["txtrno"];
+if(validateRno($_POST["txtrno"])){
+	$_rno=$_POST["txtrno"];
+	}
+	else{
+		$msg= $msg."<br>Invalid Roll Number is Entered";
+		$_rno="";
+		$error=1;
+	}
 $_gpa=$_POST["txtgpa"];
+$_course=$_SESSION["course"];
+$res_email=$obj->getStudentEmail($_rno,$_course);
 
-$res_email=$obj->getStudentEmail($_rno);
-
-
+if($res_email){
 $row_email=$res_email->fetch_assoc();
-echo "email==".$row_email["fk_email_id"];
+//echo "email==".$row_email["fk_email_id"];
 
 $_email=$row_email["fk_email_id"];
-
+}
+else{
+	$msg= $msg."<br>Student NOt Found For this Roll Number";
+	$_email="";
+	$error=1;
+}
 $_year=$_SESSION["year"];
 $_sem=$_SESSION["sem"];
 if($n_sub>1)
@@ -79,8 +93,8 @@ $_sub9=$_POST["txtsub9"];
 $_sub9_marks=$_POST["txtsub9_marks"];
 }
 
-$res=$obj->insertResult($_id,$_type,$_email,$_rno,$_year,$_sem,$_gpa,$_sub1,$_sub1_marks,$_sub2,$_sub2_marks,$_sub3,$_sub3_marks,$_sub4,$_sub4_marks,$_sub5,$_sub5_marks,$_sub6,$_sub6_marks,$_sub7,$_sub7_marks,$_sub8,$_sub8_marks,$_sub9,$_sub9_marks);
-if($res)
+$res=$obj->insertResult($_id,$_type,$_email,$_rno,$_course,$_year,$_sem,$_gpa,$_sub1,$_sub1_marks,$_sub2,$_sub2_marks,$_sub3,$_sub3_marks,$_sub4,$_sub4_marks,$_sub5,$_sub5_marks,$_sub6,$_sub6_marks,$_sub7,$_sub7_marks,$_sub8,$_sub8_marks,$_sub9,$_sub9_marks);
+if($res  && $error==0)
 {
 	header('location:result.php');
 }
@@ -88,10 +102,11 @@ else
 {
 	echo '<br><br><br><br><br><br>
 	<div align="center"  class="container jumbotron alert-danger "><h1><span class="glyphicon glyphicon-alert"></h1>
-	<h2> Some Error Occured !!!<br>Try Again</h2>
+	<h2> '.$msg.'<br>Try Again</h2>
 	<br><button class="btn btn-default btn-lg"><a href="result_insert.php">Back</a></button>
 	</div>
 	';
+	//echo "SELECT fk_email_id FROM student_tbl where fk_course_name ='".$_course."' && pk_stu_rno =".$_rno;
 }
 
 

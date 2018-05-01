@@ -42,7 +42,7 @@
 
 			  <?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
-         $sql="select * from material_link_tbl where link_year='first' && link_address='msc' && link_sem='sem1'";
+         $sql="select * from material_link_tbl where link_year=1 && link_address='msc' && link_sem=1";
          $result=$cnn->query($sql);
          while($row=$result->fetch_assoc())
          {
@@ -75,7 +75,7 @@
 		 
 			  <?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
-         $sql="select * from material_link_tbl where link_year='first' && link_address='msc' && link_sem='sem2'";
+         $sql="select * from material_link_tbl where link_year=1 && link_address='msc' && link_sem=2";
          $result=$cnn->query($sql);
          while($row=$result->fetch_assoc())
          {
@@ -113,7 +113,7 @@
     
              <?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
-         $sql="select * from material_link_tbl where link_year='second' && link_address='msc' && link_sem='sem3'";
+         $sql="select * from material_link_tbl where link_year=2 && link_address='msc' && link_sem=3";
          $result=$cnn->query($sql);
         
          while($row=$result->fetch_assoc())
@@ -144,7 +144,7 @@
 
 			  <?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
-         $sql="select * from material_link_tbl where link_year='second' && link_address='msc' && link_sem='sem4'";
+         $sql="select * from material_link_tbl where link_year=2 && link_address='msc' && link_sem=4";
          $result=$cnn->query($sql);
          while($row=$result->fetch_assoc())
          {
@@ -176,7 +176,7 @@
 			<li class="cd-faq-title"><h2>Third Year</h2></li><br>
 			<?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
-         $sql="select * from material_link_tbl where link_year='third' && link_address='msc' && link_sem='sem5'";
+         $sql="select * from material_link_tbl where link_year=3 && link_address='msc' && link_sem=5";
          $result=$cnn->query($sql);
          while($row=$result->fetch_assoc())
          {
@@ -205,7 +205,7 @@
 
 			  <?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
-         $sql="select * from material_link_tbl where link_year='third' && link_address='msc' && link_sem='sem6'";
+         $sql="select * from material_link_tbl where link_year=3 && link_address='msc' && link_sem=6";
          $result=$cnn->query($sql);
          while($row=$result->fetch_assoc())
          {
@@ -236,7 +236,7 @@
 			<li class="cd-faq-title"><h2>Fourth Year</h2></li><br>
 			<?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
-         $sql="select * from material_link_tbl where link_year='fourth' && link_address='msc' && link_sem='sem7'";
+         $sql="select * from material_link_tbl where link_year=4 && link_address='msc' && link_sem=7";
          $result=$cnn->query($sql);
          while($row=$result->fetch_assoc())
          {
@@ -264,7 +264,7 @@
 
 			  <?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
-         $sql="select * from material_link_tbl where link_year='fourth' && link_address='msc' && link_sem='sem8'";
+         $sql="select * from material_link_tbl where link_year=4 && link_address='msc' && link_sem=8";
          $result=$cnn->query($sql);
          while($row=$result->fetch_assoc())
          {
@@ -297,7 +297,7 @@
 			<li class="cd-faq-title"><h2>Fifth Year</h2></li><br>
 			<?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
-         $sql="select * from material_link_tbl where link_year='fifth' && link_address='msc' && link_sem='sem9'";
+         $sql="select * from material_link_tbl where link_year=5 && link_address='msc' && link_sem=9";
          $result=$cnn->query($sql);
          while($row=$result->fetch_assoc())
          {
@@ -325,7 +325,7 @@
 
 			  <?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
-         $sql="select * from material_link_tbl where link_year='fifth' && link_address='msc' && link_sem='sem10'";
+         $sql="select * from material_link_tbl where link_year=5 && link_address='msc' && link_sem=10";
          $result=$cnn->query($sql);
          while($row=$result->fetch_assoc())
          {

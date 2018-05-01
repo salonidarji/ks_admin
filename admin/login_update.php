@@ -29,6 +29,7 @@ if($result->num_rows==1)
 {
 
 $_email=$row["pk_login_email_id"];
+$_enrol=$row["login_enrolno"];
 $_name=$row["login_uname"];
 $_password=$row["login_passwd"];
 $_type=$row["login_type"];
@@ -43,7 +44,8 @@ $_SESSION["img"]=$_profile;
 <form method="post" action="login_update_code.php"  enctype="multipart/form-Data" >
 <div class="form-group">
 <tr><td>Email :</td><td><input type="email" name="txtemail" required  class="form-control" value="<?php echo $_email; ?>"/> </td></tr>
-<tr><td>Profile :</td><td><input type="file" name="txtprofile"  required class="form-control" value="<?php echo $_profile; ?>"/> </td></tr>
+<td>Enrollment No. :</td><td><input type="number" name="txtenrol"  class="form-control" value="<?php echo $_enrol; ?>" /> </td></tr>
+<tr><td>Profile :</td><td><input type="file" name="txtprofile"   class="form-control" value="<?php echo $_profile; ?>"/> </td></tr>
 <tr><td>Name:</td><td><input type="text" name="txtname" required class="form-control" value="<?php echo $_name; ?>"/> </td></tr>
 <tr><td>Password:</td><td><input type="password" name="txtpass" required class="form-control" value="<?php echo $_password; ?>"/> </td></tr>
 <tr><td>Type:</td><td>

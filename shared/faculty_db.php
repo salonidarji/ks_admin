@@ -43,6 +43,16 @@ class faculty_db
 			return $res;
 			faculty_db::disconnect();
 		
+		}
+		
+		public function getFacultyCourse($course)
+		{
+			$cnn=faculty_db::connect();
+			$sql="select * from faculty_tbl where faculty_course ='".$course."' ";
+			$res=$cnn->query($sql);
+			return $res;
+			faculty_db::disconnect();
+		
         }
     
         public function insertFaculty($_email,$_name,$_id,$_img,$_course,$_desig,$_degree,$_desc,$_teach_exp,$_phd,$_paper,$_specialization,$_activities)

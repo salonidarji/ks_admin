@@ -62,7 +62,7 @@ class qa_db
 		{
 			
 			$cnn=qa_db::connect();
-			$sql="update qa_tbl set pk_que_id=".$_id.",que_title='".$_title."',que_img='".$_img."',op_1='".$_op1."',op_2='".$_op2."',op_3='".$_op3."',op_4='".$_op4."',ans='".$_ans."',fk_student_year='".$_year."',fk_email_id='".$_email."'  where pk_que_id=".$_id;
+			$sql="update qa_tbl set pk_que_id=".$_id.",que_title='".$_title."',que_img='".$_img."',op_1='".$_op1."',op_2='".$_op2."',op_3='".$_op3."',op_4='".$_op4."',ans='".$_ans."',fk_student_year=".$_year.",fk_email_id='".$_email."'  where pk_que_id=".$_id;
 			$res=$cnn->query($sql);
 			return $res;
 			qa_db::disconnect();

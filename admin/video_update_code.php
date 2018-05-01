@@ -9,6 +9,9 @@ $_title=$_POST["txttitle"];
 $_desc=$_POST["txtdesc"];
 $_url=$_POST["txturl"];
 
+$pos=strpos($_url,"v=");
+$_url="https://www.youtube.com/embed/".substr($_url,$pos+2,strlen($_url));
+echo "<br>url=".$_url;
 require '../shared/video_db.php';
 $obj=new video_db();
 $res=$obj->updateVideo($_id,$_title,$_desc,$_url);

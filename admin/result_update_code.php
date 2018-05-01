@@ -15,6 +15,7 @@ $_rno=$_POST["txtrno"];
 $_gpa=$_POST["txtgpa"];
 $_year=$_SESSION["year"];
 $_sem=$_SESSION["sem"];
+$_course=$_SESSION["course"];
 if($n_sub>1)
 {
 $sub1=$_POST["txtsub1"];
@@ -69,7 +70,7 @@ $sub9_marks=$_POST["txtsub9_marks"];
 }
 require '../shared/result_db.php';
 $obj=new result_db();
-$res=$obj->updateResult($_id,$_type,$_email,$_rno,$_year,$_sem,$_gpa,$sub1,$sub1_marks,$sub2,$sub2_marks,$sub3,$sub3_marks,$sub4,$sub4_marks,$sub5,$sub5_marks,$sub6,$sub6_marks,$sub7,$sub7_marks,$sub8,$sub8_marks,$sub9,$sub9_marks);
+$res=$obj->updateResult($_id,$_type,$_email,$_rno,$_course,$_year,$_sem,$_gpa,$sub1,$sub1_marks,$sub2,$sub2_marks,$sub3,$sub3_marks,$sub4,$sub4_marks,$sub5,$sub5_marks,$sub6,$sub6_marks,$sub7,$sub7_marks,$sub8,$sub8_marks,$sub9,$sub9_marks);
 if($res)
 {
 	header('location:result.php');
@@ -81,7 +82,9 @@ else
 	<h2> Some Error Occured !!!<br>Try Again</h2>
 	<br><button class="btn btn-default btn-lg"><a href="result_update.php">Back</a></button>
 	</div>
-	';}
+	';
+	echo "UPDATE `result_tbl` SET `pk_result_id`=".$_id.",`result_type`=".$_type.",`fk_email_id`='".$_email."',`fk_stu_rno`=".$_rno.",fk_course_name='".$_course."',`stu_year`=".$_year.",`stu_semister`=".$_sem.",`stu_gpa`='".$_gpa."',`sub1_name`='".$sub1."',`sub1_marks`=".$sub1_marks."	,`sub2_name`='".$sub2."',`sub2_marks`=".$sub2_marks."	,`sub3_name`='".$sub3."',`sub3_marks`=".$sub3_marks."	,`sub4_name`='".$sub4."',`sub4_marks`=".$sub4_marks."	,`sub5_name`='".$sub5."',`sub5_marks`=".$sub5_marks."	,`sub6_name`='".$sub6."',`sub6_marks`=".$sub6_marks." ,`sub7_name`='".$sub7."',`sub7_marks`=".$sub7_marks." ,`sub8_name`='".$sub8."',`sub8_marks`=".$sub8_marks." ,`sub9_name`='".$sub9."',`sub9_marks`=".$sub9_marks." WHERE pk_result_id=".$_id;
+}
 
 
 }

@@ -8,9 +8,11 @@
 </span>
 </h3>
 <?php
+
 require '../shared/result_db.php';
 $obj=new result_db();
 $res=$obj->getResult($_SESSION["eid"]);
+if(mysqli_num_rows($res) >0){
 $row=$res->fetch_assoc();
 $gpa=$row["stu_gpa"];
 if($gpa>0.50)
@@ -115,4 +117,15 @@ for($i=1;$i<=$n;$i++){
 </form>
 </div>
 
-<?php require 'bottom.php'; ?>
+<?php 
+}
+else{
+  echo '<br><br>
+  <div class="product-sec1 container-fluid">
+  <div align="center"  class="container jumbotron alert alert-danger "><h1><span class="glyphicon glyphicon-alert"></h1>
+    <h2> This Student have not assigned any Result !!!<br>For Any Query Contact College Admin</h2>
+   <br>
+  </div>
+  </div>';
+}
+require 'bottom.php'; ?>

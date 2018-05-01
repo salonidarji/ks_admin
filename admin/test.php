@@ -21,7 +21,12 @@
       <?php 
 require '..\shared\test_db.php';
 $obj=new test_db();
-$result=$obj->getAllTest();
+if($_SESSION["login_type"]==2){
+$result=$obj->getAllTestFaculty($_SESSION["eid"]);
+}
+else{
+  $result=$obj->getAllTest();
+}
 
 ?>
    <thead bgcolor="silver">
@@ -30,6 +35,7 @@ $result=$obj->getAllTest();
    <th>Correct Answer</th>
    <th>Wrong Answer</th> 
    <th>Skip Answer</th>
+   <th>By Faculty</th>
    <th>Action</th> 
   
    </thead>
@@ -44,6 +50,7 @@ $result=$obj->getAllTest();
       echo '<td>'.$row['test_correct_cnt']. '</td>';
       echo '<td>'.$row['test_wrong_cnt']. '</td>';
       echo '<td>'.$row['test_skip_cnt']. '</td>';
+      echo '<td>'.$row['faculty_email_id']. '</td>';
      
       echo '<td>
            <a href="test_delete_one.php?id='.  $row["pk_test_id"] .'"><span class="glyphicon glyphicon-trash btn"></span></a>';

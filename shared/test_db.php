@@ -26,13 +26,23 @@ class test_db
 			test_db::disconnect();
 		
 		}
+
+		public function getAllTestFaculty($email_faculty)
+		{
+			$cnn=test_db::connect();
+			$sql="select * from test_tbl where faculty_email_id='".$email_faculty."' ";
+			$res=$cnn->query($sql);
+			return $res;
+			test_db::disconnect();
+		
+		}
 		
 		
     
-        public function insertTest($_id,$_email,$_correct_cnt,$_wrong_cnt,$_skip)
+        public function insertTest($_id,$_email,$_correct_cnt,$_wrong_cnt,$_skip,$email_faculty)
 		{
 			$cnn=test_db::connect();
-			$sql="INSERT INTO test_tbl VALUES (". $_id .",'" . $_email. "'," . $_correct_cnt . "," . $_wrong_cnt . ",".$_skip.") ";
+			$sql="INSERT INTO test_tbl VALUES (". $_id .",'" . $_email. "'," . $_correct_cnt . "," . $_wrong_cnt . ",".$_skip.",'".$email_faculty."') ";
 			$res=$cnn->query($sql);
 			return $res;
 			test_db::disconnect();

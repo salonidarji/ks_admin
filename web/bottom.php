@@ -34,20 +34,12 @@
                 <div class="col-xs-6 footer-grids ">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li>
-                            <a href="">Alumni</a>
-                        </li>
-                        <li>
-                            <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;	MBA</a>
-                        </li>
-                        <li>
-                            <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Msc(CA & IT)</a>
-                        </li>
+                        
                         <li>
                             <a href="faq.php">FAQs'</a>
                         </li>
                         <li>
-                            <a href="gallary.php">Gallery</a>
+                            <a href="gallary.php">Gallary</a>
                         </li>
                         <li>
                             <a href="http://www.gujaratuniversity.ac.in/web/">Gujarat University</a>

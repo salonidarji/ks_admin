@@ -19,6 +19,7 @@
 <form method="post" action="login_insert_code.php" enctype="multipart/form-data">
 <div class="form-group">
 <tr><td>Email :</td><td><input type="email" name="txtemail" required  class="form-control" /> </td></tr>
+<tr><td>Enrollment No. :</td><td><input type="number" name="txtenrol"  class="form-control" /> </td></tr>
 <tr><td>Profile :</td><td><input type="file" name="txtprofile"  required class="form-control"/> </td></tr>
 <tr><td>Name:</td><td><input type="text" name="txtname" required class="form-control"/> </td></tr>
 <tr><td>Password:</td><td><input type="password" name="txtpass" required class="form-control"/> </td></tr>

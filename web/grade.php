@@ -12,15 +12,24 @@
 
 <body>
 <div class="container">
-	<div id="page-wrap">
+<h3 class="tittle-w3l">Quiz Result
+       
+       <span class="heading-style">
+           <i></i>
+           <i></i>
+           <i></i>
+       </span>
+       </h3>
+	<div id="page-wrap" class="product-sec1">
 
-		<h1>Final Quiz for Lip building</h1>
+		
 		
         <?php
 		if(isset($_POST['submit']))
 		{
+			$email_faculty=$_POST["email"];
             $cnn=mysqli_connect('localhost','root','','ks_admin_db');
-			$sql="select * from qa_tbl";
+			$sql="select * from qa_tbl where fk_email_id='".$email_faculty."' ";
 			$res=$cnn->query($sql);
 			$i=0;
 			$totalCorrect = 0;
@@ -52,22 +61,26 @@
 		 }
 		 }; 
 		 $totalWrong=$n-$totalCorrect-$skip; 
-		 echo "<div id='results'>".$totalCorrect."/ ".$n." correct</div>";
-		 echo "<div id='results'>".$totalWrong."/ ".$n." wrong</div>";
-		 echo "<div id='results'>".$skip."/ ".$n." skip</div>"; 
+		 echo "<div align='center'>
+		 		<div id='results'><h3><span class='glyphicon glyphicon-ok'>   ".$totalCorrect."/".$n." (Correct)</h3></div>";
+		 echo "<br><div id='results'><h3><span class='glyphicon glyphicon-remove'>   ".$totalWrong."/ ".$n."   (Wrong)</h3></div>";
+		 echo "<br><div id='results'><h3><span class='glyphicon glyphicon-warning-sign'>   ".$skip."/ ".$n." (Skip) </h3></div> </div>"; 
 
 		 $id="null";
 		 $email=$_SESSION["eid"];
 		 require '../shared/test_db.php';
 		 $obj=new test_db();
-		 $res=$obj->insertTest($id,$email,$totalCorrect,$totalWrong,$skip);
+		 $res=$obj->insertTest($id,$email,$totalCorrect,$totalWrong,$skip,$email_faculty);
 		 if($res)
 		 {
-			echo '<h5>Exam Completed Successfully</h5>';
+			echo '<br><br><div align="center" class="alert alert-success alert-block">
+			<h3><span class="glyphicon glyphicon-ok-sign">  Exam Completed Successfully</span></h3></div>';
 		 }
 		 else{
-			echo '<h5>Exam Not Completed Successfully<br> please contact Authority for Query</h5>';
-			echo "<br>INSERT INTO test_tbl VALUES (". $id .",'" . $email. "'," . $totalCorrect . "," . $totalWrong . ",".$skip.") ";
+			echo '<br><br><div align="center" class="alert alert-danger alert-block">
+			<h3><span class="glyphicon glyphicon-remove-sign">  Exam NOT Completed Successfully</span></h3></div>';
+		 
+			//echo "<br>INSERT INTO test_tbl VALUES (". $id .",'" . $email. "'," . $totalCorrect . "," . $totalWrong . ",".$skip.") ";
 		}
         ?>
 	
