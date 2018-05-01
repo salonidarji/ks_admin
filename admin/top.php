@@ -66,9 +66,11 @@ desired effect
 <body class="hold-transition skin-blue sidebar-mini " >
 <?php
 session_start();
-if($_SESSION["eid"]=="")
+if(!isset($_SESSION["eid"]))
 {
-  echo '<div class="alert alert-danger"> please do login first</div>';
+  echo '<h1><div align="center" class="jumbotron alert-danger"> please do login first
+  <br><br><a href="../web/index.php"><button class="btn btn-primary btn-lg">Back</button></a>
+  </div></h1>';
 }
 else{
   $_id=$_SESSION["eid"];
@@ -77,16 +79,9 @@ $obj_login=new login_db();
 $res_login=$obj_login->getLogin($_id);
 $row=$res_login -> fetch_assoc();
 
-}
+
 ?>
-<?php
-      if($_SESSION["eid"]==""){
-        echo '<div class=" btn-lg btn-danger" align="center">
-        Please , Do login first !!!
-        </div>';
-      }
-      else{
-     ?>
+
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -217,6 +212,7 @@ $row=$res_login -> fetch_assoc();
           <li  ><a href="material.php"><i class="fa fa-table"></i> <span > Material</span> </a></li>
           <li <?php echo $_hide; ?> ><a href="notice.php"><i class="fa fa-table"></i> <span > Notice</span></a></li>
           <li  ><a href="qa.php"><i class="fa fa-table"></i> <span > Question-Answer</span> </a></li>
+          <li  ><a href="faq.php"><i class="fa fa-table"></i> <span > FAQs</span> </a></li>
           <li  ><a href="result.php"><i class="fa fa-table"></i> <span > Result</span> </a></li>
           <li  ><a href="test.php"><i class="fa fa-table"></i> <span > Test</span> </a></li>
           <li <?php echo $_hide; ?> ><a href="slider.php"><i class="fa fa-table"></i> <span > Slider </span> </a></li>  

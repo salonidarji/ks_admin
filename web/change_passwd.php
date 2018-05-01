@@ -1,4 +1,12 @@
 <?php require 'top.php'; ?>
+<?php
+if(!isset($_SESSION["eid"])){
+echo '<h1><div align="center" class="alert alert-danger">
+<span class="glyphicon glyphicon-warning-sign">  First Do Sign-In</span>
+</div></h1>';
+}
+else{
+?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -105,4 +113,4 @@ else
       </section>
       </div>
       
-<?php require 'bottom.php'; ?>
+<?php } require 'bottom.php'; ?>

@@ -14,7 +14,7 @@
          while($row=$result->fetch_assoc())
          {
              echo '<table class="table">';
-             echo '<tr><td><img src="'.$row["gallary_url"].'"></td>';
+             echo '<tr><td><img src="'.$row["gallary_url"].'" height="300px" width="350px"></td>';
              
               echo '<td colspan="2"></td>';
              echo '<td>';
@@ -22,13 +22,13 @@
 
          }
          ?>
-         <b>Placement cell plays a vital role in shaping the career of an individual. We have a placement cell for the students of MSC (CA&IT) programme.
+         <b><font size="4px" color="black"><br><br>Placement cell plays a vital role in shaping the career of an individual. We have a placement cell for the students of MSC (CA&IT) programme.
          
          At our institute, the placement process is a team work where the Directors,Placement Co-ordinators,Faculty members and students work in an aligned manner right from brochure designing, visiting companies to closing the process successfully.
          
          We offer Placement services to studentsafter graduation,8 week Internship at the end of fourth year and final placement in the fifth year.Many well-known domestic and international Information Technology companies are our regular recruiters.
          
-         </td></tr></table>
+         </font></td></tr></table>
        		 <?php
 	require '../shared/slider_db.php';
 	$obj_slider=new slider_db();

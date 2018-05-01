@@ -1,4 +1,12 @@
 <?php require'top.php';?>
+<?php
+if(!isset($_SESSION["eid"])){
+echo '<h1><div align="center" class="alert alert-danger">
+<span class="glyphicon glyphicon-warning-sign">  First Do Sign-In</span>
+</div></h1>';
+}
+else{
+?>
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -355,4 +363,4 @@
 <script src="faq-template-master/js/main.js"></script> <!-- Resource jQuery -->
 </body>
 </html>
-<?php require'bottom.php';?>
+      <?php } require'bottom.php';?>

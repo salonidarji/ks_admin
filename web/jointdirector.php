@@ -14,7 +14,7 @@
          while($row=$result->fetch_assoc())
          {
              echo '<table class="table">';
-             echo '<tr><td><img src="'.$row["gallary_url"].'" height="400px" width="500px"></td>';
+             echo '<tr><td><img src="'.$row["gallary_url"].'" height="350px" width="500px"></td>';
              
               echo '<td colspan="2"></td>';
              echo '<td>';

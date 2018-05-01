@@ -31,7 +31,7 @@
          
          
          </td></tr></table>
-        <table class="table">
+      <center>  <table class="table" align="center">
             <tr>
                 <td>
                 <div class="grid_3 grid_5 wthree">
@@ -83,17 +83,17 @@
 							
 							
 						</tbody>
-					</table>
+					</table></center>
 				</div>
 
-                </td>
+                
 
-                <td>
+            
 <div class="grid_3 grid_5 wthree">
 			
 				<div class="col-md-6 agileits-w3layouts">
 					
-					<table class="table table-bordered">
+					<table class="table table-bordered" align="left">
 						<thead>
 							<tr>
 								<th>
@@ -131,7 +131,7 @@ Electronic Resources</th>
 							</tr>
 							
 						</tbody>
-					</table>
+					</table></center>
 				</div>
 
                 </td>

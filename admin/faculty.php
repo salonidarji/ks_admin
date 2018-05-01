@@ -1,4 +1,10 @@
 <?php require 'top.php'; ?>
+<?php if(!isset($_SESSION["eid"])){
+  
+}
+else{
+
+?>
 <?php
       if($_SESSION["login_type"]==2){
         echo '<div class=" btn-lg btn-danger" align="center">
@@ -127,5 +133,5 @@ $result=$obj->getAllFaculty();
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-        <?php } ?>
+        <?php } } ?>
 <?php require 'bottom.php'; ?>

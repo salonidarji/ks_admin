@@ -13,7 +13,7 @@ $_desc=$_POST["txtdesc"];
 $_date=$_POST["txtdate"];
 $_cnt=$_POST["txtcnt"];
 $_year=$_POST["selyear"];
-
+$_address=$_POST["seladdress"];
 $_email=$_SESSION["eid"];
 if((basename($_FILES["txtlink"]["name"]))==""){
 	$_link=$_oldimg;
@@ -30,7 +30,7 @@ if(move_uploaded_file($_FILES["txtlink"]["tmp_name"] , $_link ) || $_flag==0)
 {
 require '../shared/notice_db.php';
 $obj=new notice_db();
-$res=$obj->updateNotice($_id,$_title,$_desc,$_link,$_date,$_cnt,$_email,$_year);
+$res=$obj->updateNotice($_id,$_title,$_desc,$_link,$_date,$_cnt,$_email,$_year,$_address);
 if($res)
 {
 	header('location:notice.php');

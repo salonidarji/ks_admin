@@ -108,7 +108,12 @@ if($res >0 && $error==0)
 	$res_l=$obj_l->insertLogin($_email,$_enrol,$_img,$_name,$_password,$_type,$_approve);
 	if($res_l >0 && $error==0)
 	{ 
-		
+		//ahiyathi
+   
+     
+		include '../PHPMailer/demo1.php';
+		//ahiya
+   
 	header('location:student.php');
 	 }
 	else{

@@ -1,4 +1,10 @@
 <?php require 'top.php'; ?>
+<?php if(!isset($_SESSION["eid"])){
+  
+}
+else{
+
+?>
 <?php
       if($_SESSION["login_type"]==2){
         echo '<div class=" btn-lg btn-danger" align="center">
@@ -33,6 +39,16 @@
             <option value="5"> Fifth </option>
 
             </select>
+            <tr><td>Address:</td><td>
+            <select name="seladdress" class="form-control" >
+            <option value="0"> --Select Address-- </option>
+            <option value="Marquee"> Marquee </option>
+            <option value="Announcements"> Announcement </option>
+            <option value="Events"> Events </option>
+            <option value="News"> News </option>
+           
+
+            </select>
 
 
 <tr><td colspan="2"><input type="submit" name="btninsert" value="INSERT" class="form-control btn btn-info "/></td></tr>
@@ -51,4 +67,4 @@
   </div>
   <!-- /.content-wrapper -->
       <?php } ?>
-  <?php require 'bottom.php'; ?>
+      <?php } require 'bottom.php'; ?>

@@ -14,12 +14,13 @@ $_cnt=$_POST["txtcnt"];
 $_year=$_POST["selyear"];
 
 $_email=$_SESSION["eid"];
+$_address=$_POST["seladdress"];
 
 if(move_uploaded_file($_FILES["txtlink"]["tmp_name"] , $_link ))
 {
 require '../shared/notice_db.php';
 $obj=new notice_db();
-$res=$obj->insertNotice($_id,$_title,$_desc,$_link,$_date,$_cnt,$_email,$_year);
+$res=$obj->insertNotice($_id,$_title,$_desc,$_link,$_date,$_cnt,$_email,$_year,$_address);
 if($res)
 {
 	header('location:notice.php');
@@ -32,6 +33,7 @@ else
 	<br><button class="btn btn-default btn-lg"><a href="notice_insert.php">Back</a></button>
 	</div>
 	';
+	echo "INSERT INTO notice_tbl VALUES (". $_id .",'" . $_title . "','" . $_desc . "','" . $_link . "','" . $_date . "',".$_cnt.",'" . $_email . "'," . $_year .  ") ";
 }
 }
 else{
@@ -41,6 +43,7 @@ else{
 	<br><button class="btn btn-default btn-lg"><a href="notice_insert.php">Back</a></button>
 	</div>
 	';
+	
 }
 
 }

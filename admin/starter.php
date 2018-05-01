@@ -1,12 +1,11 @@
 <?php require 'top.php'; ?>
-<?php
-      if($_SESSION["eid"]==""){
-        echo '<div class=" btn-lg btn-danger" align="center">
-        Please , Do login first
-        </div>';
-      }
-      else{
-     ?>
+<?php if(!isset($_SESSION["eid"])){
+  
+}
+else{
+
+?>
+     
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->

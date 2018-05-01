@@ -54,6 +54,14 @@ class faq_db
 			return $res;
 			faq_db::disconnect();
 		}
+		public function deleteAllFaq($_arr)
+		{
+			$cnn=faq_db::connect();
+			$sql="delete from faq_tbl where faq_id in ($_arr) ";
+			$res=$cnn->query($sql);
+			return $res;
+			faq_db::disconnect();
+		}
     }	
 		
         

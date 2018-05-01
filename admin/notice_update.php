@@ -1,4 +1,10 @@
 <?php require 'top.php'; ?>
+<?php if(!isset($_SESSION["eid"])){
+  
+}
+else{
+
+?>
 <?php
       if($_SESSION["login_type"]==2){
         echo '<div class=" btn-lg btn-danger" align="center">
@@ -32,7 +38,7 @@ $_cnt=$row["notice_end_count"];
 $_email=$row["fk_email_id"];
 $_year=$row["notice_year"];
 $_SESSION["img"]=$_link;
-
+$_address=$row["notice_address"];
 
 }
 ?>
@@ -57,8 +63,15 @@ $_SESSION["img"]=$_link;
                     <option value="4" <?=$_year == '4' ? ' selected="selected"' : '';?>>Fourth</option>
                     <option value="5" <?=$_year == '5' ? ' selected="selected"' : '';?>>Fifth</option>
 					</select>
-
-
+          
+            <tr><td>Address:</td><td>
+            <select name="seladdress" class="form-control" >
+            <option value="0"> --Select Address-- </option>
+            <option value="Marquee"  <?=$_address == 'Marquee' ? ' selected="selected"' : '';?>> Marquee </option>
+            <option value="Announcements"  <?=$_address == 'Announcements' ? ' selected="selected"' : '';?>> Announcement </option>
+            <option value="Events"  <?=$_address == 'Events' ? ' selected="selected"' : '';?>> Events </option>
+            <option value="News"  <?=$_address == 'News' ? ' selected="selected"' : '';?>> News </option>
+</select>
 				</td></tr>
 
 					
@@ -80,4 +93,4 @@ $_SESSION["img"]=$_link;
   </div>
   <!-- /.content-wrapper -->
 <?php } ?>
-  <?php require 'bottom.php'; ?>
+<?php } require 'bottom.php'; ?>

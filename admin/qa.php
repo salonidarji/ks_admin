@@ -1,6 +1,11 @@
 
   <?php require 'top.php'; ?>
+  <?php if(!isset($_SESSION["eid"])){
   
+}
+else{
+
+?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -142,4 +147,4 @@ if(mysqli_num_rows($result) > 0)
   <!-- /.content-wrapper -->
  
 
-  <?php require 'bottom.php'; ?>
+    <?php } require 'bottom.php'; ?>

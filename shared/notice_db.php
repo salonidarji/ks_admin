@@ -46,11 +46,11 @@ class notice_db
 		
         }
     
-        public function insertNotice($_id,$_title,$_desc,$_link,$_date,$_cnt,$_email,$_year)
+        public function insertNotice($_id,$_title,$_desc,$_link,$_date,$_cnt,$_email,$_year,$_address)
 		{
 			$cnn=notice_db::connect();
 			
-			$sql="INSERT INTO notice_tbl VALUES (". $_id .",'" . $_title . "','" . $_desc . "','" . $_link . "','" . $_date . "',".$_cnt.",'" . $_email . "'," . $_year .  ") ";
+			$sql="INSERT INTO notice_tbl VALUES (". $_id .",'" . $_title . "','" . $_desc . "','" . $_link . "','" . $_date . "',".$_cnt.",'" . $_email . "'," . $_year .  ",'".$_address."') ";
 			
 			$res=$cnn->query($sql);
 			return $res;
@@ -58,11 +58,11 @@ class notice_db
 		
 		}
 
-		public function updateNotice($_id,$_title,$_desc,$_link,$_date,$_cnt,$_email,$_year)
+		public function updateNotice($_id,$_title,$_desc,$_link,$_date,$_cnt,$_email,$_year,$_address)
 		{
 			
 			$cnn=notice_db::connect();
-			$sql="update notice_tbl set pk_notice_id=".$_id.",notice_title='".$_title."',notice_link='".$_link."',notice_start_date='".$_date."',notice_end_count=".$_cnt.",fk_email_id='".$_email."',notice_year=".$_year." where pk_notice_id=".$_id;
+			$sql="update notice_tbl set pk_notice_id=".$_id.",notice_title='".$_title."',notice_link='".$_link."',notice_start_date='".$_date."',notice_end_count=".$_cnt.",fk_email_id='".$_email."',notice_year=".$_year.",notice_address='".$_address."' where pk_notice_id=".$_id;
 			$res=$cnn->query($sql);
 			return $res;
 			notice_db::disconnect();

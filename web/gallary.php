@@ -6,7 +6,7 @@
 	<div class="ads-grid">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l">GALLARY
+			<h3 class="tittle-w3l">GALLERY
 				<span class="heading-style">
 					<i></i>
 					<i></i>

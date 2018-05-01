@@ -1,4 +1,10 @@
 <?php require 'top.php'; ?>
+<?php if(!isset($_SESSION["eid"])){
+  
+}
+else{
+
+?>
 <?php
       if($_SESSION["login_type"]==2){
         echo '<div class="btn-danger">
@@ -119,4 +125,4 @@ echo '
   </div>
   <!-- /.content-wrapper -->
 
- <?php require 'bottom.php'; ?>
+  <?php } require 'bottom.php'; ?>

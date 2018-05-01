@@ -1,12 +1,17 @@
 <?php require 'top.php'; ?>
+<?php if(!isset($_SESSION["eid"])){
+  
+}
+else{
 
+?>
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       
       <!-- code here --> 
-      <form action="material_delete.php" name="material_form" method="post" enctype="multipart/form-Data">
+      <form action="faq_delete.php" name="material_form" method="post" enctype="multipart/form-Data">
       <table class="table">
       <tr><td>
       <h3 class='page-header'>Frequently Asked Questions </h3>
@@ -123,4 +128,4 @@ echo '
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-<?php require 'bottom.php'; ?>
+  <?php } require 'bottom.php'; ?>
