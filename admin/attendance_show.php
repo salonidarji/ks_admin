@@ -39,7 +39,7 @@ else{
               echo '<td> <input type="checkbox" name="chkdel[]" value="'.$id.'"> 
               <a href="attendance_delete_one.php?id='.$id .'"><span class="glyphicon glyphicon-trash btn btn-lg"></span></a>
               </td>';
-            echo '<td><a href="">'.$row["date"].'</a></td>';
+            echo '<td>'.$row["date"].'</td>';
                echo '
                 <input type="hidden" name="date" value="'.$row['date'].'">
                 <td><a href="attendance_detail.php?date='.$row['date'].'" class="btn btn-success btn-block">View More</a></td>

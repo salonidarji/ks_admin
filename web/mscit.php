@@ -7,28 +7,33 @@
 					<i></i>
 				</span>
             </h3>
+            <div class="product-sec1">
+            <div class="row">
             <?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
          $sql="select * from gallary_tbl where gallary_type=2";
          $result=$cnn->query($sql);
          while($row=$result->fetch_assoc())
          {
-             echo '<table class="table">';
-             echo '<tr><td><img src="'.$row["gallary_url"].'" height="300px" width="350px"></td>';
+           
+             echo '<div class="col-md-5">
+             <img class="img-responsive" src="'.$row["gallary_url"].'" height="300px" width="350px"></div>';
              
-              echo '<td colspan="2"></td>';
-             echo '<td>';
              
 
          }
          ?>
-         <b><font size="4px" color="black"><br><br>Placement cell plays a vital role in shaping the career of an individual. We have a placement cell for the students of MSC (CA&IT) programme.
+         <div class="col-md-7">
+         <font size="4px" color="black"><br><br>Placement cell plays a vital role in shaping the career of an individual. We have a placement cell for the students of MSC (CA&IT) programme.
          
          At our institute, the placement process is a team work where the Directors,Placement Co-ordinators,Faculty members and students work in an aligned manner right from brochure designing, visiting companies to closing the process successfully.
          
          We offer Placement services to studentsafter graduation,8 week Internship at the end of fourth year and final placement in the fifth year.Many well-known domestic and international Information Technology companies are our regular recruiters.
          
-         </font></td></tr></table>
+         </font>
+         </div>
+         </div>
+         <div class="row">
        		 <?php
 	require '../shared/slider_db.php';
 	$obj_slider=new slider_db();
@@ -71,4 +76,7 @@ while($row=$res->fetch_assoc())
   <span class="sr-only">Next</span>
 </a>
 </div>
+
+
+</div></div>
 <?php require 'bottom.php'; ?>

@@ -41,10 +41,10 @@ else{
             </div>
 
         </div>
-                <table class="table">
-                <td><a href="index.php" class="btn btn-danger btn-block"><b><span class="glyphicon glyphicon-home btn btn-md"></span>Back Home</b></a></td>
-                <td><a href="change_passwd.php" class="btn btn-success btn-block"><b><span class="glyphicon glyphicon-pencil btn btn-md"></span>Password</b></a></td>
-                
+              <div class="row">
+                <div class="col-md-6"><a href="index.php" class="btn btn-danger btn-block"><b><span class="glyphicon glyphicon-home btn btn-md"></span>Back Home</b></a></div>
+                <div class="col-md-6"><a href="change_passwd.php" class="btn btn-success btn-block"><b><span class="glyphicon glyphicon-pencil btn btn-md"></span>Password</b></a></div>
+                </div>
 
             </table>
             </div>

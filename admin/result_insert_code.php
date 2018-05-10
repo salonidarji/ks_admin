@@ -27,7 +27,7 @@ $_gpa=$_POST["txtgpa"];
 $_course=$_SESSION["course"];
 $res_email=$obj->getStudentEmail($_rno,$_course);
 
-if($res_email){
+if(mysqli_num_rows($res_email) > 0){
 $row_email=$res_email->fetch_assoc();
 //echo "email==".$row_email["fk_email_id"];
 

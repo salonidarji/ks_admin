@@ -7,11 +7,11 @@
         while($row=$res->fetch_assoc()){
 
             $rno=$row["pk_stu_rno"];
-            $newRno=$rno - 1000;
+            $newRno=$rno + 1000;
             $year=$row["stu_year"];
-            $newYear=$year - 1;
+            $newYear=$year + 1;
             $sem=$row["stu_semister"];
-            $newSem=$sem - 1;
+            $newSem=$sem + 1;
             $email=$row["fk_email_id"];
 
             

@@ -59,8 +59,8 @@ while($row=$res->fetch_assoc())
         
 						echo'<h3 class="heading-tittle">'.$row["notice_title"].'</h3><br>';
 							echo'<div align="center"> '.$row["notice_desc"].'</div>';
-							echo'<a href="'.$row["notice_link"].'"><center>CLICK HERE </center></a>';	
-		 	echo'<a href="'.$row["notice_link"].'"><center>CLICK HERE </center></a>';	
+							echo'<a href="'.$row["notice_link"].'"><center>'.$row["notice_title"].' </center></a>';	
+		 	
 		
 		 }
 		 ?>					
@@ -128,7 +128,7 @@ while($row=$res->fetch_assoc())
 						echo'<div class="w3l-specilamk">
 							<div class="speioffer-agile">
 								<a href="gallary.php">
-									<img src="'.$row["url"].'" height="300px" width="300px">
+									<img  class="img-responsive" src="'.$row["url"].'" height="300px" width="300px">
 								</a>
 							</div>
 							</div>

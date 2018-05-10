@@ -43,7 +43,7 @@ else{
 
 	<div class="cd-faq-items">
 		<ul id="basics" >
-         <li class="cd-faq-title" ><h2><b>First Year</b></h2></li><br>
+         <li class="cd-faq-title" ><h2><b>First Year</b></h2></li><br><br>
     
              
        </li>
@@ -59,15 +59,15 @@ else{
             echo '        <a  class="cd-faq-trigger" >Semester 1</a>';
     
             
-				echo'<div class="cd-faq-content">
-            <a href="'.$row['first_link'].'">BUSINESS MANAGEMENT -1 </a><br>
-            <a href="'.$row['second_link'].'">FUNDAMENTALS OF FINANCIAL ACCOUNTING</a><br>
-            <a href="'.$row['third_link'].'">BASIC STATISTICS</a><br>
-            <a href="'.$row['fourth_link'].'">FOUNDATION COURSE IN ECONOMICS</a><br>
-            <a href="'.$row['fifth_link'].'">MERCANTILE LAW </a><br>
-            <a href="'.$row['sixth_link'].'">COMMUNICATION SKILLS</a><br>
-            <a href="'.$row['seventh_link'].'">INTRODUCTION TO INFORMATION TECHNOLOGY </a><br>
-            <a href="'.$row['eighth_link'].'">INDIAN CULTURE AND CIVILIZATION</a><br>
+				echo'<div class="cd-faq-content row">
+            <a href="'.$row['first_link'].'">BUSINESS MANAGEMENT -1 </a><br><br>
+            <a href="'.$row['second_link'].'">FUNDAMENTALS OF FINANCIAL ACCOUNTING</a><br><br>
+            <a href="'.$row['third_link'].'">BASIC STATISTICS</a><br><br>
+            <a href="'.$row['fourth_link'].'">FOUNDATION COURSE IN ECONOMICS</a><br><br>
+            <a href="'.$row['fifth_link'].'">MERCANTILE LAW </a><br><br>
+            <a href="'.$row['sixth_link'].'">COMMUNICATION SKILLS</a><br><br>
+            <a href="'.$row['seventh_link'].'">INTRODUCTION TO INFORMATION TECHNOLOGY </a><br><br>
+            <a href="'.$row['eighth_link'].'">INDIAN CULTURE AND CIVILIZATION</a><br><br>
             <a href="'.$row['ninth_link'].'">LEARNING FROM LEADERS</a>';
 					
          
@@ -92,14 +92,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'">ENVIRONMENTAL STUDIES</a><br>
-            <a href="'.$row['second_link'].'">PERSONALITY DEVELOPEMENT </a><br>
-            <a href="'.$row['third_link'].'">BUSINESS MANAGEMENT - 2</a><br>
-            <a href="'.$row['fourth_link'].'">FUNDAMENTALS OF COST ACCOUNTING</a><br>
-            <a href="'.$row['fifth_link'].'">BASIC MATHEMATICS</a><br>
-            <a href="'.$row['sixth_link'].'">ELEMENTARY COURSE IN ECONOMICS</a><br>
-            <a href="'.$row['seventh_link'].'">COMMERCIAL COMMUNICATION</a><br>
-            <a href="'.$row['eighth_link'].'">GROWTH AND STRUCTURE OF INDUSTRIES</a><br>
+         <a href="'.$row['first_link'].'">ENVIRONMENTAL STUDIES</a><br><br>
+            <a href="'.$row['second_link'].'">PERSONALITY DEVELOPEMENT </a><br><br>
+            <a href="'.$row['third_link'].'">BUSINESS MANAGEMENT - 2</a><br><br>
+            <a href="'.$row['fourth_link'].'">FUNDAMENTALS OF COST ACCOUNTING</a><br><br>
+            <a href="'.$row['fifth_link'].'">BASIC MATHEMATICS</a><br><br>
+            <a href="'.$row['sixth_link'].'">ELEMENTARY COURSE IN ECONOMICS</a><br><br>
+            <a href="'.$row['seventh_link'].'">COMMERCIAL COMMUNICATION</a><br><br>
+            <a href="'.$row['eighth_link'].'">GROWTH AND STRUCTURE OF INDUSTRIES</a><br><br>
             <a href="'.$row['ninth_link'].'">PROJECT</a>';
 					
          
@@ -115,7 +115,7 @@ else{
 		</ul> <!-- cd-faq-group -->
 
 		<ul id="mobile">
-			<li class="cd-faq-title"><h2>Second Year</h2></li><br>
+			<li class="cd-faq-title"><h2>Second Year</h2></li><br><br>
     
              <?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
@@ -130,14 +130,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'">INTRODUCTION TO RESEARCH METHODOLOGY</a><br>
-            <a href="'.$row['second_link'].'">HUMANITIES – 1</a><br>
-            <a href="'.$row['third_link'].'">INTRODUCTION TO MARKETING MANAGEMENT </a><br>
-            <a href="'.$row['fourth_link'].'">ADVANCED FINANCIAL ACCOUNTING – 1 </a><br>
-            <a href="'.$row['fifth_link'].'">BUSINESS MATHEMATICS</a><br>
-            <a href="'.$row['sixth_link'].'">MICRO ECONOMICS – THEORY</a><br>
-            <a href="'.$row['seventh_link'].'">SOFT SKILL DEVELOPMENT </a><br>
-            <a href="'.$row['eighth_link'].'">DIRECT TAXES – I </a><br>
+         <a href="'.$row['first_link'].'">INTRODUCTION TO RESEARCH METHODOLOGY</a><br><br>
+            <a href="'.$row['second_link'].'">HUMANITIES – 1</a><br><br>
+            <a href="'.$row['third_link'].'">INTRODUCTION TO MARKETING MANAGEMENT </a><br><br>
+            <a href="'.$row['fourth_link'].'">ADVANCED FINANCIAL ACCOUNTING – 1 </a><br><br>
+            <a href="'.$row['fifth_link'].'">BUSINESS MATHEMATICS</a><br><br>
+            <a href="'.$row['sixth_link'].'">MICRO ECONOMICS – THEORY</a><br><br>
+            <a href="'.$row['seventh_link'].'">SOFT SKILL DEVELOPMENT </a><br><br>
+            <a href="'.$row['eighth_link'].'">DIRECT TAXES – I </a><br><br>
             <a href="'.$row['ninth_link'].'">PROJECT</a>';
 					
          echo '	</div> <!-- cd-faq-content -->';
@@ -160,14 +160,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'"> INTRODUCTION TO SCIENCE AND TECHNOLOGY</a><br>
-            <a href="'.$row['second_link'].'">HUMANITIES – 2</a><br>
-            <a href="'.$row['third_link'].'">FUNDAMENTALS OF FINANCIAL MANAGEMENT</a><br>
-            <a href="'.$row['fourth_link'].'">ADVANCED FINANCIAL ACCOUNTING – 2</a><br>
-            <a href="'.$row['fifth_link'].'">BUSINESS STATISTICS</a><br>
-            <a href="'.$row['sixth_link'].'">FIRMS AND MARKETS</a><br>
-            <a href="'.$row['seventh_link'].'">BUSINESS COMMUNICATION</a><br>
-            <a href="'.$row['eighth_link'].'">DIRECT TAXES – II </a><br>
+         <a href="'.$row['first_link'].'"> INTRODUCTION TO SCIENCE AND TECHNOLOGY</a><br><br>
+            <a href="'.$row['second_link'].'">HUMANITIES – 2</a><br><br>
+            <a href="'.$row['third_link'].'">FUNDAMENTALS OF FINANCIAL MANAGEMENT</a><br><br>
+            <a href="'.$row['fourth_link'].'">ADVANCED FINANCIAL ACCOUNTING – 2</a><br><br>
+            <a href="'.$row['fifth_link'].'">BUSINESS STATISTICS</a><br><br>
+            <a href="'.$row['sixth_link'].'">FIRMS AND MARKETS</a><br><br>
+            <a href="'.$row['seventh_link'].'">BUSINESS COMMUNICATION</a><br><br>
+            <a href="'.$row['eighth_link'].'">DIRECT TAXES – II </a><br><br>
             <a href="'.$row['ninth_link'].'">PROJECT</a>';
 				 echo '	</div> <!-- cd-faq-content -->';
 			
@@ -179,7 +179,7 @@ else{
 			</ul> <!-- cd-faq-group -->
 
 		<ul id="account" >
-			<li class="cd-faq-title"><h2>Third Year</h2></li><br>
+			<li class="cd-faq-title"><h2>Third Year</h2></li><br><br>
 			<?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
          $sql="select * from material_link_tbl where link_year=3 && link_address='mba' && link_sem=5";
@@ -192,15 +192,15 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'">HEALTH AND FITNESS MANAGEMENT</a><br>
-            <a href="'.$row['second_link'].'">ENTREPRENEURSHIP DEVELOPEMENT </a><br>
-            <a href="'.$row['third_link'].'">ORGANISATION BEHAVIOUR AND PERSONNEL MANAGEMENT</a><br>
-            <a href="'.$row['fourth_link'].'">FINANCIAL ANALYSIS AND REPORTING</a><br>
-            <a href="'.$row['fifth_link'].'">QUANTITATIVE TECHNIQUES</a><br>
-            <a href="'.$row['sixth_link'].'">MACRO ECONOMICS </a><br>
-            <a href="'.$row['seventh_link'].'">CORPORATE COMMUNICATION</a><br>
-            <a href="'.$row['eighth_link'].'">PROJECT </a><br>
-             <a href="'.$row['ninth_link'].'">FINANCIAL MANAGEMENT – I  </a><br>';
+         <a href="'.$row['first_link'].'">HEALTH AND FITNESS MANAGEMENT</a><br><br>
+            <a href="'.$row['second_link'].'">ENTREPRENEURSHIP DEVELOPEMENT </a><br><br>
+            <a href="'.$row['third_link'].'">ORGANISATION BEHAVIOUR AND PERSONNEL MANAGEMENT</a><br><br>
+            <a href="'.$row['fourth_link'].'">FINANCIAL ANALYSIS AND REPORTING</a><br><br>
+            <a href="'.$row['fifth_link'].'">QUANTITATIVE TECHNIQUES</a><br><br>
+            <a href="'.$row['sixth_link'].'">MACRO ECONOMICS </a><br><br>
+            <a href="'.$row['seventh_link'].'">CORPORATE COMMUNICATION</a><br><br>
+            <a href="'.$row['eighth_link'].'">PROJECT </a><br><br>
+             <a href="'.$row['ninth_link'].'">FINANCIAL MANAGEMENT – I  </a><br><br>';
            
          echo '	</div> <!-- cd-faq-content -->';
 			
@@ -222,15 +222,15 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'"> WORLD GEOGRAPHY</a><br>
-            <a href="'.$row['second_link'].'">HISTORY AND CULTURE OF GUJARAT</a><br>
-            <a href="'.$row['third_link'].'">INDUSTRIAL RELATIONS AND PRODUCTION MANAGEMENT</a><br>
-            <a href="'.$row['fourth_link'].'">COST AND MANAGEMENT ACCOUNTING</a><br>
-            <a href="'.$row['fifth_link'].'">OPERATIONS RESEARCH</a><br>
-            <a href="'.$row['sixth_link'].'">PUBLIC FINANCE, MONEY AND BANKING</a><br>
-            <a href="'.$row['seventh_link'].'">BUSINESS ENGLISH </a><br>
-            <a href="'.$row['eighth_link'].'">PROJECT </a><br>
-           <a href="'.$row['ninth_link'].'">FINANCIAL MANAGEMENT – II  </a><br>';
+         <a href="'.$row['first_link'].'"> WORLD GEOGRAPHY</a><br><br>
+            <a href="'.$row['second_link'].'">HISTORY AND CULTURE OF GUJARAT</a><br><br>
+            <a href="'.$row['third_link'].'">INDUSTRIAL RELATIONS AND PRODUCTION MANAGEMENT</a><br><br>
+            <a href="'.$row['fourth_link'].'">COST AND MANAGEMENT ACCOUNTING</a><br><br>
+            <a href="'.$row['fifth_link'].'">OPERATIONS RESEARCH</a><br><br>
+            <a href="'.$row['sixth_link'].'">PUBLIC FINANCE, MONEY AND BANKING</a><br><br>
+            <a href="'.$row['seventh_link'].'">BUSINESS ENGLISH </a><br><br>
+            <a href="'.$row['eighth_link'].'">PROJECT </a><br><br>
+           <a href="'.$row['ninth_link'].'">FINANCIAL MANAGEMENT – II  </a><br><br>';
 
             echo '	</div> <!-- cd-faq-content -->';
 			
@@ -242,7 +242,7 @@ else{
 		</ul> <!-- cd-faq-group -->
 
 		<ul id="payments">
-			<li class="cd-faq-title"><h2>Fourth Year</h2></li><br>
+			<li class="cd-faq-title"><h2>Fourth Year</h2></li><br><br>
 			<?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
          $sql="select * from material_link_tbl where link_year=4 && link_address='mba' && link_sem=7";
@@ -255,14 +255,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'">PRINCIPLES AND PRACTICES OF MANAGEMENT </a><br>
-            <a href="'.$row['second_link'].'">QUANTITATIVE TECHNIQUES FOR MANAGEMENT – I </a><br>
-            <a href="'.$row['third_link'].'">ORGANIZATIONAL BEHAVIOUR </a><br>
-            <a href="'.$row['fourth_link'].'">MANAGERIAL ECONOMICS </a><br>
-            <a href="'.$row['fifth_link'].'">MANAGEMENT INFORMATION SYSTEMS </a><br>
-            <a href="'.$row['sixth_link'].'">FINANCIAL ACCOUNTING FOR MANAGEMENT</a><br>
-            <a href="'.$row['seventh_link'].'">MANAGERIAL COMMUNICATION </a><br>
-            <a href="'.$row['eighth_link'].'">ETHICS, ETHOS AND VALUES</a><br>';
+         <a href="'.$row['first_link'].'">PRINCIPLES AND PRACTICES OF MANAGEMENT </a><br><br>
+            <a href="'.$row['second_link'].'">QUANTITATIVE TECHNIQUES FOR MANAGEMENT – I </a><br><br>
+            <a href="'.$row['third_link'].'">ORGANIZATIONAL BEHAVIOUR </a><br><br>
+            <a href="'.$row['fourth_link'].'">MANAGERIAL ECONOMICS </a><br><br>
+            <a href="'.$row['fifth_link'].'">MANAGEMENT INFORMATION SYSTEMS </a><br><br>
+            <a href="'.$row['sixth_link'].'">FINANCIAL ACCOUNTING FOR MANAGEMENT</a><br><br>
+            <a href="'.$row['seventh_link'].'">MANAGERIAL COMMUNICATION </a><br><br>
+            <a href="'.$row['eighth_link'].'">ETHICS, ETHOS AND VALUES</a><br><br>';
          echo '	</div> <!-- cd-faq-content -->';
 			
  
@@ -283,14 +283,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'">QUANTITATIVE TECHNIQUES FOR MANAGEMENT – II</a><br>
-            <a href="'.$row['second_link'].'">ADVANCED MARKETING MANAGEMENT </a><br>
-            <a href="'.$row['third_link'].'">HUMAN RESOURCE DEVELOPMENT </a><br>
-            <a href="'.$row['fourth_link'].'">ADVANCED COST AND MANAGEMENT ACCOUNTING</a><br>
-            <a href="'.$row['fifth_link'].'">PRODUCTION AND OPERATIONS MANAGEMENT </a><br>
-            <a href="'.$row['sixth_link'].'">INDIAN BUSINESS ENVIRONMENT </a><br>
-            <a href="'.$row['seventh_link'].'">ADVANCED FINANCIAL MANAGEMENT </a><br>
-            <a href="'.$row['eighth_link'].'">BUSINESS RESEARCH METHODOLOGY</a><br>';
+         <a href="'.$row['first_link'].'">QUANTITATIVE TECHNIQUES FOR MANAGEMENT – II</a><br><br>
+            <a href="'.$row['second_link'].'">ADVANCED MARKETING MANAGEMENT </a><br><br>
+            <a href="'.$row['third_link'].'">HUMAN RESOURCE DEVELOPMENT </a><br><br>
+            <a href="'.$row['fourth_link'].'">ADVANCED COST AND MANAGEMENT ACCOUNTING</a><br><br>
+            <a href="'.$row['fifth_link'].'">PRODUCTION AND OPERATIONS MANAGEMENT </a><br><br>
+            <a href="'.$row['sixth_link'].'">INDIAN BUSINESS ENVIRONMENT </a><br><br>
+            <a href="'.$row['seventh_link'].'">ADVANCED FINANCIAL MANAGEMENT </a><br><br>
+            <a href="'.$row['eighth_link'].'">BUSINESS RESEARCH METHODOLOGY</a><br><br>';
            
          echo '	</div> <!-- cd-faq-content -->';
 			
@@ -303,7 +303,7 @@ else{
 		 	  	</ul> <!-- cd-faq-group -->
 
 		<ul id="privacy">
-			<li class="cd-faq-title"><h2>Fifth Year</h2></li><br>
+			<li class="cd-faq-title"><h2>Fifth Year</h2></li><br><br>
 			<?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
          $sql="select * from material_link_tbl where link_year=5 && link_address='mba' && link_sem=9";
@@ -316,14 +316,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-            <a href="'.$row['first_link'].'"></a><br>
-            <a href="'.$row['second_link'].'"></a><br>
-            <a href="'.$row['third_link'].'"></a><br>
-            <a href="'.$row['fourth_link'].'"></a><br>
-            <a href="'.$row['fifth_link'].'"></a><br>
-            <a href="'.$row['sixth_link'].'"></a><br>
-            <a href="'.$row['seventh_link'].'"></a><br>
-            <a href="'.$row['eighth_link'].'"></a><br>';
+            <a href="'.$row['first_link'].'"></a><br><br>
+            <a href="'.$row['second_link'].'"></a><br><br>
+            <a href="'.$row['third_link'].'"></a><br><br>
+            <a href="'.$row['fourth_link'].'"></a><br><br>
+            <a href="'.$row['fifth_link'].'"></a><br><br>
+            <a href="'.$row['sixth_link'].'"></a><br><br>
+            <a href="'.$row['seventh_link'].'"></a><br><br>
+            <a href="'.$row['eighth_link'].'"></a><br><br>';
             echo '	</div> <!-- cd-faq-content -->';
 			
  
@@ -344,7 +344,7 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'"></a><br>';
+         <a href="'.$row['first_link'].'"></a><br><br>';
                    echo '	</div> <!-- cd-faq-content -->';
 			
  

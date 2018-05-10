@@ -135,5 +135,5 @@ else{
    <br>
   </div>
   </div>';
-}
-require } 'bottom.php'; ?>
+}}
+require  'bottom.php'; ?>

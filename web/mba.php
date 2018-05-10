@@ -7,28 +7,31 @@
 					<i></i>
 				</span>
             </h3>
+            <div class="product-sec1">
+            <div class="row">
             <?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
          $sql="select * from gallary_tbl where gallary_type=1";
          $result=$cnn->query($sql);
          while($row=$result->fetch_assoc())
          {
-             echo '<table class="table">';
-             echo '<tr><td><img src="'.$row["gallary_url"].'" height="300px" width="400px"></td>';
+            
+             echo '<div class="col-md-5">
+             <img  class="img-responsive" src="'.$row["gallary_url"].'" height="300px" width="400px">
+             </div>';
              
-              echo '<td colspan="2"></td>';
-             echo '<td>';
-             
-
          }
          ?>
-         <br><b><font color="black" size="4px"><br>K. S. School of Business Management has enjoyed the faith of the corporate world which is expressed through successful final placements and summer internships. All the placement activities are conducted through MBA placement cell headed by the placement officer. Each year the placement cell prepares a Placement Brochure which serves as a recruiters´ guide and contains detailed portrayal of the school and the students who are looking forward to placement.
+         <div class="col-md-7">
+         <font color="black" size="4px"><br>K. S. School of Business Management has enjoyed the faith of the corporate world which is expressed through successful final placements and summer internships. All the placement activities are conducted through MBA placement cell headed by the placement officer. Each year the placement cell prepares a Placement Brochure which serves as a recruiters´ guide and contains detailed portrayal of the school and the students who are looking forward to placement.
          
          The final year students wanting to spread their wings in the corporate world are given special attention and are acculturated in professional values of fairness, objectivity, compassion, team work, commitment and super ordinations. They are tuned to the needs and demands of the business and industry through carefully designed co-curricular programmes. The placement season begins from third week of November each year.
          
-        </font> </td></tr></table>
+        </font> </div>
+        </div>
+        
 
-
+         <div class="row">
 
 
 		 <?php
@@ -72,5 +75,8 @@ while($row=$res->fetch_assoc())
   <span class="glyphicon glyphicon-chevron-right"></span>
   <span class="sr-only">Next</span>
 </a>
+</div>
+
+</div>
 </div>
 <?php require 'bottom.php'; ?>

@@ -7,21 +7,23 @@
 					<i></i>
 				</span>
             </h3>
+            <div class="product-sec1">
+                <div class="row">
             <?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
          $sql="select * from gallary_tbl where gallary_type=8";
          $result=$cnn->query($sql);
          while($row=$result->fetch_assoc())
          {
-             echo '<table class="table">';
-             echo '<tr><td><img src="'.$row["gallary_url"].'" height="350px" width="500px"></td>';
              
-              echo '<td colspan="2"></td>';
-             echo '<td>';
-             
-
+             echo '<div class="col-md-5 ">
+                <img  class="img img-responsive" src="'.$row["gallary_url"].'" >
+                </div>';
+           
          }
          ?>
+        
+         <div class="col-md-7">
         <font size="4px" color="black">An investment in knowledge pays the best interest" - Benjamin Franklin.
         
         Investment in education is the best gift parents can ever make for the future of their children, which in turn leads to betterment of the society at large and the nation as a whole.
@@ -37,5 +39,7 @@
         <br>K. S. School of Business Management.</font>
          
          
-         </td></tr></table>
+        </div>
+            </div>
+            </div>
 		 <?php require 'bottom.php'; ?>

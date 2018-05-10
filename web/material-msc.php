@@ -43,7 +43,7 @@ else{
 
 	<div class="cd-faq-items">
 		<ul id="basics" >
-         <li class="cd-faq-title" ><h2><b>First Year</b></h2></li><br>
+         <li class="cd-faq-title" ><h2><b>First Year</b></h2></li><br><br>
     
              
        </li>
@@ -60,14 +60,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-            <a href="'.$row['first_link'].'">FUNDAMENTALS OF MANAGEMENT</a><br>
-            <a href="'.$row['second_link'].'">FINANCIAL ACCOUNTING AND MANAGEMENT</a><br>
-            <a href="'.$row['third_link'].'">FUNDAMENTALS OF PROGRAMMING</a><br>
-            <a href="'.$row['fourth_link'].'">FUNDAMENTALS OF COMPUTER ORGANIZATION</a><br>
-            <a href="'.$row['fifth_link'].'">MATHEMATICAL CONCEPTS</a><br>
-            <a href="'.$row['sixth_link'].'">COMMUNICATION SKILLS</a><br>
-            <a href="'.$row['seventh_link'].'">DATABASE MANAGEMENT SYSTEMS CONCEPTS </a><br>
-            <a href="'.$row['eighth_link'].'">IMPLEMENTATION OF C (PRACTICAL ON CC-113)</a><br>
+            <a href="'.$row['first_link'].'">FUNDAMENTALS OF MANAGEMENT</a><br><br>
+            <a href="'.$row['second_link'].'">FINANCIAL ACCOUNTING AND MANAGEMENT</a><br><br>
+            <a href="'.$row['third_link'].'">FUNDAMENTALS OF PROGRAMMING</a><br><br>
+            <a href="'.$row['fourth_link'].'">FUNDAMENTALS OF COMPUTER ORGANIZATION</a><br><br>
+            <a href="'.$row['fifth_link'].'">MATHEMATICAL CONCEPTS</a><br><br>
+            <a href="'.$row['sixth_link'].'">COMMUNICATION SKILLS</a><br><br>
+            <a href="'.$row['seventh_link'].'">DATABASE MANAGEMENT SYSTEMS CONCEPTS </a><br><br>
+            <a href="'.$row['eighth_link'].'">IMPLEMENTATION OF C (PRACTICAL ON CC-113)</a><br><br>
             <a href="'.$row['ninth_link'].'">IMPLEMENTATION OF OFFICE
       APPLICATIONS(PRACTICAL)</a>';
 					
@@ -93,15 +93,15 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'">ENVIRONMENTAL STUDIES</a><br>
-            <a href="'.$row['second_link'].'">TAXATION LAWS</a><br>
-            <a href="'.$row['third_link'].'">MATRIX ALGEBRA AND GRAPH THEORY</a><br>
-            <a href="'.$row['fourth_link'].'">DATABASE MANAGEMENT SYSTEMS USING SQL /PLSQL</a><br>
-            <a href="'.$row['fifth_link'].'">COMMERCIAL COMMUNICATION</a><br>
-            <a href="'.$row['sixth_link'].'">ADVANCE C PROGRAMMING</a><br>
+         <a href="'.$row['first_link'].'">ENVIRONMENTAL STUDIES</a><br><br>
+            <a href="'.$row['second_link'].'">TAXATION LAWS</a><br><br>
+            <a href="'.$row['third_link'].'">MATRIX ALGEBRA AND GRAPH THEORY</a><br><br>
+            <a href="'.$row['fourth_link'].'">DATABASE MANAGEMENT SYSTEMS USING SQL /PLSQL</a><br><br>
+            <a href="'.$row['fifth_link'].'">COMMERCIAL COMMUNICATION</a><br><br>
+            <a href="'.$row['sixth_link'].'">ADVANCE C PROGRAMMING</a><br><br>
             <a href="'.$row['seventh_link'].'">IMPLEMENTATION OF SQL/PLSQL
-      (PRACTICAL ON CC-124) </a><br>
-            <a href="'.$row['eighth_link'].'">IMPLEMENTATION OF C PROGRAMMING (PRACTICAL ON CC-126)</a><br>
+      (PRACTICAL ON CC-124) </a><br><br>
+            <a href="'.$row['eighth_link'].'">IMPLEMENTATION OF C PROGRAMMING (PRACTICAL ON CC-126)</a><br><br>
             <a href="'.$row['ninth_link'].'">MULTIMEDIA (PRACTICAL)</a>';
 					
          
@@ -117,7 +117,7 @@ else{
 		</ul> <!-- cd-faq-group -->
 
 		<ul id="mobile">
-			<li class="cd-faq-title"><h2>Second Year</h2></li><br>
+			<li class="cd-faq-title"><h2>Second Year</h2></li><br><br>
     
              <?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
@@ -132,14 +132,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'">FUNDAMENTALS OF ECONOMICS</a><br>
-            <a href="'.$row['second_link'].'">SOFT SKILL DEVELOPMENT</a><br>
-            <a href="'.$row['third_link'].'">COMPUTER ORIENTED STATISTICAL METHODS</a><br>
-            <a href="'.$row['fourth_link'].'">CONCEPTS OF OPERATING SYSTEM</a><br>
-            <a href="'.$row['fifth_link'].'">OBJECT ORIENTED PROGRAMMING WITH C++</a><br>
-            <a href="'.$row['sixth_link'].'">DATA STRUCTURES</a><br>
-            <a href="'.$row['seventh_link'].'">DISCRETE MATHEMATICS </a><br>
-            <a href="'.$row['eighth_link'].'">IMPLEMENTATION OF C++ (PRACTICAL ON CC-235)</a><br>
+         <a href="'.$row['first_link'].'">FUNDAMENTALS OF ECONOMICS</a><br><br>
+            <a href="'.$row['second_link'].'">SOFT SKILL DEVELOPMENT</a><br><br>
+            <a href="'.$row['third_link'].'">COMPUTER ORIENTED STATISTICAL METHODS</a><br><br>
+            <a href="'.$row['fourth_link'].'">CONCEPTS OF OPERATING SYSTEM</a><br><br>
+            <a href="'.$row['fifth_link'].'">OBJECT ORIENTED PROGRAMMING WITH C++</a><br><br>
+            <a href="'.$row['sixth_link'].'">DATA STRUCTURES</a><br><br>
+            <a href="'.$row['seventh_link'].'">DISCRETE MATHEMATICS </a><br><br>
+            <a href="'.$row['eighth_link'].'">IMPLEMENTATION OF C++ (PRACTICAL ON CC-235)</a><br><br>
             <a href="'.$row['ninth_link'].'">IMPLEMENTATION OF DATA STRUCTURE (PRACTICAL ON CC-236)</a>';
 					
          echo '	</div> <!-- cd-faq-content -->';
@@ -162,14 +162,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'">INTRODUCTION TO HUMANITIES</a><br>
-            <a href="'.$row['second_link'].'">BUSINESS COMMUNICATION</a><br>
-            <a href="'.$row['third_link'].'">COMPUTER ORIENTED NUMERICAL METHODS</a><br>
-            <a href="'.$row['fourth_link'].'">OPEN SOURCE TECHNOLOGY</a><br>
-            <a href="'.$row['fifth_link'].'">SYSTEM ANALYSIS , DESIGN AND MODELING</a><br>
-            <a href="'.$row['sixth_link'].'">CLIENT SERVER ARCHITECTURE</a><br>
-            <a href="'.$row['seventh_link'].'">IMPLEMENTATION OF OPEN SOURCE TECHNOLOGY (PRACTICAL ON CC-244) </a><br>
-            <a href="'.$row['eighth_link'].'">WEB TECHNOLOGY (PRACTICAL) javascript / vb script/xml</a><br>
+         <a href="'.$row['first_link'].'">INTRODUCTION TO HUMANITIES</a><br><br>
+            <a href="'.$row['second_link'].'">BUSINESS COMMUNICATION</a><br><br>
+            <a href="'.$row['third_link'].'">COMPUTER ORIENTED NUMERICAL METHODS</a><br><br>
+            <a href="'.$row['fourth_link'].'">OPEN SOURCE TECHNOLOGY</a><br><br>
+            <a href="'.$row['fifth_link'].'">SYSTEM ANALYSIS , DESIGN AND MODELING</a><br><br>
+            <a href="'.$row['sixth_link'].'">CLIENT SERVER ARCHITECTURE</a><br><br>
+            <a href="'.$row['seventh_link'].'">IMPLEMENTATION OF OPEN SOURCE TECHNOLOGY (PRACTICAL ON CC-244) </a><br><br>
+            <a href="'.$row['eighth_link'].'">WEB TECHNOLOGY (PRACTICAL) javascript / vb script/xml</a><br><br>
             <a href="'.$row['ninth_link'].'">IMPLEMENTATION OF CLIENT SERVER ARCHITECTURE (PRACTICAL ON CC-246)</a>';
 				 echo '	</div> <!-- cd-faq-content -->';
 			
@@ -181,7 +181,7 @@ else{
 			</ul> <!-- cd-faq-group -->
 
 		<ul id="account" >
-			<li class="cd-faq-title"><h2>Third Year</h2></li><br>
+			<li class="cd-faq-title"><h2>Third Year</h2></li><br><br>
 			<?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
          $sql="select * from material_link_tbl where link_year=3 && link_address='msc' && link_sem=5";
@@ -194,14 +194,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'">CYBER LAW AND INTELLECTUAL PROPERTY</a><br>
-            <a href="'.$row['second_link'].'">TECHNICAL COMMUNICATION</a><br>
-            <a href="'.$row['third_link'].'">SOFTWARE ENGINEERING</a><br>
-            <a href="'.$row['fourth_link'].'">COMPUTER GRAPHICS</a><br>
-            <a href="'.$row['fifth_link'].'">CORE JAVA</a><br>
-            <a href="'.$row['sixth_link'].'">IMPLEMENTATION OF COMPUTER GRAPHICS ( PRACTICAL ON KS_C_FC-354)</a><br>
-            <a href="'.$row['seventh_link'].'">IMPLEMENTATION OF CORE JAVA(PRACTICAL ON KS_C_CC-355) </a><br>
-            <a href="'.$row['eighth_link'].'">SOFTWARE PROJECT DEVELOPMENT-I </a><br>';
+         <a href="'.$row['first_link'].'">CYBER LAW AND INTELLECTUAL PROPERTY</a><br><br>
+            <a href="'.$row['second_link'].'">TECHNICAL COMMUNICATION</a><br><br>
+            <a href="'.$row['third_link'].'">SOFTWARE ENGINEERING</a><br><br>
+            <a href="'.$row['fourth_link'].'">COMPUTER GRAPHICS</a><br><br>
+            <a href="'.$row['fifth_link'].'">CORE JAVA</a><br><br>
+            <a href="'.$row['sixth_link'].'">IMPLEMENTATION OF COMPUTER GRAPHICS ( PRACTICAL ON KS_C_FC-354)</a><br><br>
+            <a href="'.$row['seventh_link'].'">IMPLEMENTATION OF CORE JAVA(PRACTICAL ON KS_C_CC-355) </a><br><br>
+            <a href="'.$row['eighth_link'].'">SOFTWARE PROJECT DEVELOPMENT-I </a><br><br>';
            
          echo '	</div> <!-- cd-faq-content -->';
 			
@@ -223,14 +223,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'"> ADVANCED JAVA / ADVANCED WEB TECHNOLOGY</a><br>
-            <a href="'.$row['second_link'].'">RESEARCH METHODOLOGY</a><br>
-            <a href="'.$row['third_link'].'">DATA COMMUNICATION AND NETWORKING</a><br>
-            <a href="'.$row['fourth_link'].'">SYSTEM SOFTWARE</a><br>
-            <a href="'.$row['fifth_link'].'">E-COMMERCE AND E-GOVERNANCE</a><br>
-            <a href="'.$row['sixth_link'].'">IMPLEMENTATION OF DATA COMMUNICATION AND NETWORKING  (PRACTICAL ON CC-363)</a><br>
-            <a href="'.$row['seventh_link'].'">IMPLEMENTATION OF SYSTEM SOFTWARE (PRACTICAL ON CC -364 ) </a><br>
-            <a href="'.$row['eighth_link'].'">SOFTWARE DEVELOPMENT</a><br>';
+         <a href="'.$row['first_link'].'"> ADVANCED JAVA / ADVANCED WEB TECHNOLOGY</a><br><br>
+            <a href="'.$row['second_link'].'">RESEARCH METHODOLOGY</a><br><br>
+            <a href="'.$row['third_link'].'">DATA COMMUNICATION AND NETWORKING</a><br><br>
+            <a href="'.$row['fourth_link'].'">SYSTEM SOFTWARE</a><br><br>
+            <a href="'.$row['fifth_link'].'">E-COMMERCE AND E-GOVERNANCE</a><br><br>
+            <a href="'.$row['sixth_link'].'">IMPLEMENTATION OF DATA COMMUNICATION AND NETWORKING  (PRACTICAL ON CC-363)</a><br><br>
+            <a href="'.$row['seventh_link'].'">IMPLEMENTATION OF SYSTEM SOFTWARE (PRACTICAL ON CC -364 ) </a><br><br>
+            <a href="'.$row['eighth_link'].'">SOFTWARE DEVELOPMENT</a><br><br>';
             echo '	</div> <!-- cd-faq-content -->';
 			
  
@@ -241,7 +241,7 @@ else{
 		</ul> <!-- cd-faq-group -->
 
 		<ul id="payments">
-			<li class="cd-faq-title"><h2>Fourth Year</h2></li><br>
+			<li class="cd-faq-title"><h2>Fourth Year</h2></li><br><br>
 			<?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
          $sql="select * from material_link_tbl where link_year=4 && link_address='msc' && link_sem=7";
@@ -254,14 +254,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'">ADVANCED DATABASE SYSTEMS</a><br>
-            <a href="'.$row['second_link'].'">CORPORATE COMMUNICATION & BUSINESS ENGLISH</a><br>
-            <a href="'.$row['third_link'].'">OPERATIONS RESEARCH</a><br>
-            <a href="'.$row['fourth_link'].'">ARTIFICIAL INTELLIGENCE</a><br>
-            <a href="'.$row['fifth_link'].'">ADVANCED NETWORKING</a><br>
-            <a href="'.$row['sixth_link'].'">SOFTWARE PROJECT MANAGEMENT & TESTING</a><br>
-            <a href="'.$row['seventh_link'].'">ENTERPRISE RESOURCE PLANNING </a><br>
-            <a href="'.$row['eighth_link'].'">PROJECT DEVELOPMENT ON  KS_C_CC-474</a><br>';
+         <a href="'.$row['first_link'].'">ADVANCED DATABASE SYSTEMS</a><br><br>
+            <a href="'.$row['second_link'].'">CORPORATE COMMUNICATION & BUSINESS ENGLISH</a><br><br>
+            <a href="'.$row['third_link'].'">OPERATIONS RESEARCH</a><br><br>
+            <a href="'.$row['fourth_link'].'">ARTIFICIAL INTELLIGENCE</a><br><br>
+            <a href="'.$row['fifth_link'].'">ADVANCED NETWORKING</a><br><br>
+            <a href="'.$row['sixth_link'].'">SOFTWARE PROJECT MANAGEMENT & TESTING</a><br><br>
+            <a href="'.$row['seventh_link'].'">ENTERPRISE RESOURCE PLANNING </a><br><br>
+            <a href="'.$row['eighth_link'].'">PROJECT DEVELOPMENT ON  KS_C_CC-474</a><br><br>';
          echo '	</div> <!-- cd-faq-content -->';
 			
  
@@ -282,14 +282,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'">CLOUD COMPUTING</a><br>
-            <a href="'.$row['second_link'].'">MASS COMMUNICATION</a><br>
-            <a href="'.$row['third_link'].'">QUANTITATIVE TECHNIQUES</a><br>
-            <a href="'.$row['fourth_link'].'">MOBILE COMPUTING</a><br>
-            <a href="'.$row['fifth_link'].'">SOFT COMPUTING </a><br>
-            <a href="'.$row['sixth_link'].'">MANAGEMENT INFORMATION SYSTEM</a><br>
-            <a href="'.$row['seventh_link'].'">DATA WAREHOUSING & DATA MINING </a><br>
-            <a href="'.$row['eighth_link'].'">DISSERTATION</a><br>';
+         <a href="'.$row['first_link'].'">CLOUD COMPUTING</a><br><br>
+            <a href="'.$row['second_link'].'">MASS COMMUNICATION</a><br><br>
+            <a href="'.$row['third_link'].'">QUANTITATIVE TECHNIQUES</a><br><br>
+            <a href="'.$row['fourth_link'].'">MOBILE COMPUTING</a><br><br>
+            <a href="'.$row['fifth_link'].'">SOFT COMPUTING </a><br><br>
+            <a href="'.$row['sixth_link'].'">MANAGEMENT INFORMATION SYSTEM</a><br><br>
+            <a href="'.$row['seventh_link'].'">DATA WAREHOUSING & DATA MINING </a><br><br>
+            <a href="'.$row['eighth_link'].'">DISSERTATION</a><br><br>';
            
          echo '	</div> <!-- cd-faq-content -->';
 			
@@ -302,7 +302,7 @@ else{
 		 	  	</ul> <!-- cd-faq-group -->
 
 		<ul id="privacy">
-			<li class="cd-faq-title"><h2>Fifth Year</h2></li><br>
+			<li class="cd-faq-title"><h2>Fifth Year</h2></li><br><br>
 			<?php
          $cnn=new mysqli("localhost","root","","ks_admin_db");
          $sql="select * from material_link_tbl where link_year=5 && link_address='msc' && link_sem=9";
@@ -315,14 +315,14 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-            <a href="'.$row['first_link'].'">NETWORK SECURITY</a><br>
-            <a href="'.$row['second_link'].'">NETWORK ADMINISTRATION</a><br>
-            <a href="'.$row['third_link'].'">GEOGRAPHICAL INFORMATION SYSTEM</a><br>
-            <a href="'.$row['fourth_link'].'">CRYPTOGRAPHY</a><br>
-            <a href="'.$row['fifth_link'].'">INTERNET APPLICATIONS</a><br>
-            <a href="'.$row['sixth_link'].'">DISTRIBUTED OPERATING SYSTEM</a><br>
-            <a href="'.$row['seventh_link'].'">DATA COMPRESSION</a><br>
-            <a href="'.$row['eighth_link'].'">PRACTICAL</a><br>';
+            <a href="'.$row['first_link'].'">NETWORK SECURITY</a><br><br>
+            <a href="'.$row['second_link'].'">NETWORK ADMINISTRATION</a><br><br>
+            <a href="'.$row['third_link'].'">GEOGRAPHICAL INFORMATION SYSTEM</a><br><br>
+            <a href="'.$row['fourth_link'].'">CRYPTOGRAPHY</a><br><br>
+            <a href="'.$row['fifth_link'].'">INTERNET APPLICATIONS</a><br><br>
+            <a href="'.$row['sixth_link'].'">DISTRIBUTED OPERATING SYSTEM</a><br><br>
+            <a href="'.$row['seventh_link'].'">DATA COMPRESSION</a><br><br>
+            <a href="'.$row['eighth_link'].'">PRACTICAL</a><br><br>';
             echo '	</div> <!-- cd-faq-content -->';
 			
  
@@ -343,7 +343,7 @@ else{
     
             
 				echo'<div class="cd-faq-content">
-         <a href="'.$row['first_link'].'">GRAND PROJECT (6 MONTHS)</a><br>';
+         <a href="'.$row['first_link'].'">GRAND PROJECT (6 MONTHS)</a><br><br>';
                    echo '	</div> <!-- cd-faq-content -->';
 			
  

@@ -30,7 +30,7 @@ $email=$_SESSION["eid"];
     require '../shared/attendance_db.php';
     $obj=new attendance_db();
     $res=$obj->getAttendanceRno($rno,$email);
-    if($res){
+    if(mysqli_num_rows($res) >0){
         $ctr=1;
         $check_p="";
         $check_a="";

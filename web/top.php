@@ -363,12 +363,15 @@ session_start();
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu agile_short_dropdown">
-							
+							<li>
+									<a href="profile.php">View Profile</a>
+								
+								</li>
 								<li>
-							<a href="">Download Material</a>
+							<a>Download Material</a>
 						
 						<ol><li type="disc">
-						<a href="material-mba.php">MBA</a>
+						<a  href="material-mba.php">MBA</a>
 					
 					</li>
 					<li type="disc">
@@ -414,23 +417,8 @@ session_start();
 									<a class="nav-stylehead" href="contact.php">Contact</a>
 								</li>
 								 
-								 
-								<li class="dropdown"  >
 								
-								<a class="nav-stylehead dropdown-toggle" href="#" data-toggle="dropdown"><div <?php echo $hide_2; ?> >  Profile
-									<b class="caret"></b> </div>
-								</a>
-								<ul class="dropdown-menu agile_short_dropdown">
-								<li>
-								<a href="profile.php">View Profile</a>
-								</li>
-								<li>
-										<a href="change_passwd.php">Change Password</a>
-									</li>
-									
-								</ul>
-								
-							    </li>
+							  
 								 
 							
 								

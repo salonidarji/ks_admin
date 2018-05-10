@@ -21,7 +21,7 @@
      <?php
 	$type=1;
 	  echo '<div class="product-sec1" width="100%">';
-	echo '<div class="col-md-4 product-men" width="100%">';
+
 	if(isset($_GET["type"]))
 	{
 		$type=$_GET["type"];
@@ -38,32 +38,29 @@
 		 $result=$cnn->query($sql);
 	}
 		 $fac_cnt=0;
-		 echo'<table class="table table-responsive"> <tr>';
+		 echo'
+		
+		 <table class="table"  > <tr >';
          while($row=$result->fetch_assoc())
          {
-             echo '<td>';
-            	echo '<div class="men-pro-item simpleCart_shelfItem" width="100%">';
-	echo '<div class="men-thumb-item" width="100%">';
+             echo '<td height="30%" width="30%"	>';
+            
+
 	if($type==1)
 	{
-	echo '<img src="'.$row["url"].'" height="300px" width="320px">';
+	echo '
+	
+	<img  class="img img-thumbnail img-responsive" src="'.$row["url"].'" height="100%" width="100%" >';
 	}
 	else if($type==2){
-	echo '<iframe  src="' . $row["url"] . '" height="300px" width="320px" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+	echo '<div class="embed-responsive embed-responsive-4by3">
+	<iframe  class="embed-responsive-item" src="' . $row["url"] . '"  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	</div>';
 	
 	}
-									echo '<div class="men-cart-pro">';
-										echo '<div class="inner-men-cart-pro">';
-											//echo '<a href="single.html" class="link-product-add-cart">Quick View</a>';
-										echo '</div>';
-									echo '</div>';
-								echo '</div>';
-								echo '<div class="item-info-product " width="100%">';
-									echo '<h4>';
-									//	echo '<a href="single.html">'.$row["faculty_name"].'</a>';
-									echo '</h4>';
-									 echo '</div>';
-							echo '</div>';
+								
+							
+							
 							echo'</td>';	
          $fac_cnt++;
 		 if($fac_cnt==3){
@@ -72,7 +69,7 @@
 		 }
 		 }
        // echo '<br>';
-      echo'</table>';
+	  echo'</table>';
         	echo '</div>';
 					    echo '<div class="clearfix" ></div>';
 					echo '</div>';
